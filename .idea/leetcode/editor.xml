@@ -69,6 +69,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/ConcatenationOfArray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/ConcatenationOfArray.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1929" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/ConcatenationOfArray.java" />
+              <option name="titleSlug" value="concatenation-of-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/CongWeiDaoTouDaYinLianBiaoLcof.java">
           <value>
             <LeetcodeEditor>
@@ -245,6 +256,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/RankTransformOfAnArray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/RankTransformOfAnArray.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1331" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/RankTransformOfAnArray.java" />
+              <option name="titleSlug" value="rank-transform-of-an-array" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/RemoveDuplicatesFromSortedArray.java">
           <value>
             <LeetcodeEditor>
@@ -330,6 +352,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/SearchInsertPosition.java" />
               <option name="titleSlug" value="search-insert-position" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/ShuZuZhongShuZiChuXianDeCiShuIiLcof.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/ShuZuZhongShuZiChuXianDeCiShuIiLcof.md" />
+              <option name="frontendQuestionId" value="leetcode.cn剑指 Offer 56 - II" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/ShuZuZhongShuZiChuXianDeCiShuIiLcof.java" />
+              <option name="titleSlug" value="shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-ii-lcof" />
             </LeetcodeEditor>
           </value>
         </entry>
