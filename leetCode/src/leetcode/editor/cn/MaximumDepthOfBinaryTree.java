@@ -46,15 +46,18 @@ public class MaximumDepthOfBinaryTree {
  *     }
  * }
  */
-class Solution {
+
+    /**
+     * 思路：对树结构进行遍历，一个节点取左右节点的最大值
+     */
+    class Solution {
     public int maxDepth(TreeNode root) {
-        if (root == null) {
-            return 0;
-        } else {
-            int leftHeight = maxDepth(root.left);
-            int rightHeight = maxDepth(root.right);
-            return Math.max(leftHeight, rightHeight) + 1;
-        }
+       if (root == null){
+           return 0;
+       }
+        int i = maxDepth(root.left);
+        int i1 = maxDepth(root.right);
+        return Math.max(i,i1) + 1;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

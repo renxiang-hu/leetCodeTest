@@ -64,7 +64,7 @@ import java.util.List;
 public class BinaryTreePreorderTraversal {
     public static void main(String[] args) {
         Solution solution = new BinaryTreePreorderTraversal().new Solution();
-        Integer[] arr = {1,null,2,3};
+        Integer[] arr = {1,null,2,3,4};
         List<Integer> integers = solution.preorderTraversal(TreeUtil.createTree(arr));
         System.out.println(integers);
     }
@@ -87,19 +87,21 @@ public class BinaryTreePreorderTraversal {
 // 1, null, 2, 3
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        preOrder(root,res);
-        return res;
+        //前序遍历  根--左--右
+        List<Integer> list = new ArrayList<>();
+        preOrder(root,list);
+        return list;
     }
 
-    public void preOrder(TreeNode node , List<Integer> res){
-        if(node == null){
+    public void preOrder(TreeNode root , List<Integer> list){
+        if (root == null){
             return;
         }
-        res.add(node.val);
-        preOrder(node.left,res);
-        preOrder(node.right,res);
+        list.add(root.val);    //根
+        preOrder(root.left,list);  //左
+        preOrder(root.right,list); //右
     }
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

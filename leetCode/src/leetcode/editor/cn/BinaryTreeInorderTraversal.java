@@ -1,7 +1,7 @@
 /**
   * 题目Id：94
   * 题目：二叉树的中序遍历
-  * 日期：2022-07-01 14:18:47
+  * 日期：2022-09-26 17:53:24
 */
 //给定一个二叉树的根节点 root ，返回 它的 中序 遍历 。
 //
@@ -40,7 +40,8 @@
 //
 //
 // 进阶: 递归算法很简单，你可以通过迭代算法完成吗？
-// Related Topics 栈 树 深度优先搜索 二叉树 👍 1476 👎 0
+//
+// Related Topics 栈 树 深度优先搜索 二叉树 👍 1574 👎 0
 
 package leetcode.editor.cn;
 
@@ -52,7 +53,7 @@ public class BinaryTreeInorderTraversal {
         Solution solution = new BinaryTreeInorderTraversal().new Solution();
         Integer[] arr = {1,null,2,3};
         List<Integer> integers = solution.inorderTraversal(TreeUtil.createTree(arr));
-        System.out.println(integers);
+        System.out.println(integers.toString());
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 /**
@@ -72,18 +73,18 @@ public class BinaryTreeInorderTraversal {
  */
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> list = new ArrayList<>();
-        inOrder(root,list);
-        return list;
+       List<Integer> list = new ArrayList<>();
+       inorder(root,list);
+       return list;
     }
 
-    public void inOrder(TreeNode treeNode,List<Integer> list){
-        if (treeNode == null){
+    public void inorder(TreeNode root,List<Integer> list){
+        if (root == null){
             return;
         }
-        inOrder(treeNode.left,list);
-        list.add(treeNode.val);
-        inOrder(treeNode.right,list);
+        inorder(root.left,list);
+        list.add(root.val);
+        inorder(root.right,list);
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

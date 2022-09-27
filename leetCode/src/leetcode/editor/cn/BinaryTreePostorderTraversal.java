@@ -1,7 +1,7 @@
 /**
   * 题目Id：145
   * 题目：二叉树的后序遍历
-  * 日期：2022-07-01 14:22:53
+  * 日期：2022-09-26 18:00:14
 */
 //给你一棵二叉树的根节点 root ，返回其节点值的 后序遍历 。
 //
@@ -40,7 +40,8 @@
 //
 //
 // 进阶：递归算法很简单，你可以通过迭代算法完成吗？
-// Related Topics 栈 树 深度优先搜索 二叉树 👍 876 👎 0
+//
+// Related Topics 栈 树 深度优先搜索 二叉树 👍 927 👎 0
 
 package leetcode.editor.cn;
 
@@ -52,7 +53,7 @@ public class BinaryTreePostorderTraversal {
         Solution solution = new BinaryTreePostorderTraversal().new Solution();
         Integer[] arr = {1,null,2,3};
         List<Integer> integers = solution.postorderTraversal(TreeUtil.createTree(arr));
-        System.out.println(integers);
+        System.out.println(integers.toString());
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 /**
@@ -77,13 +78,13 @@ class Solution {
        return list;
     }
 
-    public void postOrder(TreeNode treeNode,List<Integer> list){
-        if (treeNode == null){
+    public void postOrder(TreeNode root,List<Integer> list){
+        if (root == null){
             return;
         }
-        postOrder(treeNode.left,list);
-        postOrder(treeNode.right,list);
-        list.add(treeNode.val);
+        postOrder(root.left,list);
+        postOrder(root.right,list);
+        list.add(root.val);
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
