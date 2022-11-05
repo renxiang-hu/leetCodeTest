@@ -80,15 +80,15 @@ class findPivotIndex{
      */
     class Solution {
     public int pivotIndex(int[] nums) {
-        int total = Arrays.stream(nums).sum();
-        int sum = 0;
-        for (int i = 0 ; i < nums.length ; i++){
-            if (2 * sum == total - nums[i]){
-                return i;
-            }
-            sum += nums[i];
-        }
-        return -1;
+       int total = Arrays.stream(nums).sum();
+       int sumLeft = 0;
+       for (int i = 0 ; i < nums.length ; i++){
+           if (sumLeft == total-sumLeft-nums[i]){
+               return i;
+           }
+           sumLeft += nums[i];
+       }
+       return -1;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

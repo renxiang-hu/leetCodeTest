@@ -509,6 +509,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/bestTimeToBuyAndSellStock.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/bestTimeToBuyAndSellStock.md" />
+              <option name="frontendQuestionId" value="leetcode.cn121" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/bestTimeToBuyAndSellStock.java" />
+              <option name="titleSlug" value="best-time-to-buy-and-sell-stock" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/findPivotIndex.java">
           <value>
             <LeetcodeEditor>
