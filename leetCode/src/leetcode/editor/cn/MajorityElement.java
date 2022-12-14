@@ -39,6 +39,8 @@
 package leetcode.editor.cn;
 
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class MajorityElement {
     public static void main(String[] args) {
@@ -49,27 +51,14 @@ public class MajorityElement {
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int majorityElement(int[] nums) {
-        Map<Integer,Integer> map = new HashMap<>();
-        for (int i = 0 ; i < nums.length ; i++){
-            if(!map.containsKey(nums[i])){
-                map.put(nums[i],1);
-            }else{
-                map.put(nums[i],map.get(nums[i])+1);
-            }
-        }
-        List<Integer> list = new ArrayList<>();
-        map.entrySet().stream().forEach(e->{
-            list.add(e.getValue());
-        });
-        Collections.sort(list);
-        //3,4
-        int ss = 0;
-        for (Integer key : map.keySet()){
-           if(map.get(key) == list.get(list.size()-1)){
-               ss = key;
+        Map<Integer, Long> map = Arrays.stream(nums).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        int len = nums.length>>1;
+        for (Map.Entry<Integer,Long> entry : map.entrySet()){
+           if (entry.getValue() > len){
+               return entry.getKey();
            }
         }
-        return ss;
+      return -1;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
