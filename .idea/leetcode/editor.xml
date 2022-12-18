@@ -619,6 +619,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/islandPerimeter.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/islandPerimeter.md" />
+              <option name="frontendQuestionId" value="leetcode.cn463" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/islandPerimeter.java" />
+              <option name="titleSlug" value="island-perimeter" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/isomorphicStrings.java">
           <value>
             <LeetcodeEditor>
