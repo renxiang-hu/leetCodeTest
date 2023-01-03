@@ -641,6 +641,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/keyboardRow.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/keyboardRow.md" />
+              <option name="frontendQuestionId" value="leetcode.cn500" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/keyboardRow.java" />
+              <option name="titleSlug" value="keyboard-row" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/leetcode/editor/cn/BinaryTreePreorderTraversal.java">
           <value>
             <LeetcodeEditor>
@@ -671,6 +682,39 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/mergeTwoSortedLists.java" />
               <option name="titleSlug" value="merge-two-sorted-lists" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/nextGreaterElementI.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/nextGreaterElementI.md" />
+              <option name="frontendQuestionId" value="leetcode.cn496" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/nextGreaterElementI.java" />
+              <option name="titleSlug" value="next-greater-element-i" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/pascalsTriangle.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/pascalsTriangle.md" />
+              <option name="frontendQuestionId" value="leetcode.cn118" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/pascalsTriangle.java" />
+              <option name="titleSlug" value="pascals-triangle" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/pascalsTriangleIi.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/pascalsTriangleIi.md" />
+              <option name="frontendQuestionId" value="leetcode.cn119" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/pascalsTriangleIi.java" />
+              <option name="titleSlug" value="pascals-triangle-ii" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -776,10 +820,10 @@
         <entry key="$PROJECT_DIR$/../../leetCodeTest/leetCode/src/leetcode/editor/cn/KeyboardRow.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/../../leetCodeTest/leetCode/src/leetcode/editor/cn/doc/content/KeyboardRow.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/keyboardRow.md" />
               <option name="frontendQuestionId" value="leetcode.cn500" />
               <option name="host" value="leetcode.cn" />
-              <option name="path" value="$PROJECT_DIR$/../../leetCodeTest/leetCode/src/leetcode/editor/cn/KeyboardRow.java" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/keyboardRow.java" />
               <option name="titleSlug" value="keyboard-row" />
             </LeetcodeEditor>
           </value>
