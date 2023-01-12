@@ -762,6 +762,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/romanToInteger.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/romanToInteger.md" />
+              <option name="frontendQuestionId" value="leetcode.cn13" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/romanToInteger.java" />
+              <option name="titleSlug" value="roman-to-integer" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/runningSumOf1dArray.java">
           <value>
             <LeetcodeEditor>
@@ -803,6 +814,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/toLowerCase.java" />
               <option name="titleSlug" value="to-lower-case" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/uncommonWordsFromTwoSentences.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/uncommonWordsFromTwoSentences.md" />
+              <option name="frontendQuestionId" value="leetcode.cn884" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/uncommonWordsFromTwoSentences.java" />
+              <option name="titleSlug" value="uncommon-words-from-two-sentences" />
             </LeetcodeEditor>
           </value>
         </entry>
