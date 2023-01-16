@@ -48,9 +48,7 @@
 
 package leetcode.editor.cn;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 class nextGreaterElementI{
@@ -66,10 +64,23 @@ class nextGreaterElementI{
     //leetcode submit region begin(Prohibit modification and deletion)
     // 4,1,2   1,3,4,2
 class Solution {
-    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
-        return null;
-    }
-
+        public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+            Map<Integer,Integer> map = new HashMap<>();
+            Stack<Integer> stack = new Stack<>();
+            for (int i = nums2.length-1 ; i >= 0 ; i--){
+                int num = nums2[i];
+                if (!stack.isEmpty() && num >= stack.peek()){
+                    stack.pop();
+                }
+                map.put(num,stack.isEmpty()?-1:stack.peek());
+                stack.push(num);
+            }
+            int[] ns = new int[nums1.length];
+            for (int j = 0 ; j < nums1.length ; j++){
+                ns[j] = map.get(nums1[j]);
+            }
+            return ns;
+        }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
