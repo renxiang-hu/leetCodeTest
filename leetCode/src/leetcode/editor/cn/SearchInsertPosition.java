@@ -52,36 +52,13 @@ public class SearchInsertPosition {
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int searchInsert(int[] nums, int target) {
-        //暴力法
-//        if (target < nums[0]){
-//            return 0;
-//        }
-//        if (target > nums[nums.length-1]){
-//            return nums.length;
-//        }
-//       for(int i = 0 ; i < nums.length ; i++){
-//           if (nums[i] == target){
-//               return i;
-//           } else if (target > nums[i] && target < nums[i+1]){
-//               return i+1;
-//           }
-//       }
-//       return -1;
-
-        //二分法
-        if (target < nums[0]){
-            return 0;
-        }
-        if (target > nums[nums.length-1]){
-            return nums.length;
-        }
         int left = 0;
         int right = nums.length - 1;
         while (left <= right){
             int middle = left + (right - left) / 2;
-            if (nums[middle] < target) {
+            if (nums[middle] < target){
                 left = middle + 1;
-            } else if (nums[middle] > target){
+            } else if(nums[middle] > target){
                 right = middle - 1;
             } else {
                 return middle;
