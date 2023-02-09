@@ -40,11 +40,13 @@ class zaiPaiXuShuZuZhongChaZhaoShuZiLcof{
     
     public static void main(String[] args) {
         Solution solution = new zaiPaiXuShuZuZhongChaZhaoShuZiLcof().new Solution();
+        int search = solution.search(new int[]{2,2}, 2);
+        System.out.println(search);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int search(int[] nums, int target) {
-
+       return 0;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
