@@ -75,19 +75,17 @@ public class RemoveDuplicatesFromSortedArray {
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int removeDuplicates(int[] nums) {
-        //慢指针
-        int m = 0;
-        //快指针
-        int n = 1;
-        while (n < nums.length){
-           if (nums[m] == nums[n]){
-               n++;
+       int left = 0;
+       int right = 1;
+       while (right <= nums.length - 1){
+           if (nums[left]==nums[right]){
+               right++;
            } else {
-               m++;
-               nums[m] = nums[n];
+               left++;
+               nums[left] = nums[right];
            }
-        }
-        return m+1;
+       }
+       return left+1;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
