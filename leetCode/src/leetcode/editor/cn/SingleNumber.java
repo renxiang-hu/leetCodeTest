@@ -36,36 +36,11 @@ public class SingleNumber {
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int singleNumber(int[] nums) {
-        //第一种Map方法，复杂度较高，不推荐使用
-//        Map<Integer,Integer> map = new HashMap<>();
-//        int total = 0;
-//        for (int i = 0 ; i < nums.length ; i++){
-//            if (!map.containsKey(nums[i])){
-//                map.put(nums[i],1);
-//            }else{
-//                map.put(nums[i],map.get(nums[i])+1);
-//            }
-//        }
-//        int key = 0;
-//        //map数据已加载完成，现在进行输出
-//        Set<Map.Entry<Integer, Integer>> entries = map.entrySet();
-//        for (Map.Entry<Integer,Integer> entry : entries){
-//           if (entry.getValue() == 1){
-//              key = entry.getKey();
-//           }
-//        }
-//        return key;
-
-        //第二种方法，位运算，异或
-        /**知识点：
-         * 任何数和 0 做异或运算，结果仍然是原来的数，即 a \oplus 0=aa⊕0=a。
-         * 任何数和其自身做异或运算，结果是 0，即 a \oplus a=0a⊕a=0。
-         */
-        int angle = 0;
-        for (int num : nums){
-            angle = angle ^ num;
+        int sum = 0;
+        for (int i = 0 ; i < nums.length ; i++){
+            sum ^= nums[i];
         }
-        return angle;
+        return sum;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
