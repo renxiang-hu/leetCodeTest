@@ -38,6 +38,7 @@ package leetcode.editor.cn;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class ContainsDuplicate {
     public static void main(String[] args) {
@@ -49,16 +50,13 @@ public class ContainsDuplicate {
 class Solution {
     public boolean containsDuplicate(int[] nums) {
         Map<Integer,Integer> map = new HashMap<>();
-        for(int t = 0 ; t < nums.length ; t++){
-            if(!map.containsKey(nums[t])){
-                map.put(nums[t],1);
-            }else{
-                map.put(nums[t],map.get(nums[t])+1);
-            }
+        for (int i = 0 ; i < nums.length ; i++){
+            map.put(nums[i],map.getOrDefault(nums[i],0) + 1 );
         }
-        for(Integer ss : map.keySet()){
-            if(map.get(ss) > 1){
-               return true;
+        Set<Map.Entry<Integer, Integer>> entries = map.entrySet();
+        for (Map.Entry<Integer,Integer> entry : entries){
+            if (entry.getValue() >= 2){
+                return true;
             }
         }
         return false;
