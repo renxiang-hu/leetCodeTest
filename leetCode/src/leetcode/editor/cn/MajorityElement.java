@@ -51,14 +51,18 @@ public class MajorityElement {
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int majorityElement(int[] nums) {
-        Map<Integer, Long> map = Arrays.stream(nums).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        int len = nums.length>>1;
-        for (Map.Entry<Integer,Long> entry : map.entrySet()){
-           if (entry.getValue() > len){
-               return entry.getKey();
-           }
+       Map<Integer,Integer> map = new HashMap<>();
+       for (int i = 0 ; i < nums.length ; i++){
+           map.put(nums[i],map.getOrDefault(nums[i],0)+1);
+       }
+       int num = nums.length / 2;
+        Set<Map.Entry<Integer, Integer>> entries = map.entrySet();
+        for (Map.Entry<Integer,Integer> set : entries){
+            if (set.getValue() > num){
+                return set.getKey();
+            }
         }
-      return -1;
+        return -1;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
