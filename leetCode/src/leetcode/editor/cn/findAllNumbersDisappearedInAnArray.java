@@ -53,13 +53,13 @@ class findAllNumbersDisappearedInAnArray{
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public List<Integer> findDisappearedNumbers(int[] nums) {
-        Set<Integer> set = new HashSet<>();
         List<Integer> list = new ArrayList<>();
-        for (int i = 0 ; i < nums.length ; i++){
-            set.add(nums[i]);
+        Set<Integer> numSet = new HashSet<>();
+        for (int i = 0 ; i < nums.length ; i++) {
+            numSet.add(nums[i]);
         }
         for (int i = 1 ; i <= nums.length ; i++){
-            if (set.add(i)){
+            if (!numSet.contains(i)){
                 list.add(i);
             }
         }
