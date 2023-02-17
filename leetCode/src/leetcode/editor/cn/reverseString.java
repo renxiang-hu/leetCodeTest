@@ -41,14 +41,14 @@ class reverseString{
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public void reverseString(char[] s) {
-        int m = 0 ;
-        int n = s.length - 1;
-        while (m<=n){
-            char tl = s[m];
-            s[m] = s[n];
-            s[n] = tl;
-            m++;
-            n--;
+        int left = 0;
+        int right = s.length-1;
+        while (left <= right){
+            char temp = s[left];
+            s[left] = s[right];
+            s[right] = temp;
+            left++;
+            right--;
         }
     }
 }
