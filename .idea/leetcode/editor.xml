@@ -861,6 +861,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/removeDuplicateNodeLcci.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/removeDuplicateNodeLcci.md" />
+              <option name="frontendQuestionId" value="leetcode.cn面试题 02.01" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/removeDuplicateNodeLcci.java" />
+              <option name="titleSlug" value="remove-duplicate-node-lcci" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/removeLinkedListElements.java">
           <value>
             <LeetcodeEditor>
