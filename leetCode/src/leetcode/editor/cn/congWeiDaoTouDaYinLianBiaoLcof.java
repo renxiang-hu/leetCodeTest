@@ -18,10 +18,7 @@
 package leetcode.editor.cn;
 
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 class congWeiDaoTouDaYinLianBiaoLcof{
     //2022-11-19 13:24:50
@@ -48,16 +45,18 @@ class congWeiDaoTouDaYinLianBiaoLcof{
  */
 class Solution {
     public int[] reversePrint(ListNode head) {
-        Stack<Integer> stack = new Stack<>();
-        while (head != null){
-            stack.push(head.val);
-            head = head.next;
+        ListNode cur = head;
+        List<Integer> list = new ArrayList<>();
+        while (cur != null) {
+            list.add(cur.val);
+            cur = cur.next;
         }
-        int[] len = new int[stack.size()];
-        for (int i = 0 ; i < len.length ; i++){
-            len[i] = stack.pop();
+        Collections.reverse(list);
+        int[] a = new int[list.size()];
+        for (int i = 0 ; i < list.size() ; i++){
+           a[i] = list.get(i);
         }
-        return len;
+        return a;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
