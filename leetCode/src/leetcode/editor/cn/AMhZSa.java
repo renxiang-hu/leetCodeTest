@@ -53,7 +53,7 @@ import java.util.List;
 
 public class AMhZSa {
     public static void main(String[] args) {
-        int[] x = {1,2,3,3,2,1};
+        int[] x = {1,2};
         Solution solution = new AMhZSa().new Solution();
         ListNode linkedList = CreateLink.createLinkedList(x);
         boolean palindrome = solution.isPalindrome(linkedList);
@@ -72,24 +72,18 @@ public class AMhZSa {
  */
 class Solution {
     public boolean isPalindrome(ListNode head) {
-        if (head == null){
-            return false;
-        }
-        ListNode cur = head;
         List<Integer> list = new ArrayList<>();
+        ListNode cur = head;
         while (cur != null){
             list.add(cur.val);
             cur = cur.next;
         }
-        if (list.size() == 0){
-
-        }
-        int begin = 0;
-        int end = list.size() - 1;
-        while (begin <= end){
-            if (list.get(begin).equals(list.get(end))){
-                begin++;
-                end--;
+        int left = 0;
+        int right = list.size() - 1;
+        while (left <= right){
+            if (list.get(left) == list.get(right)){
+                left++;
+                right--;
             } else {
                 return false;
             }
