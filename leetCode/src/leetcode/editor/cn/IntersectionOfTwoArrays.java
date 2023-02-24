@@ -34,8 +34,7 @@
 
 package leetcode.editor.cn;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class IntersectionOfTwoArrays {
     public static void main(String[] args) {
@@ -46,7 +45,25 @@ public class IntersectionOfTwoArrays {
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int[] intersection(int[] nums1, int[] nums2) {
-return null;
+        Set<Integer> num1Set = new HashSet<>();
+        Set<Integer> num2Set = new HashSet<>();
+        for (Integer num : nums1){
+            num1Set.add(num);
+        }
+        for (Integer num : nums2){
+            num2Set.add(num);
+        }
+        List<Integer> list = new ArrayList<>();
+        for (Integer nu1 : num1Set){
+            if (num2Set.contains(nu1)){
+                list.add(nu1);
+            }
+        }
+        int[] tl = new int[list.size()];
+        for (int i = 0 ; i < list.size() ; i++){
+            tl[i] = list.get(i);
+        }
+        return tl;
     }
 }
 
