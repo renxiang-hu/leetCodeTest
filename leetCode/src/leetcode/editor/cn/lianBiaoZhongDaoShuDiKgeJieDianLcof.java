@@ -14,11 +14,12 @@
 // Related Topics 链表 双指针 👍 432 👎 0
 
 package leetcode.editor.cn;
-class lianBiaoZhongDaoShuDiKgeJieDianLcof{
+
+class lianBiaoZhongDaoShuDiKgeJieDianLcof {
     //2023-02-23 22:43:48
     //链表中倒数第k个节点
     //编号：[剑指 Offer 22]
-    
+
     public static void main(String[] args) {
         Solution solution = new lianBiaoZhongDaoShuDiKgeJieDianLcof().new Solution();
         ListNode linkedList = CreateLink.createLinkedList(new int[]{1, 2, 3, 4, 5});
@@ -26,28 +27,29 @@ class lianBiaoZhongDaoShuDiKgeJieDianLcof{
         PrintLink.printLinkedList(kthFromEnd);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */
-class Solution {
-    public ListNode getKthFromEnd(ListNode head, int k) {
-        ListNode left = head;
-        ListNode right = head;
-        for (int i = 1 ; i <= k ; i++){
-            right = right.next;
+
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     * int val;
+     * ListNode next;
+     * ListNode(int x) { val = x; }
+     * }
+     */
+    class Solution {
+        public ListNode getKthFromEnd(ListNode head, int k) {
+            ListNode left = head;
+            ListNode right = head;
+            for (int i = 1; i <= k; i++) {
+                right = right.next;
+            }
+            while (right != null) {
+                left = left.next;
+                right = right.next;
+            }
+            return left;
         }
-        while (right != null){
-            left = left.next;
-            right = right.next;
-        }
-        return left;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

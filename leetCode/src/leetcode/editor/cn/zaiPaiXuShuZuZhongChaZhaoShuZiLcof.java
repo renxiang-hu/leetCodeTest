@@ -33,22 +33,24 @@
 // Related Topics 数组 二分查找 👍 395 👎 0
 
 package leetcode.editor.cn;
-class zaiPaiXuShuZuZhongChaZhaoShuZiLcof{
+
+class zaiPaiXuShuZuZhongChaZhaoShuZiLcof {
     //2023-02-08 11:41:56
     //在排序数组中查找数字 I
     //编号：[剑指 Offer 53 - I]
-    
+
     public static void main(String[] args) {
         Solution solution = new zaiPaiXuShuZuZhongChaZhaoShuZiLcof().new Solution();
-        int search = solution.search(new int[]{2,2}, 2);
+        int search = solution.search(new int[]{2, 2}, 2);
         System.out.println(search);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int search(int[] nums, int target) {
-       return 0;
+    class Solution {
+        public int search(int[] nums, int target) {
+            return 0;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

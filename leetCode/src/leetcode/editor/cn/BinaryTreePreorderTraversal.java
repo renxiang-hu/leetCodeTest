@@ -1,8 +1,8 @@
 /**
-  * 题目Id：144
-  * 题目：二叉树的前序遍历
-  * 日期：2022-07-01 11:46:08
-*/
+ * 题目Id：144
+ * 题目：二叉树的前序遍历
+ * 日期：2022-07-01 11:46:08
+ */
 //给你二叉树的根节点 root ，返回它节点值的 前序 遍历。
 //
 //
@@ -64,45 +64,46 @@ import java.util.List;
 public class BinaryTreePreorderTraversal {
     public static void main(String[] args) {
         Solution solution = new BinaryTreePreorderTraversal().new Solution();
-        Integer[] arr = {1,null,2,3,4};
+        Integer[] arr = {1, null, 2, 3, 4};
         List<Integer> integers = solution.preorderTraversal(TreeUtil.createTree(arr));
         System.out.println(integers);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
+
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     *     int val;
+     *     TreeNode left;
+     *     TreeNode right;
+     *     TreeNode() {}
+     *     TreeNode(int val) { this.val = val; }
+     *     TreeNode(int val, TreeNode left, TreeNode right) {
+     *         this.val = val;
+     *         this.left = left;
+     *         this.right = right;
+     *     }
+     * }
+     */
 // 1, null, 2, 3
-class Solution {
-    public List<Integer> preorderTraversal(TreeNode root) {
-        //前序遍历  根--左--右
-        List<Integer> list = new ArrayList<>();
-        preOrder(root,list);
-        return list;
-    }
-
-    public void preOrder(TreeNode root , List<Integer> list){
-        if (root == null){
-            return;
+    class Solution {
+        public List<Integer> preorderTraversal(TreeNode root) {
+            //前序遍历  根--左--右
+            List<Integer> list = new ArrayList<>();
+            preOrder(root, list);
+            return list;
         }
-        list.add(root.val);    //根
-        preOrder(root.left,list);  //左
-        preOrder(root.right,list); //右
-    }
 
-}
+        public void preOrder(TreeNode root, List<Integer> list) {
+            if (root == null) {
+                return;
+            }
+            list.add(root.val);    //根
+            preOrder(root.left, list);  //左
+            preOrder(root.right, list); //右
+        }
+
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

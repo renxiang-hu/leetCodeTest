@@ -51,37 +51,38 @@ package leetcode.editor.cn;
 import java.util.*;
 import java.util.stream.Collectors;
 
-class nextGreaterElementI{
+class nextGreaterElementI {
     //2022-12-25 20:23:20
     //下一个更大元素 I
     //编号：[496]
-    
+
     public static void main(String[] args) {
         Solution solution = new nextGreaterElementI().new Solution();
-        int[] ints = solution.nextGreaterElement(new int[]{1,3,5,2,4}, new int[]{6,5,4,3,2,1,7});
+        int[] ints = solution.nextGreaterElement(new int[]{1, 3, 5, 2, 4}, new int[]{6, 5, 4, 3, 2, 1, 7});
         System.out.println(Arrays.toString(ints));
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
     // 4,1,2   1,3,4,2
-class Solution {
+    class Solution {
         public int[] nextGreaterElement(int[] nums1, int[] nums2) {
-            Map<Integer,Integer> map = new HashMap<>();
+            Map<Integer, Integer> map = new HashMap<>();
             Stack<Integer> stack = new Stack<>();
-            for (int i = nums2.length-1 ; i >= 0 ; i--){
+            for (int i = nums2.length - 1; i >= 0; i--) {
                 int num = nums2[i];
-                if (!stack.isEmpty() && num >= stack.peek()){
+                if (!stack.isEmpty() && num >= stack.peek()) {
                     stack.pop();
                 }
-                map.put(num,stack.isEmpty()?-1:stack.peek());
+                map.put(num, stack.isEmpty() ? -1 : stack.peek());
                 stack.push(num);
             }
             int[] ns = new int[nums1.length];
-            for (int j = 0 ; j < nums1.length ; j++){
+            for (int j = 0; j < nums1.length; j++) {
                 ns[j] = map.get(nums1[j]);
             }
             return ns;
         }
-}
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

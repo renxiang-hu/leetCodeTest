@@ -41,32 +41,34 @@
 // Related Topics 数组 数学 👍 1173 👎 0
 
 package leetcode.editor.cn;
-class plusOne{
+
+class plusOne {
     //2023-02-14 09:19:43
     //加一
     //编号：[66]
-    
+
     public static void main(String[] args) {
         Solution solution = new plusOne().new Solution();
         int[] ints = solution.plusOne(new int[]{4, 3, 2, 1});
         System.out.println(ints.toString());
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int[] plusOne(int[] digits) {
-       for (int i = digits.length - 1 ; i >= 0 ; i--){
-           if (digits[i] == 9){
-               digits[i] = 0;
-           } else {
-               digits[i]++;
-               return digits;
-           }
-       }
-       digits = new int[digits.length+1];
-       digits[0] = 1;
-       return digits;
+    class Solution {
+        public int[] plusOne(int[] digits) {
+            for (int i = digits.length - 1; i >= 0; i--) {
+                if (digits[i] == 9) {
+                    digits[i] = 0;
+                } else {
+                    digits[i]++;
+                    return digits;
+                }
+            }
+            digits = new int[digits.length + 1];
+            digits[0] = 1;
+            return digits;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

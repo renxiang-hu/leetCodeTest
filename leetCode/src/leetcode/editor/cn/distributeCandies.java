@@ -49,32 +49,33 @@ package leetcode.editor.cn;
 import java.util.HashSet;
 import java.util.Set;
 
-class distributeCandies{
+class distributeCandies {
     //2022-12-17 11:04:41
     //分糖果
     //编号：[575]
-    
+
     public static void main(String[] args) {
         Solution solution = new distributeCandies().new Solution();
-        int[] x = {1,1,2,3};
+        int[] x = {1, 1, 2, 3};
         int i = solution.distributeCandies(x);
         System.out.println(i);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int distributeCandies(int[] candyType) {
-        Set<Integer> set = new HashSet<>();
-        int len = candyType.length / 2;
-        for (int num : candyType){
-            set.add(num);
-        }
-        if (set.size() >= len){
-            return len;
-        } else {
-            return set.size();
+    class Solution {
+        public int distributeCandies(int[] candyType) {
+            Set<Integer> set = new HashSet<>();
+            int len = candyType.length / 2;
+            for (int num : candyType) {
+                set.add(num);
+            }
+            if (set.size() >= len) {
+                return len;
+            } else {
+                return set.size();
+            }
         }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

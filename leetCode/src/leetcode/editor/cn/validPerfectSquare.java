@@ -33,34 +33,36 @@
 // Related Topics 数学 二分查找 👍 467 👎 0
 
 package leetcode.editor.cn;
-class validPerfectSquare{
+
+class validPerfectSquare {
     //2023-02-10 15:12:38
     //有效的完全平方数
     //编号：[367]
-    
+
     public static void main(String[] args) {
         Solution solution = new validPerfectSquare().new Solution();
         boolean perfectSquare = solution.isPerfectSquare(14);
         System.out.println(perfectSquare);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean isPerfectSquare(int num) {
-        int left = 0;
-        int right = num;
-        while (left <= right){
-            int middle = left + (right - left) / 2;
-            if ((long)middle * middle < num){
-                left = middle + 1;
-            } else if ((long)middle * middle > num){
-                right = middle - 1;
-            } else {
-                return true;
+    class Solution {
+        public boolean isPerfectSquare(int num) {
+            int left = 0;
+            int right = num;
+            while (left <= right) {
+                int middle = left + (right - left) / 2;
+                if ((long) middle * middle < num) {
+                    left = middle + 1;
+                } else if ((long) middle * middle > num) {
+                    right = middle - 1;
+                } else {
+                    return true;
+                }
             }
+            return false;
         }
-        return false;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

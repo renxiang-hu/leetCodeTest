@@ -18,30 +18,32 @@
 // Related Topics 链表 👍 178 👎 0
 
 package leetcode.editor.cn;
-class deleteMiddleNodeLcci{
+
+class deleteMiddleNodeLcci {
     //2023-02-22 15:16:11
     //删除中间节点
     //编号：[面试题 02.03]
-    
+
     public static void main(String[] args) {
         Solution solution = new deleteMiddleNodeLcci().new Solution();
         ListNode linkedList = CreateLink.createLinkedList(new int[]{4, 5, 1, 9});
         solution.deleteNode(linkedList);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */
-class Solution {
-    public void deleteNode(ListNode node) {
-        
+
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     * int val;
+     * ListNode next;
+     * ListNode(int x) { val = x; }
+     * }
+     */
+    class Solution {
+        public void deleteNode(ListNode node) {
+
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

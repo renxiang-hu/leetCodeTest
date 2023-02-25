@@ -54,28 +54,29 @@ package leetcode.editor.cn;
 
 import java.util.Arrays;
 
-class missingNumber{
+class missingNumber {
     //2023-02-16 14:29:53
     //丢失的数字
     //编号：[268]
-    
+
     public static void main(String[] args) {
         Solution solution = new missingNumber().new Solution();
-        int i = solution.missingNumber(new int[]{0,1});
+        int i = solution.missingNumber(new int[]{0, 1});
         System.out.println(i);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int missingNumber(int[] nums) {
-        Arrays.sort(nums);
-        for (int i = 0 ; i < nums.length ; i++){
-            if (nums[i] != i){
-                return i;
+    class Solution {
+        public int missingNumber(int[] nums) {
+            Arrays.sort(nums);
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] != i) {
+                    return i;
+                }
             }
+            return nums.length;
         }
-     return nums.length;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

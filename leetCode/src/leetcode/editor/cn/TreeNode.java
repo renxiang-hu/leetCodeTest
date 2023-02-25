@@ -4,16 +4,20 @@ public class TreeNode {
     public int val;
     public TreeNode left;
     public TreeNode right;
-    TreeNode(int x) { val = x; }
-    public String toString(){
+
+    TreeNode(int x) {
+        val = x;
+    }
+
+    public String toString() {
         return Integer.toString(val);
     }
 
     //    int []arr = {3, 9, 20, Integer.MAX_VALUE, Integer.MAX_VALUE, 15, 7};
     private static int[] StrToIntArray(String str) {
         str = str.substring(1, str.length() - 1);
-        String []strs = str.split(",");
-        int []arr = new int[strs.length];
+        String[] strs = str.split(",");
+        int[] arr = new int[strs.length];
 
         for (int i = 0; i < arr.length; i++) {
             if (strs[i].equals("null")) {
@@ -29,12 +33,12 @@ public class TreeNode {
     //    String str = "[3,9,20,null,null,15,7]";
     public static TreeNode mkTree(String str) {
 
-        int []arr = StrToIntArray(str);
-        TreeNode []nodes = new TreeNode[arr.length + 1];
+        int[] arr = StrToIntArray(str);
+        TreeNode[] nodes = new TreeNode[arr.length + 1];
         for (int i = 1; i < nodes.length; i++) {
             if (arr[i - 1] != Integer.MAX_VALUE) {
                 nodes[i] = new TreeNode(arr[i - 1]);
-            }else {
+            } else {
                 nodes[i] = null;
             }
         }

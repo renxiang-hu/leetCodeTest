@@ -43,42 +43,44 @@
 // Related Topics 递归 链表 👍 2798 👎 0
 
 package leetcode.editor.cn;
-class reverseLinkedList{
+
+class reverseLinkedList {
     //2022-10-14 13:05:36
     //反转链表
     //编号：[206]
-    
+
     public static void main(String[] args) {
         Solution solution = new reverseLinkedList().new Solution();
-        int[] x = {1,2,3,4,5};
+        int[] x = {1, 2, 3, 4, 5};
         ListNode linkedList = CreateLink.createLinkedList(x);
         ListNode listNode = solution.reverseList(linkedList);
         PrintLink.printLinkedList(listNode);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
-class Solution {
-    public ListNode reverseList(ListNode head) {
-        ListNode cur = head;
-        ListNode pre = null;
-        while (cur!=null){
-            ListNode temp = cur.next;
-            cur.next = pre;
-            pre = cur;
-            cur = temp;
+
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     * int val;
+     * ListNode next;
+     * ListNode() {}
+     * ListNode(int val) { this.val = val; }
+     * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+     * }
+     */
+    class Solution {
+        public ListNode reverseList(ListNode head) {
+            ListNode cur = head;
+            ListNode pre = null;
+            while (cur != null) {
+                ListNode temp = cur.next;
+                cur.next = pre;
+                pre = cur;
+                cur = temp;
+            }
+            return pre;
         }
-        return pre;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

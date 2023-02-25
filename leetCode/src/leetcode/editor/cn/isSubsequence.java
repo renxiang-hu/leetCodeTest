@@ -41,30 +41,32 @@
 // Related Topics 双指针 字符串 动态规划 👍 741 👎 0
 
 package leetcode.editor.cn;
-class isSubsequence{
+
+class isSubsequence {
     //2022-10-10 19:13:41
     //判断子序列
     //编号：[392]
-    
+
     public static void main(String[] args) {
         Solution solution = new isSubsequence().new Solution();
         boolean subsequence = solution.isSubsequence("aaaaaa", "bbaaaa");
         System.out.println(subsequence);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean isSubsequence(String s, String t) {
-       int i = 0 ;
-       int j = 0 ;
-       while ( i < s.length() && j < t.length()){
-           if (s.charAt(i) == t.charAt(j)){
-               i++;
-           }
-           j++;
-       }
-    return i == s.length();
+    class Solution {
+        public boolean isSubsequence(String s, String t) {
+            int i = 0;
+            int j = 0;
+            while (i < s.length() && j < t.length()) {
+                if (s.charAt(i) == t.charAt(j)) {
+                    i++;
+                }
+                j++;
+            }
+            return i == s.length();
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

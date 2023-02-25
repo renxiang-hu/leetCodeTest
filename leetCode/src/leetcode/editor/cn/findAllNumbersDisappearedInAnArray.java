@@ -37,35 +37,36 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-class findAllNumbersDisappearedInAnArray{
+class findAllNumbersDisappearedInAnArray {
     //2022-12-17 13:28:30
     //找到所有数组中消失的数字
     //编号：[448]
-    
+
     public static void main(String[] args) {
         Solution solution = new findAllNumbersDisappearedInAnArray().new Solution();
-        int[] x = {1,1};
+        int[] x = {1, 1};
         List<Integer> disappearedNumbers = solution.findDisappearedNumbers(x);
-        for (Integer num : disappearedNumbers){
+        for (Integer num : disappearedNumbers) {
             System.out.println(num);
         }
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public List<Integer> findDisappearedNumbers(int[] nums) {
-        List<Integer> list = new ArrayList<>();
-        Set<Integer> numSet = new HashSet<>();
-        for (int i = 0 ; i < nums.length ; i++) {
-            numSet.add(nums[i]);
-        }
-        for (int i = 1 ; i <= nums.length ; i++){
-            if (!numSet.contains(i)){
-                list.add(i);
+    class Solution {
+        public List<Integer> findDisappearedNumbers(int[] nums) {
+            List<Integer> list = new ArrayList<>();
+            Set<Integer> numSet = new HashSet<>();
+            for (int i = 0; i < nums.length; i++) {
+                numSet.add(nums[i]);
             }
+            for (int i = 1; i <= nums.length; i++) {
+                if (!numSet.contains(i)) {
+                    list.add(i);
+                }
+            }
+            return list;
         }
-        return list;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

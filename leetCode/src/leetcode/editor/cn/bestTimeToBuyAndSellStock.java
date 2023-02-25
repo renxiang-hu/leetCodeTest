@@ -35,32 +35,34 @@
 // Related Topics 数组 动态规划 👍 2619 👎 0
 
 package leetcode.editor.cn;
-class bestTimeToBuyAndSellStock{
+
+class bestTimeToBuyAndSellStock {
     //2022-10-18 14:14:17
     //买卖股票的最佳时机
     //编号：[121]
-    
+
     public static void main(String[] args) {
-        int[] x = {7,1,5,3,6,4};
+        int[] x = {7, 1, 5, 3, 6, 4};
         Solution solution = new bestTimeToBuyAndSellStock().new Solution();
         int i = solution.maxProfit(x);
         System.out.println(i);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int maxProfit(int[] prices) {
-        int maxValue = 0;
-        for (int i = 0 ; i < prices.length-1 ; i++){
-            for (int j = i + 1 ; j < prices.length ; j++){
-                int vl = prices[j] - prices[i];
-                if (vl > maxValue){
-                    maxValue = vl;
+    class Solution {
+        public int maxProfit(int[] prices) {
+            int maxValue = 0;
+            for (int i = 0; i < prices.length - 1; i++) {
+                for (int j = i + 1; j < prices.length; j++) {
+                    int vl = prices[j] - prices[i];
+                    if (vl > maxValue) {
+                        maxValue = vl;
+                    }
                 }
             }
+            return maxValue;
         }
-        return maxValue;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

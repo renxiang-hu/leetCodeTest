@@ -33,34 +33,35 @@ package leetcode.editor.cn;
 import java.util.ArrayList;
 import java.util.List;
 
-class maxConsecutiveOnes{
+class maxConsecutiveOnes {
     //2022-12-15 07:58:24
     //最大连续 1 的个数
     //编号：[485]
-    
+
     public static void main(String[] args) {
         Solution solution = new maxConsecutiveOnes().new Solution();
-        int[] t = {1,1,0,1,1,1};
+        int[] t = {1, 1, 0, 1, 1, 1};
         int maxConsecutiveOnes = solution.findMaxConsecutiveOnes(t);
         System.out.println(maxConsecutiveOnes);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-      public int findMaxConsecutiveOnes(int[] nums) {
-        int value = 0;
-        int maxValue = 0;
-        for (int i = 0 ; i < nums.length ; i++){
-          if (nums[i] == 1){
-              value++;
-          } else {
-              maxValue = Math.max(maxValue,value);
-              value = 0;
-          }
+        public int findMaxConsecutiveOnes(int[] nums) {
+            int value = 0;
+            int maxValue = 0;
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] == 1) {
+                    value++;
+                } else {
+                    maxValue = Math.max(maxValue, value);
+                    value = 0;
+                }
+            }
+            maxValue = Math.max(maxValue, value);
+            return maxValue;
         }
-        maxValue = Math.max(maxValue,value);
-        return maxValue;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

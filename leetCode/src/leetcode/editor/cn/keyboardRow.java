@@ -46,25 +46,27 @@
 // Related Topics 数组 哈希表 字符串 👍 227 👎 0
 
 package leetcode.editor.cn;
-class keyboardRow{
+
+class keyboardRow {
     //2022-12-18 13:19:18
     //键盘行
     //编号：[500]
-    
+
     public static void main(String[] args) {
         Solution solution = new keyboardRow().new Solution();
-        String[] word = {"Hello","Alaska","Dad","Peace"};
+        String[] word = {"Hello", "Alaska", "Dad", "Peace"};
         String[] words = solution.findWords(word);
-        for (String wo : words){
+        for (String wo : words) {
             System.out.println(wo);
         }
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public String[] findWords(String[] words) {
-        return null;
+    class Solution {
+        public String[] findWords(String[] words) {
+            return null;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

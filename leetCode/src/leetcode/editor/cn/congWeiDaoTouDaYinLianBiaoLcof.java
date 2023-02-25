@@ -20,45 +20,46 @@ package leetcode.editor.cn;
 import java.io.InputStream;
 import java.util.*;
 
-class congWeiDaoTouDaYinLianBiaoLcof{
+class congWeiDaoTouDaYinLianBiaoLcof {
     //2022-11-19 13:24:50
     //从尾到头打印链表
     //编号：[剑指 Offer 06]
-    
+
     public static void main(String[] args) {
         Solution solution = new congWeiDaoTouDaYinLianBiaoLcof().new Solution();
-        int[] x = {1,3,2};
+        int[] x = {1, 3, 2};
         ListNode linkedList = CreateLink.createLinkedList(x);
         int[] ints = solution.reversePrint(linkedList);
-        for (int i = 0 ; i < ints.length ; i++){
+        for (int i = 0; i < ints.length; i++) {
             System.out.println(ints[i]);
         }
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */
-class Solution {
-    public int[] reversePrint(ListNode head) {
-        ListNode cur = head;
-        List<Integer> list = new ArrayList<>();
-        while (cur != null) {
-            list.add(cur.val);
-            cur = cur.next;
+
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     * int val;
+     * ListNode next;
+     * ListNode(int x) { val = x; }
+     * }
+     */
+    class Solution {
+        public int[] reversePrint(ListNode head) {
+            ListNode cur = head;
+            List<Integer> list = new ArrayList<>();
+            while (cur != null) {
+                list.add(cur.val);
+                cur = cur.next;
+            }
+            Collections.reverse(list);
+            int[] a = new int[list.size()];
+            for (int i = 0; i < list.size(); i++) {
+                a[i] = list.get(i);
+            }
+            return a;
         }
-        Collections.reverse(list);
-        int[] a = new int[list.size()];
-        for (int i = 0 ; i < list.size() ; i++){
-           a[i] = list.get(i);
-        }
-        return a;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

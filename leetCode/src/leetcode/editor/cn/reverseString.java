@@ -29,29 +29,31 @@
 // Related Topics 双指针 字符串 👍 707 👎 0
 
 package leetcode.editor.cn;
-class reverseString{
+
+class reverseString {
     //2023-01-09 10:32:22
     //反转字符串
     //编号：[344]
-    
+
     public static void main(String[] args) {
         Solution solution = new reverseString().new Solution();
-        solution.reverseString(new char[]{'H','a','n','n','a','h'});
+        solution.reverseString(new char[]{'H', 'a', 'n', 'n', 'a', 'h'});
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public void reverseString(char[] s) {
-        int left = 0;
-        int right = s.length-1;
-        while (left <= right){
-            char temp = s[left];
-            s[left] = s[right];
-            s[right] = temp;
-            left++;
-            right--;
+    class Solution {
+        public void reverseString(char[] s) {
+            int left = 0;
+            int right = s.length - 1;
+            while (left <= right) {
+                char temp = s[left];
+                s[left] = s[right];
+                s[right] = temp;
+                left++;
+                right--;
+            }
         }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

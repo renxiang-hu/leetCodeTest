@@ -36,11 +36,12 @@
 // Related Topics 递归 链表 👍 1163 👎 0
 
 package leetcode.editor.cn;
-class removeLinkedListElements{
+
+class removeLinkedListElements {
     //2023-02-19 22:49:00
     //移除链表元素
     //编号：[203]
-    
+
     public static void main(String[] args) {
         Solution solution = new removeLinkedListElements().new Solution();
         ListNode linkedList = CreateLink.createLinkedList(new int[]{1, 2, 6, 3, 4, 5, 6});
@@ -48,31 +49,32 @@ class removeLinkedListElements{
         PrintLink.printLinkedList(listNode);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
-class Solution {
-    public ListNode removeElements(ListNode head, int val) {
-        ListNode dummyNode = new ListNode(0);
-        dummyNode.next = head;
-        ListNode cur = dummyNode;
-        while (cur.next != null) {
-            if (cur.next.val == val){
-                cur.next = cur.next.next;
-            } else {
-                cur = cur.next;
+
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     * int val;
+     * ListNode next;
+     * ListNode() {}
+     * ListNode(int val) { this.val = val; }
+     * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+     * }
+     */
+    class Solution {
+        public ListNode removeElements(ListNode head, int val) {
+            ListNode dummyNode = new ListNode(0);
+            dummyNode.next = head;
+            ListNode cur = dummyNode;
+            while (cur.next != null) {
+                if (cur.next.val == val) {
+                    cur.next = cur.next.next;
+                } else {
+                    cur = cur.next;
+                }
             }
+            return dummyNode.next;
         }
-        return dummyNode.next;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

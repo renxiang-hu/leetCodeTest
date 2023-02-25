@@ -39,32 +39,34 @@
 // Related Topics 数组 双指针 排序 👍 258 👎 0
 
 package leetcode.editor.cn;
-class sortArrayByParityIi{
+
+class sortArrayByParityIi {
     //2023-02-18 13:40:32
     //按奇偶排序数组 II
     //编号：[922]
-    
+
     public static void main(String[] args) {
         Solution solution = new sortArrayByParityIi().new Solution();
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int[] sortArrayByParityII(int[] nums) {
-       int[] mm = new int[nums.length];
-       int ans = 0;
-       int tns = 1;
-       for (int i = 0 ; i < nums.length ; i++){
-           if (nums[i] % 2 == 0){
-               mm[ans] = nums[i];
-               ans += 2;
-           } else {
-               mm[tns] = nums[i];
-               tns += 2;
-           }
-       }
-       return mm;
+    class Solution {
+        public int[] sortArrayByParityII(int[] nums) {
+            int[] mm = new int[nums.length];
+            int ans = 0;
+            int tns = 1;
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] % 2 == 0) {
+                    mm[ans] = nums[i];
+                    ans += 2;
+                } else {
+                    mm[tns] = nums[i];
+                    tns += 2;
+                }
+            }
+            return mm;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

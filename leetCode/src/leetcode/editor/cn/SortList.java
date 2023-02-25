@@ -1,8 +1,8 @@
 /**
-  * 题目Id：148
-  * 题目：排序链表
-  * 日期：2022-09-13 18:25:20
-*/
+ * 题目Id：148
+ * 题目：排序链表
+ * 日期：2022-09-13 18:25:20
+ */
 //给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。
 //
 //
@@ -47,47 +47,49 @@
 // Related Topics 链表 双指针 分治 排序 归并排序 👍 1779 👎 0
 
 package leetcode.editor.cn;
+
 public class SortList {
     public static void main(String[] args) {
-        int[] x = {4,2,1,3};
+        int[] x = {4, 2, 1, 3};
         Solution solution = new SortList().new Solution();
         ListNode linkedList = CreateLink.createLinkedList(x);
         ListNode listNode = solution.sortList(linkedList);
         PrintLink.printLinkedList(listNode);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
-class Solution {
-    public ListNode sortList(ListNode head) {
-       if (head == null){
-           return null;
-       }
-       ListNode cur = head;
-       while (cur != null){
-          if (cur.val > cur.next.val){
-            exchangeVal(cur.val,cur.next.val);
-          }
-          cur = cur.next;
 
-       }
-       return null;
-    }
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     *     int val;
+     *     ListNode next;
+     *     ListNode() {}
+     *     ListNode(int val) { this.val = val; }
+     *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+     * }
+     */
+    class Solution {
+        public ListNode sortList(ListNode head) {
+            if (head == null) {
+                return null;
+            }
+            ListNode cur = head;
+            while (cur != null) {
+                if (cur.val > cur.next.val) {
+                    exchangeVal(cur.val, cur.next.val);
+                }
+                cur = cur.next;
 
-    public void exchangeVal(Integer x , Integer y){
-        Integer a = x;
-        x = y;
-        y = a;
+            }
+            return null;
+        }
+
+        public void exchangeVal(Integer x, Integer y) {
+            Integer a = x;
+            x = y;
+            y = a;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

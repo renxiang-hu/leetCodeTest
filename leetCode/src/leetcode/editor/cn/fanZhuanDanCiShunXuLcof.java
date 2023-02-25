@@ -46,30 +46,31 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-class fanZhuanDanCiShunXuLcof{
+class fanZhuanDanCiShunXuLcof {
     //2022-11-17 19:18:36
     //翻转单词顺序
     //编号：[剑指 Offer 58 - I]
-    
+
     public static void main(String[] args) {
         Solution solution = new fanZhuanDanCiShunXuLcof().new Solution();
         String s = solution.reverseWords("a good  example");
         System.out.println(s);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public String reverseWords(String s) {
-        String[] s1 = s.trim().split(" ");
-        StringBuffer stringBuffer = new StringBuffer();
-        for (int i = s1.length - 1 ; i >= 0 ; i--){
-            if ("".equals(s1[i])){
-                continue;
+    class Solution {
+        public String reverseWords(String s) {
+            String[] s1 = s.trim().split(" ");
+            StringBuffer stringBuffer = new StringBuffer();
+            for (int i = s1.length - 1; i >= 0; i--) {
+                if ("".equals(s1[i])) {
+                    continue;
+                }
+                stringBuffer.append(s1[i]).append(" ");
             }
-            stringBuffer.append(s1[i]).append(" ");
+            return stringBuffer.toString().trim();
         }
-        return stringBuffer.toString().trim();
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

@@ -1,8 +1,8 @@
 /**
-  * 题目Id：145
-  * 题目：二叉树的后序遍历
-  * 日期：2022-09-26 18:00:14
-*/
+ * 题目Id：145
+ * 题目：二叉树的后序遍历
+ * 日期：2022-09-26 18:00:14
+ */
 //给你一棵二叉树的根节点 root ，返回其节点值的 后序遍历 。
 //
 //
@@ -51,42 +51,43 @@ import java.util.List;
 public class BinaryTreePostorderTraversal {
     public static void main(String[] args) {
         Solution solution = new BinaryTreePostorderTraversal().new Solution();
-        Integer[] arr = {1,null,2,3};
+        Integer[] arr = {1, null, 2, 3};
         List<Integer> integers = solution.postorderTraversal(TreeUtil.createTree(arr));
         System.out.println(integers.toString());
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
-class Solution {
-    public List<Integer> postorderTraversal(TreeNode root) {
-       List<Integer> list = new ArrayList<>();
-       postOrder(root,list);
-       return list;
-    }
 
-    public void postOrder(TreeNode root,List<Integer> list){
-        if (root == null){
-            return;
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     *     int val;
+     *     TreeNode left;
+     *     TreeNode right;
+     *     TreeNode() {}
+     *     TreeNode(int val) { this.val = val; }
+     *     TreeNode(int val, TreeNode left, TreeNode right) {
+     *         this.val = val;
+     *         this.left = left;
+     *         this.right = right;
+     *     }
+     * }
+     */
+    class Solution {
+        public List<Integer> postorderTraversal(TreeNode root) {
+            List<Integer> list = new ArrayList<>();
+            postOrder(root, list);
+            return list;
         }
-        postOrder(root.left,list);
-        postOrder(root.right,list);
-        list.add(root.val);
+
+        public void postOrder(TreeNode root, List<Integer> list) {
+            if (root == null) {
+                return;
+            }
+            postOrder(root.left, list);
+            postOrder(root.right, list);
+            list.add(root.val);
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

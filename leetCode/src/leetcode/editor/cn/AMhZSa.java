@@ -1,8 +1,8 @@
 /**
-  * 题目Id：剑指 Offer II 027
-  * 题目：回文链表
-  * 日期：2022-09-13 18:00:44
-*/
+ * 题目Id：剑指 Offer II 027
+ * 题目：回文链表
+ * 日期：2022-09-13 18:00:44
+ */
 //给定一个链表的 头节点 head ，请判断其是否为回文链表。
 //
 // 如果一个链表是回文，那么链表节点序列从前往后看和从后往前看是相同的。
@@ -53,44 +53,45 @@ import java.util.List;
 
 public class AMhZSa {
     public static void main(String[] args) {
-        int[] x = {1,2};
+        int[] x = {1, 2};
         Solution solution = new AMhZSa().new Solution();
         ListNode linkedList = CreateLink.createLinkedList(x);
         boolean palindrome = solution.isPalindrome(linkedList);
         System.out.println(palindrome);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
-class Solution {
-    public boolean isPalindrome(ListNode head) {
-        List<Integer> list = new ArrayList<>();
-        ListNode cur = head;
-        while (cur != null){
-            list.add(cur.val);
-            cur = cur.next;
-        }
-        int left = 0;
-        int right = list.size() - 1;
-        while (left <= right){
-            if (list.get(left) == list.get(right)){
-                left++;
-                right--;
-            } else {
-                return false;
+
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     *     int val;
+     *     ListNode next;
+     *     ListNode() {}
+     *     ListNode(int val) { this.val = val; }
+     *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+     * }
+     */
+    class Solution {
+        public boolean isPalindrome(ListNode head) {
+            List<Integer> list = new ArrayList<>();
+            ListNode cur = head;
+            while (cur != null) {
+                list.add(cur.val);
+                cur = cur.next;
             }
+            int left = 0;
+            int right = list.size() - 1;
+            while (left <= right) {
+                if (list.get(left) == list.get(right)) {
+                    left++;
+                    right--;
+                } else {
+                    return false;
+                }
+            }
+            return true;
         }
-        return true;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

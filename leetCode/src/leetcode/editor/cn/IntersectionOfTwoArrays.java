@@ -1,8 +1,8 @@
 /**
-  * 题目Id：349
-  * 题目：两个数组的交集
-  * 日期：2022-07-21 09:50:33
-*/
+ * 题目Id：349
+ * 题目：两个数组的交集
+ * 日期：2022-07-21 09:50:33
+ */
 //给定两个数组 nums1 和 nums2 ，返回 它们的交集 。输出结果中的每个元素一定是 唯一 的。我们可以 不考虑输出结果的顺序 。
 //
 //
@@ -39,33 +39,34 @@ import java.util.*;
 public class IntersectionOfTwoArrays {
     public static void main(String[] args) {
         Solution solution = new IntersectionOfTwoArrays().new Solution();
-        int[] intersection = solution.intersection(new int[]{4,9,5}, new int[]{9,4,9,8,4});
+        int[] intersection = solution.intersection(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4});
         System.out.println(intersection);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int[] intersection(int[] nums1, int[] nums2) {
-        Set<Integer> num1Set = new HashSet<>();
-        Set<Integer> num2Set = new HashSet<>();
-        for (Integer num : nums1){
-            num1Set.add(num);
-        }
-        for (Integer num : nums2){
-            num2Set.add(num);
-        }
-        List<Integer> list = new ArrayList<>();
-        for (Integer nu1 : num1Set){
-            if (num2Set.contains(nu1)){
-                list.add(nu1);
+    class Solution {
+        public int[] intersection(int[] nums1, int[] nums2) {
+            Set<Integer> num1Set = new HashSet<>();
+            Set<Integer> num2Set = new HashSet<>();
+            for (Integer num : nums1) {
+                num1Set.add(num);
             }
+            for (Integer num : nums2) {
+                num2Set.add(num);
+            }
+            List<Integer> list = new ArrayList<>();
+            for (Integer nu1 : num1Set) {
+                if (num2Set.contains(nu1)) {
+                    list.add(nu1);
+                }
+            }
+            int[] tl = new int[list.size()];
+            for (int i = 0; i < list.size(); i++) {
+                tl[i] = list.get(i);
+            }
+            return tl;
         }
-        int[] tl = new int[list.size()];
-        for (int i = 0 ; i < list.size() ; i++){
-            tl[i] = list.get(i);
-        }
-        return tl;
     }
-}
 
 //leetcode submit region end(Prohibit modification and deletion)
 

@@ -1,8 +1,8 @@
 /**
-  * 题目Id：26
-  * 题目：删除有序数组中的重复项
-  * 日期：2022-09-13 20:38:54
-*/
+ * 题目Id：26
+ * 题目：删除有序数组中的重复项
+ * 日期：2022-09-13 20:38:54
+ */
 //给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺序 应该保持 一致
 //。
 //
@@ -67,27 +67,28 @@ import java.util.stream.Collectors;
 
 public class RemoveDuplicatesFromSortedArray {
     public static void main(String[] args) {
-        int[] x = {0,0,0,1,1,1,2,2,3,3,4};
+        int[] x = {0, 0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
         Solution solution = new RemoveDuplicatesFromSortedArray().new Solution();
         int i = solution.removeDuplicates(x);
         System.out.println(i);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int removeDuplicates(int[] nums) {
-       int left = 0;
-       int right = 1;
-       while (right <= nums.length - 1){
-           if (nums[left]==nums[right]){
-               right++;
-           } else {
-               left++;
-               nums[left] = nums[right];
-           }
-       }
-       return left+1;
+    class Solution {
+        public int removeDuplicates(int[] nums) {
+            int left = 0;
+            int right = 1;
+            while (right <= nums.length - 1) {
+                if (nums[left] == nums[right]) {
+                    right++;
+                } else {
+                    left++;
+                    nums[left] = nums[right];
+                }
+            }
+            return left + 1;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

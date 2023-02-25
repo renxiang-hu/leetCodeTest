@@ -1,8 +1,8 @@
 /**
-  * 题目Id：27
-  * 题目：移除元素
-  * 日期：2022-06-21 10:45:05
-*/
+ * 题目Id：27
+ * 题目：移除元素
+ * 日期：2022-06-21 10:45:05
+ */
 //给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。
 //
 // 不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 原地 修改输入数组。
@@ -72,19 +72,20 @@ public class RemoveElement {
         int i = solution.removeElement(new int[]{3, 2, 2, 3}, 3);
         System.out.println(i);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int removeElement(int[] nums, int val) {
-        int ans = 0 ;
-        for (int num : nums){
-            if (num != val){
-                nums[ans] = num;
-                ans++;
+    class Solution {
+        public int removeElement(int[] nums, int val) {
+            int ans = 0;
+            for (int num : nums) {
+                if (num != val) {
+                    nums[ans] = num;
+                    ans++;
+                }
             }
+            return ans;
         }
-        return ans;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

@@ -57,25 +57,26 @@ package leetcode.editor.cn;
 
 import java.util.Arrays;
 
-class mergeSortedArray{
+class mergeSortedArray {
     //2023-02-14 09:54:52
     //合并两个有序数组
     //编号：[88]
-    
+
     public static void main(String[] args) {
         Solution solution = new mergeSortedArray().new Solution();
-        solution.merge(new int[]{1,2,3,0,0,0},3,new int[]{2,5,6},3);
+        solution.merge(new int[]{1, 2, 3, 0, 0, 0}, 3, new int[]{2, 5, 6}, 3);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
-        for (int i = 0 ; i < nums2.length ; i++){
-            nums1[m] = nums2[i];
-            m++;
+    class Solution {
+        public void merge(int[] nums1, int m, int[] nums2, int n) {
+            for (int i = 0; i < nums2.length; i++) {
+                nums1[m] = nums2[i];
+                m++;
+            }
+            Arrays.sort(nums1);
         }
-        Arrays.sort(nums1);
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

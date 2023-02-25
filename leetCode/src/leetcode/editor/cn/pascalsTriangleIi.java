@@ -48,32 +48,33 @@ package leetcode.editor.cn;
 import java.util.ArrayList;
 import java.util.List;
 
-class pascalsTriangleIi{
+class pascalsTriangleIi {
     //2023-01-03 13:36:31
     //杨辉三角 II
     //编号：[119]
-    
+
     public static void main(String[] args) {
         Solution solution = new pascalsTriangleIi().new Solution();
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public List<Integer> getRow(int rowIndex) {
-       List<List<Integer>> list = new ArrayList<>();
-       for(int i = 0 ; i < rowIndex+1 ; i++){
-           List<Integer> nt = new ArrayList<>();
-           for (int j = 0 ; j <= i ; j++){
-               if (j == 0 || j == i){
-                   nt.add(1);
-               } else {
-                   nt.add(list.get(i-1).get(j-1)+list.get(i-1).get(j));
-               }
-           }
-           list.add(nt);
-       }
-       return list.get(rowIndex);
+    class Solution {
+        public List<Integer> getRow(int rowIndex) {
+            List<List<Integer>> list = new ArrayList<>();
+            for (int i = 0; i < rowIndex + 1; i++) {
+                List<Integer> nt = new ArrayList<>();
+                for (int j = 0; j <= i; j++) {
+                    if (j == 0 || j == i) {
+                        nt.add(1);
+                    } else {
+                        nt.add(list.get(i - 1).get(j - 1) + list.get(i - 1).get(j));
+                    }
+                }
+                list.add(nt);
+            }
+            return list.get(rowIndex);
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

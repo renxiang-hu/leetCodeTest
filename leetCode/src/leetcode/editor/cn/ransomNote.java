@@ -44,35 +44,36 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-class ransomNote{
+class ransomNote {
     //2023-01-15 18:37:54
     //赎金信
     //编号：[383]
-    
+
     public static void main(String[] args) {
         Solution solution = new ransomNote().new Solution();
         boolean b = solution.canConstruct("a", "b");
         System.out.println(b);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean canConstruct(String ransomNote, String magazine) {
-        Map<Character,Integer> ranHashMap = new HashMap<>();
-        for (int i = 0 ; i < ransomNote.length() ; i++){
-            ranHashMap.put(ransomNote.charAt(i),ranHashMap.getOrDefault(ransomNote.charAt(i),0) + 1);
+    class Solution {
+        public boolean canConstruct(String ransomNote, String magazine) {
+            Map<Character, Integer> ranHashMap = new HashMap<>();
+            for (int i = 0; i < ransomNote.length(); i++) {
+                ranHashMap.put(ransomNote.charAt(i), ranHashMap.getOrDefault(ransomNote.charAt(i), 0) + 1);
+            }
+            Map<Character, Integer> magHashMap = new HashMap<>();
+            for (int j = 0; j < magazine.length(); j++) {
+                magHashMap.put(magazine.charAt(j), magHashMap.getOrDefault(magazine.charAt(j), 0) + 1);
+            }
+            for (Character ch : ranHashMap.keySet()) {
+                if (ranHashMap.getOrDefault(ch, 0) > magHashMap.getOrDefault(ch, 0)) {
+                    return false;
+                }
+            }
+            return true;
         }
-        Map<Character,Integer> magHashMap = new HashMap<>();
-        for (int j = 0 ; j < magazine.length() ; j++){
-            magHashMap.put(magazine.charAt(j),magHashMap.getOrDefault(magazine.charAt(j),0) + 1);
-        }
-        for (Character ch : ranHashMap.keySet()){
-           if (ranHashMap.getOrDefault(ch,0) > magHashMap.getOrDefault(ch,0)){
-               return false;
-           }
-        }
-        return true;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

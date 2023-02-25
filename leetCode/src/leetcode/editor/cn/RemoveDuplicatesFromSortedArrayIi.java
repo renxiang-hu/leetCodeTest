@@ -1,8 +1,8 @@
 /**
-  * 题目Id：80
-  * 题目：删除有序数组中的重复项 II
-  * 日期：2022-09-14 13:36:14
-*/
+ * 题目Id：80
+ * 题目：删除有序数组中的重复项 II
+ * 日期：2022-09-14 13:36:14
+ */
 //给你一个有序数组 nums ，请你 原地 删除重复出现的元素，使得出现次数超过两次的元素只出现两次 ，返回删除后数组的新长度。
 //
 // 不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。
@@ -60,29 +60,31 @@
 // Related Topics 数组 双指针 👍 722 👎 0
 
 package leetcode.editor.cn;
+
 public class RemoveDuplicatesFromSortedArrayIi {
     public static void main(String[] args) {
-        int[] x = {0,0,0,1,1,1,1,2,3,3};
+        int[] x = {0, 0, 0, 1, 1, 1, 1, 2, 3, 3};
         Solution solution = new RemoveDuplicatesFromSortedArrayIi().new Solution();
         int i = solution.removeDuplicates(x);
         System.out.println(i);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int removeDuplicates(int[] nums) {
-       int m = 0;
-       int n = 1;
-       while (n < nums.length){
-           if (nums[m] == nums[n]){
-               n++;
-           } else {
-               m++;
-               nums[m] = nums[n];
-           }
-       }
-       return 0;
+    class Solution {
+        public int removeDuplicates(int[] nums) {
+            int m = 0;
+            int n = 1;
+            while (n < nums.length) {
+                if (nums[m] == nums[n]) {
+                    n++;
+                } else {
+                    m++;
+                    nums[m] = nums[n];
+                }
+            }
+            return 0;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

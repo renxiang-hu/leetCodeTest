@@ -57,14 +57,14 @@ package leetcode.editor.cn;
 
 import java.util.Arrays;
 
-class findPivotIndex{
+class findPivotIndex {
     //2022-10-02 16:32:12
     //寻找数组的中心下标
     //编号：[724]
-    
+
     public static void main(String[] args) {
         Solution solution = new findPivotIndex().new Solution();
-        int[] x = {1,7,3,6,5,6};
+        int[] x = {1, 7, 3, 6, 5, 6};
         int i = solution.pivotIndex(x);
         System.out.println(i);
     }
@@ -79,18 +79,18 @@ class findPivotIndex{
      * 2*sum = total - nums[i]
      */
     class Solution {
-    public int pivotIndex(int[] nums) {
-       int total = Arrays.stream(nums).sum();
-       int sumLeft = 0;
-       for (int i = 0 ; i < nums.length ; i++){
-           if (sumLeft == total-sumLeft-nums[i]){
-               return i;
-           }
-           sumLeft += nums[i];
-       }
-       return -1;
+        public int pivotIndex(int[] nums) {
+            int total = Arrays.stream(nums).sum();
+            int sumLeft = 0;
+            for (int i = 0; i < nums.length; i++) {
+                if (sumLeft == total - sumLeft - nums[i]) {
+                    return i;
+                }
+                sumLeft += nums[i];
+            }
+            return -1;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

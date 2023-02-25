@@ -1,8 +1,8 @@
 /**
-  * 题目Id：75
-  * 题目：颜色分类
-  * 日期：2022-09-14 14:05:41
-*/
+ * 题目Id：75
+ * 题目：颜色分类
+ * 日期：2022-09-14 14:05:41
+ */
 //给定一个包含红色、白色和蓝色、共 n 个元素的数组
 // nums ，原地对它们进行排序，使得相同颜色的元素相邻，并按照红色、白色、蓝色顺序排列。
 //
@@ -56,24 +56,25 @@ import java.util.Arrays;
 
 public class SortColors {
     public static void main(String[] args) {
-        int[] x = {2,0,2,1,1,0};
+        int[] x = {2, 0, 2, 1, 1, 0};
         Solution solution = new SortColors().new Solution();
         solution.sortColors(x);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public void sortColors(int[] nums) {
-       for(int i = 0 ; i < nums.length - 1 ; i++){
-           for(int j = 0 ; j < nums.length - i - 1 ; j++){
-               if (nums[j] > nums[j+1]){
-                   int temp = nums[j];
-                   nums[j] = nums[j+1];
-                   nums[j+1] = temp;
-               }
-           }
-       }
+    class Solution {
+        public void sortColors(int[] nums) {
+            for (int i = 0; i < nums.length - 1; i++) {
+                for (int j = 0; j < nums.length - i - 1; j++) {
+                    if (nums[j] > nums[j + 1]) {
+                        int temp = nums[j];
+                        nums[j] = nums[j + 1];
+                        nums[j + 1] = temp;
+                    }
+                }
+            }
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

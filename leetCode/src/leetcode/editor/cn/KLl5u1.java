@@ -1,8 +1,8 @@
 /**
-  * 题目Id：剑指 Offer II 006
-  * 题目：排序数组中两个数字之和
-  * 日期：2022-09-13 20:33:21
-*/
+ * 题目Id：剑指 Offer II 006
+ * 题目：排序数组中两个数字之和
+ * 日期：2022-09-13 20:33:21
+ */
 //给定一个已按照 升序排列 的整数数组 numbers ，请你从数组中找出两个数满足相加之和等于目标数 target 。
 //
 // 函数应该以长度为 2 的整数数组的形式返回这两个数的下标值。numbers 的下标 从 0 开始计数 ，所以答案数组应当满足 0 <= answer[0]
@@ -54,28 +54,30 @@
 // Related Topics 数组 双指针 二分查找 👍 46 👎 0
 
 package leetcode.editor.cn;
+
 public class KLl5u1 {
     public static void main(String[] args) {
-        int[] x = {1,2,4,6,10};
+        int[] x = {1, 2, 4, 6, 10};
         Solution solution = new KLl5u1().new Solution();
         int[] ints = solution.twoSum(x, 8);
-        for(int m : ints){
+        for (int m : ints) {
             System.out.println(m);
         }
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int[] twoSum(int[] numbers, int target) {
-       for(int i = 0 ; i < numbers.length ; i++){
-           for(int j = i+1 ; j < numbers.length ; j++){
-               if (numbers[i] + numbers[j] == target){
-                   return new int[]{i,j};
-               }
-           }
-       }
-       return null;
+    class Solution {
+        public int[] twoSum(int[] numbers, int target) {
+            for (int i = 0; i < numbers.length; i++) {
+                for (int j = i + 1; j < numbers.length; j++) {
+                    if (numbers[i] + numbers[j] == target) {
+                        return new int[]{i, j};
+                    }
+                }
+            }
+            return null;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

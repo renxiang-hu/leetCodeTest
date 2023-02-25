@@ -21,34 +21,36 @@
 // Related Topics 数组 前缀和 👍 274 👎 0
 
 package leetcode.editor.cn;
-class gouJianChengJiShuZuLcof{
+
+class gouJianChengJiShuZuLcof {
     //2022-11-19 09:09:03
     //构建乘积数组
     //编号：[剑指 Offer 66]
-    
+
     public static void main(String[] args) {
         Solution solution = new gouJianChengJiShuZuLcof().new Solution();
-        int[] x = {1,2,3,4,5};
+        int[] x = {1, 2, 3, 4, 5};
         int[] ints = solution.constructArr(x);
         System.out.println(ints.toString());
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int[] constructArr(int[] a) {
-        int[] arr = new int[a.length];
-        for (int i = 0 ; i < a.length ; i++){
-            int tt = 1;
-            for (int j = 0 ; j < a.length ; j++){
-                if (i == j){
-                    continue;
+    class Solution {
+        public int[] constructArr(int[] a) {
+            int[] arr = new int[a.length];
+            for (int i = 0; i < a.length; i++) {
+                int tt = 1;
+                for (int j = 0; j < a.length; j++) {
+                    if (i == j) {
+                        continue;
+                    }
+                    tt = tt * a[j];
                 }
-                tt = tt * a[j];
+                arr[i] = tt;
             }
-            arr[i] = tt;
+            return arr;
         }
-        return arr;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

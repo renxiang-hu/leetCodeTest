@@ -35,27 +35,29 @@
 // Related Topics 字符串 👍 223 👎 0
 
 package leetcode.editor.cn;
-class toLowerCase{
+
+class toLowerCase {
     //2023-01-11 10:09:51
     //转换成小写字母
     //编号：[709]
-    
+
     public static void main(String[] args) {
         Solution solution = new toLowerCase().new Solution();
         String hello = solution.toLowerCase("Hello");
         System.out.println(hello);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public String toLowerCase(String s) {
-        StringBuffer stringBuffer = new StringBuffer();
-        for (char ch : s.toCharArray()){
-            char c = Character.toLowerCase(ch);
-            stringBuffer.append(c);
+    class Solution {
+        public String toLowerCase(String s) {
+            StringBuffer stringBuffer = new StringBuffer();
+            for (char ch : s.toCharArray()) {
+                char c = Character.toLowerCase(ch);
+                stringBuffer.append(c);
+            }
+            return stringBuffer.toString();
         }
-        return stringBuffer.toString();
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

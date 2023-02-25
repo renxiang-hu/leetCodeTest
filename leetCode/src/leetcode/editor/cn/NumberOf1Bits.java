@@ -1,8 +1,8 @@
 /**
-  * 题目Id：191
-  * 题目：位1的个数
-  * 日期：2022-06-22 10:45:00
-*/
+ * 题目Id：191
+ * 题目：位1的个数
+ * 日期：2022-06-22 10:45:00
+ */
 //编写一个函数，输入是一个无符号整数（以二进制串的形式），返回其二进制表达式中数字位数为 '1' 的个数（也被称为汉明重量）。
 //
 //
@@ -64,17 +64,17 @@ package leetcode.editor.cn;
 
 public class NumberOf1Bits {
     //leetcode submit region begin(Prohibit modification and deletion)
-public class Solution {
-    // you need to treat n as an unsigned value
-    public int hammingWeight(int n) {
-        int val = 0;
-        while (n != 0){
-            val += n & 1;
-            n = n >>> 1;
+    public class Solution {
+        // you need to treat n as an unsigned value
+        public int hammingWeight(int n) {
+            int val = 0;
+            while (n != 0) {
+                val += n & 1;
+                n = n >>> 1;
+            }
+            return val;
         }
-        return val;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

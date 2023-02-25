@@ -35,31 +35,32 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-class findCommonCharacters{
+class findCommonCharacters {
     //2023-01-15 16:28:14
     //查找共用字符
     //编号：[1002]
-    
+
     public static void main(String[] args) {
         Solution solution = new findCommonCharacters().new Solution();
         List<String> strings = solution.commonChars(new String[]{"bella", "label", "roller"});
         System.out.println(strings.toString());
     }
-    //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public List<String> commonChars(String[] words) {
-        String firstWord = words[0];
-        Map<Character,Integer> firstWordMap = new HashMap<>();
-        for (int i = 0 ; i < firstWord.length() ; i++){
-            firstWordMap.put(firstWord.charAt(i),firstWordMap.getOrDefault(firstWord.charAt(i),0)+1);
-        }
-        for (int i = 1 ; i < words.length ; i++){
-            Map<Character,Integer> amp = new HashMap<>();
 
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public List<String> commonChars(String[] words) {
+            String firstWord = words[0];
+            Map<Character, Integer> firstWordMap = new HashMap<>();
+            for (int i = 0; i < firstWord.length(); i++) {
+                firstWordMap.put(firstWord.charAt(i), firstWordMap.getOrDefault(firstWord.charAt(i), 0) + 1);
+            }
+            for (int i = 1; i < words.length; i++) {
+                Map<Character, Integer> amp = new HashMap<>();
+
+            }
+            return null;
         }
-        return null;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

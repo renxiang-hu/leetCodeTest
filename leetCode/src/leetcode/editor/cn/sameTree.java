@@ -37,48 +37,50 @@
 // Related Topics 树 深度优先搜索 广度优先搜索 二叉树 👍 907 👎 0
 
 package leetcode.editor.cn;
-class sameTree{
+
+class sameTree {
     //2022-10-02 17:16:46
     //相同的树
     //编号：[100]
-    
+
     public static void main(String[] args) {
         Solution solution = new sameTree().new Solution();
-        Integer[] x = {1,2,3};
-        Integer[] y = {1,2,3};
+        Integer[] x = {1, 2, 3};
+        Integer[] y = {1, 2, 3};
         boolean sameTree = solution.isSameTree(TreeUtil.createTree(x), TreeUtil.createTree(y));
         System.out.println(sameTree);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
-class Solution {
-    public boolean isSameTree(TreeNode p, TreeNode q) {
-       if (p == null && q == null){
-           return true;
-       } else if ( p == null || q == null){
-           return false;
-       } else if (p.val != q.val){
-           return false;
-       } else {
-           return isSameTree(p.left,q.left) && isSameTree(p.right,q.right);
-       }
 
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     * int val;
+     * TreeNode left;
+     * TreeNode right;
+     * TreeNode() {}
+     * TreeNode(int val) { this.val = val; }
+     * TreeNode(int val, TreeNode left, TreeNode right) {
+     * this.val = val;
+     * this.left = left;
+     * this.right = right;
+     * }
+     * }
+     */
+    class Solution {
+        public boolean isSameTree(TreeNode p, TreeNode q) {
+            if (p == null && q == null) {
+                return true;
+            } else if (p == null || q == null) {
+                return false;
+            } else if (p.val != q.val) {
+                return false;
+            } else {
+                return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+            }
+
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

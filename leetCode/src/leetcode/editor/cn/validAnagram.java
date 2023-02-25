@@ -37,37 +37,38 @@ package leetcode.editor.cn;
 import java.util.HashMap;
 import java.util.Map;
 
-class validAnagram{
+class validAnagram {
     //2023-01-15 18:07:50
     //有效的字母异位词
     //编号：[242]
-    
+
     public static void main(String[] args) {
         Solution solution = new validAnagram().new Solution();
         boolean anagram = solution.isAnagram("rat", "car");
         System.out.println(anagram);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean isAnagram(String s, String t) {
-        if (s.length() != t.length()){
-            return false;
-        } else {
-            Map<Character,Integer> sMap = new HashMap<>();
-            for (int i = 0 ; i < s.length() ; i++){
-                sMap.put(s.charAt(i),sMap.getOrDefault(s.charAt(i),0) + 1);
-            }
-            Map<Character,Integer> tMap = new HashMap<>();
-            for (int j = 0 ; j < t.length() ; j++){
-                tMap.put(t.charAt(j),tMap.getOrDefault(t.charAt(j),0) + 1);
-            }
-            if (!sMap.equals(tMap)){
+    class Solution {
+        public boolean isAnagram(String s, String t) {
+            if (s.length() != t.length()) {
                 return false;
+            } else {
+                Map<Character, Integer> sMap = new HashMap<>();
+                for (int i = 0; i < s.length(); i++) {
+                    sMap.put(s.charAt(i), sMap.getOrDefault(s.charAt(i), 0) + 1);
+                }
+                Map<Character, Integer> tMap = new HashMap<>();
+                for (int j = 0; j < t.length(); j++) {
+                    tMap.put(t.charAt(j), tMap.getOrDefault(t.charAt(j), 0) + 1);
+                }
+                if (!sMap.equals(tMap)) {
+                    return false;
+                }
             }
+            return true;
         }
-        return true;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

@@ -20,25 +20,25 @@ public class TreeUtil {
             while (!pre.isEmpty()) {
 
                 TreeNode node = pre.removeFirst();
-                TreeNode left=null;
-                TreeNode right=null;
+                TreeNode left = null;
+                TreeNode right = null;
                 // 如果对应索引上的数组不为空的话就创建一个节点,进行判断的时候，
                 // 要先索引看是否已经超过数组的长度，如果索引已经超过了数组的长度，那么剩下节点的左右子节点就都是空了
                 // 这里index每次都会增加，实际上是不必要的，但是这样写比较简单
-                if (++index<arr.length&&arr[index]!=null){
+                if (++index < arr.length && arr[index] != null) {
 
-                    left=new TreeNode(arr[index]);
+                    left = new TreeNode(arr[index]);
                     cur.addLast(left);
                 }
-                if (++index<arr.length&&arr[index]!=null){
+                if (++index < arr.length && arr[index] != null) {
 
-                    right=new TreeNode(arr[index]);
+                    right = new TreeNode(arr[index]);
                     cur.addLast(right);
                 }
-                node.left=left;
-                node.right=right;
+                node.left = left;
+                node.right = right;
             }
-            pre=cur;
+            pre = cur;
         }
 
 
@@ -48,8 +48,8 @@ public class TreeUtil {
     public static void main(String[] args) {
 
         //Integer[] arr = {5, 4, 8, 11, null, 13, 4, 7, 2, null, null, 5, 1};
-        Integer[] arr={
-                5,4};
+        Integer[] arr = {
+                5, 4};
         TreeNode tree = createTree(arr);
         prePrinTree(tree);
 

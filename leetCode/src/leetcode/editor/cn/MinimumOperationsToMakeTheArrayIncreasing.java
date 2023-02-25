@@ -1,8 +1,8 @@
 /**
-  * 题目Id：1827
-  * 题目：最少操作使数组递增
-  * 日期：2022-09-15 14:54:56
-*/
+ * 题目Id：1827
+ * 题目：最少操作使数组递增
+ * 日期：2022-09-15 14:54:56
+ */
 //给你一个整数数组 nums （下标从 0 开始）。每一次操作中，你可以选择数组中一个元素，并将它增加 1 。
 //
 //
@@ -50,27 +50,29 @@
 // Related Topics 贪心 数组 👍 27 👎 0
 
 package leetcode.editor.cn;
+
 public class MinimumOperationsToMakeTheArrayIncreasing {
     public static void main(String[] args) {
-        int[] x = {1,5,2,4,1};
+        int[] x = {1, 5, 2, 4, 1};
         Solution solution = new MinimumOperationsToMakeTheArrayIncreasing().new Solution();
         int i = solution.minOperations(x);
         System.out.println(i);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int minOperations(int[] nums) {
-        int len = nums.length;
-        int res = 0;
-        for (int i = 1 ; i < len ; i++){
-            if (nums[i-1] >= nums[i]){
-                res = res + nums[i-1] - nums[i] + 1;
-                nums[i] = nums[i-1] + 1;
+    class Solution {
+        public int minOperations(int[] nums) {
+            int len = nums.length;
+            int res = 0;
+            for (int i = 1; i < len; i++) {
+                if (nums[i - 1] >= nums[i]) {
+                    res = res + nums[i - 1] - nums[i] + 1;
+                    nums[i] = nums[i - 1] + 1;
+                }
             }
+            return res;
         }
-        return res;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

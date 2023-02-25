@@ -31,32 +31,33 @@ package leetcode.editor.cn;
 
 import java.util.Arrays;
 
-class buKePaiZhongDeShunZiLcof{
+class buKePaiZhongDeShunZiLcof {
     //2022-11-18 10:31:25
     //扑克牌中的顺子
     //编号：[面试题61]
-    
+
     public static void main(String[] args) {
         Solution solution = new buKePaiZhongDeShunZiLcof().new Solution();
-        int[] x = {1,2,3,4,5};
+        int[] x = {1, 2, 3, 4, 5};
         boolean straight = solution.isStraight(x);
         System.out.println(straight);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean isStraight(int[] nums) {
-        Arrays.sort(nums);
-        int ttl = 0;
-        for (int i = 0 ; i < 4 ; i++){
-            if (nums[i]==0){
-                ttl++;
-            } else if(nums[i]==nums[i+1]){
-                return false;
+    class Solution {
+        public boolean isStraight(int[] nums) {
+            Arrays.sort(nums);
+            int ttl = 0;
+            for (int i = 0; i < 4; i++) {
+                if (nums[i] == 0) {
+                    ttl++;
+                } else if (nums[i] == nums[i + 1]) {
+                    return false;
+                }
             }
+            return nums[4] - nums[ttl] < 5;
         }
-        return nums[4] - nums[ttl] < 5;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

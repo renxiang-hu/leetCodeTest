@@ -44,26 +44,27 @@ package leetcode.editor.cn;
 
 import java.util.Arrays;
 
-class squaresOfASortedArray{
+class squaresOfASortedArray {
     //2023-02-13 11:49:46
     //有序数组的平方
     //编号：[977]
-    
+
     public static void main(String[] args) {
         Solution solution = new squaresOfASortedArray().new Solution();
         int[] ints = solution.sortedSquares(new int[]{-4, -1, 0, 3, 10});
         System.out.println(ints.toString());
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int[] sortedSquares(int[] nums) {
-        for (int i = 0 ; i < nums.length ; i++){
-            nums[i] = nums[i] * nums[i];
+    class Solution {
+        public int[] sortedSquares(int[] nums) {
+            for (int i = 0; i < nums.length; i++) {
+                nums[i] = nums[i] * nums[i];
+            }
+            Arrays.sort(nums);
+            return nums;
         }
-        Arrays.sort(nums);
-        return nums;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

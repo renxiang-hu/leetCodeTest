@@ -38,32 +38,33 @@ package leetcode.editor.cn;
 
 import java.util.*;
 
-class firstUniqueCharacterInAString{
+class firstUniqueCharacterInAString {
     //2023-02-24 11:53:41
     //字符串中的第一个唯一字符
     //编号：[387]
-    
+
     public static void main(String[] args) {
         Solution solution = new firstUniqueCharacterInAString().new Solution();
         int leetcode = solution.firstUniqChar("loveleetcode");
         System.out.println(leetcode);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int firstUniqChar(String s) {
-        Map<Character, Integer> hashMap = new LinkedHashMap<>();
-        for (int i = 0 ; i < s.length() ; i++){
-            Character key = s.charAt(i);
-            hashMap.put(key,hashMap.getOrDefault(key,0)+1);
-        }
-        for (int j = 0 ; j < s.length() ; j++){
-            if (hashMap.get(s.charAt(j)) == 1){
-                return j;
+    class Solution {
+        public int firstUniqChar(String s) {
+            Map<Character, Integer> hashMap = new LinkedHashMap<>();
+            for (int i = 0; i < s.length(); i++) {
+                Character key = s.charAt(i);
+                hashMap.put(key, hashMap.getOrDefault(key, 0) + 1);
             }
+            for (int j = 0; j < s.length(); j++) {
+                if (hashMap.get(s.charAt(j)) == 1) {
+                    return j;
+                }
+            }
+            return -1;
         }
-        return -1;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

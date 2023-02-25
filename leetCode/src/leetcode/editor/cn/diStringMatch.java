@@ -44,35 +44,36 @@ package leetcode.editor.cn;
 
 import java.util.Arrays;
 
-class diStringMatch{
+class diStringMatch {
     //2023-02-18 13:51:20
     //增减字符串匹配
     //编号：[942]
-    
+
     public static void main(String[] args) {
         Solution solution = new diStringMatch().new Solution();
         int[] idids = solution.diStringMatch("DDI");
         System.out.println(Arrays.toString(idids));
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int[] diStringMatch(String s) {
-       int ans = 0;
-       int[] tns = new int[s.length()+1];
-       for (int i = 0 ; i <= s.length() ; i++){
-          tns[ans] = i;
-          ans++;
-       }
-       for (int j = 0 ; j < tns.length-1 ; j++){
-           if (s.charAt(j) == 'D'){
-               int temp = tns[j];
-               tns[j] = tns[j+1];
-               tns[j+1] = temp;
-           }
-       }
-       return tns;
+    class Solution {
+        public int[] diStringMatch(String s) {
+            int ans = 0;
+            int[] tns = new int[s.length() + 1];
+            for (int i = 0; i <= s.length(); i++) {
+                tns[ans] = i;
+                ans++;
+            }
+            for (int j = 0; j < tns.length - 1; j++) {
+                if (s.charAt(j) == 'D') {
+                    int temp = tns[j];
+                    tns[j] = tns[j + 1];
+                    tns[j + 1] = temp;
+                }
+            }
+            return tns;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

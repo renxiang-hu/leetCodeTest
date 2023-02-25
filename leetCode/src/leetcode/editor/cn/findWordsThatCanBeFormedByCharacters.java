@@ -41,11 +41,11 @@ package leetcode.editor.cn;
 import java.util.HashMap;
 import java.util.Map;
 
-class findWordsThatCanBeFormedByCharacters{
+class findWordsThatCanBeFormedByCharacters {
     //2023-01-12 18:01:35
     //拼写单词
     //编号：[1160]
-    
+
     public static void main(String[] args) {
         Solution solution = new findWordsThatCanBeFormedByCharacters().new Solution();
         int atach = solution.countCharacters(new String[]{"cat", "bt", "hat", "tree"}, "atach");
@@ -55,36 +55,36 @@ class findWordsThatCanBeFormedByCharacters{
 
     /**
      * 思路：用hash存储chars每个字符出现的次数
-     *      用hash存储每个单词每个字符出现的次数
-     *      然后进行一一比对即可
+     * 用hash存储每个单词每个字符出现的次数
+     * 然后进行一一比对即可
      */
     class Solution {
-    public int countCharacters(String[] words, String chars) {
-       Map<Character,Integer> charMap = new HashMap<>();
-       for (int i = 0 ; i < chars.length() ; i++){
-           charMap.put(chars.charAt(i),charMap.getOrDefault(chars.charAt(i),0)+1);
-       }
-       int ans = 0;
-       for (int j = 0 ; j < words.length ; j++){
-           Map<Character,Integer> wordMap = new HashMap<>();
-           String cc = words[j];
-           for (int m = 0 ; m < cc.length() ; m++){
-               wordMap.put(cc.charAt(m),wordMap.getOrDefault(cc.charAt(m),0)+1);
-           }
-           boolean tns = true;
-           for (int n = 0 ; n < cc.length() ; n++){
-               if (charMap.getOrDefault(cc.charAt(n),0)<wordMap.getOrDefault(cc.charAt(n),0)){
-                  tns = false;
-                  break;
-               }
-           }
-           if (tns){
-               ans = ans + words[j].length();
-           }
-       }
-       return ans;
+        public int countCharacters(String[] words, String chars) {
+            Map<Character, Integer> charMap = new HashMap<>();
+            for (int i = 0; i < chars.length(); i++) {
+                charMap.put(chars.charAt(i), charMap.getOrDefault(chars.charAt(i), 0) + 1);
+            }
+            int ans = 0;
+            for (int j = 0; j < words.length; j++) {
+                Map<Character, Integer> wordMap = new HashMap<>();
+                String cc = words[j];
+                for (int m = 0; m < cc.length(); m++) {
+                    wordMap.put(cc.charAt(m), wordMap.getOrDefault(cc.charAt(m), 0) + 1);
+                }
+                boolean tns = true;
+                for (int n = 0; n < cc.length(); n++) {
+                    if (charMap.getOrDefault(cc.charAt(n), 0) < wordMap.getOrDefault(cc.charAt(n), 0)) {
+                        tns = false;
+                        break;
+                    }
+                }
+                if (tns) {
+                    ans = ans + words[j].length();
+                }
+            }
+            return ans;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

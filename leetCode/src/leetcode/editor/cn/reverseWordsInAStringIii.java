@@ -43,41 +43,42 @@ import com.sun.tools.javac.util.ArrayUtils;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-class reverseWordsInAStringIii{
+class reverseWordsInAStringIii {
     //2023-02-17 09:10:30
     //反转字符串中的单词 III
     //编号：[557]
-    
+
     public static void main(String[] args) {
         Solution solution = new reverseWordsInAStringIii().new Solution();
         String s = solution.reverseWords("Let's take LeetCode contest");
         System.out.println(s);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public String reverseWords(String s) {
-        String[] s1 = s.split(" ");
-        StringBuffer stringBuffer = new StringBuffer();
-        String ttl = null;
-        String trim = null;
-        StringBuffer innerBuffer = new StringBuffer();
-        for (int i = 0 ; i < s1.length ; i++){
-            String[] split = s1[i].split("");
-            int left = 0;
-            int right = split.length - 1;
-            while (left <= right) {
-               String temp = split[left];
-               split[left] = split[right];
-               split[right] = temp;
-               left++;
-               right--;
+    class Solution {
+        public String reverseWords(String s) {
+            String[] s1 = s.split(" ");
+            StringBuffer stringBuffer = new StringBuffer();
+            String ttl = null;
+            String trim = null;
+            StringBuffer innerBuffer = new StringBuffer();
+            for (int i = 0; i < s1.length; i++) {
+                String[] split = s1[i].split("");
+                int left = 0;
+                int right = split.length - 1;
+                while (left <= right) {
+                    String temp = split[left];
+                    split[left] = split[right];
+                    split[right] = temp;
+                    left++;
+                    right--;
+                }
+                ttl = Arrays.stream(split).collect(Collectors.joining());
+                trim = innerBuffer.append(ttl).append(" ").toString().trim();
             }
-            ttl = Arrays.stream(split).collect(Collectors.joining());
-            trim = innerBuffer.append(ttl).append(" ").toString().trim();
+            return trim;
         }
-        return trim;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

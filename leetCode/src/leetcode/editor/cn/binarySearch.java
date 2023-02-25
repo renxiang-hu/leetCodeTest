@@ -28,34 +28,36 @@
 // Related Topics 数组 二分查找 👍 1133 👎 0
 
 package leetcode.editor.cn;
-class binarySearch{
+
+class binarySearch {
     //2023-01-31 17:19:00
     //二分查找
     //编号：[704]
-    
+
     public static void main(String[] args) {
         Solution solution = new binarySearch().new Solution();
         int search = solution.search(new int[]{-1, 0, 3, 5, 9, 12}, 9);
         System.out.println(search);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int search(int[] nums, int target) {
-        int left = 0;
-        int right = nums.length - 1;
-        while (left <= right){
-          int middle = left + (right - left) / 2;
-          if (nums[middle] > target){
-              right = middle - 1;
-          } else if (nums[middle] < target){
-              left = middle + 1;
-          } else {
-              return middle;
-          }
+    class Solution {
+        public int search(int[] nums, int target) {
+            int left = 0;
+            int right = nums.length - 1;
+            while (left <= right) {
+                int middle = left + (right - left) / 2;
+                if (nums[middle] > target) {
+                    right = middle - 1;
+                } else if (nums[middle] < target) {
+                    left = middle + 1;
+                } else {
+                    return middle;
+                }
+            }
+            return -1;
         }
-        return -1;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

@@ -26,26 +26,28 @@
 // Related Topics 数学 双指针 字符串 👍 319 👎 0
 
 package leetcode.editor.cn;
-class zuoXuanZhuanZiFuChuanLcof{
+
+class zuoXuanZhuanZiFuChuanLcof {
     //2022-11-18 23:23:04
     //左旋转字符串
     //编号：[剑指 Offer 58 - II]
-    
+
     public static void main(String[] args) {
         Solution solution = new zuoXuanZhuanZiFuChuanLcof().new Solution();
         String abcdefg = solution.reverseLeftWords("abcdefg", 2);
         System.out.println(abcdefg);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public String reverseLeftWords(String s, int n) {
-        String substring = s.substring(0, n);
-        String substring1 = s.substring(n , s.length());
-        StringBuffer stringBuffer = new StringBuffer();
-        String s1 = stringBuffer.append(substring1).append(substring).toString();
-    return s1;
+    class Solution {
+        public String reverseLeftWords(String s, int n) {
+            String substring = s.substring(0, n);
+            String substring1 = s.substring(n, s.length());
+            StringBuffer stringBuffer = new StringBuffer();
+            String s1 = stringBuffer.append(substring1).append(substring).toString();
+            return s1;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

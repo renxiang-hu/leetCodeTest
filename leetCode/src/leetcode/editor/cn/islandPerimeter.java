@@ -44,50 +44,52 @@
 // Related Topics 深度优先搜索 广度优先搜索 数组 矩阵 👍 626 👎 0
 
 package leetcode.editor.cn;
-class islandPerimeter{
+
+class islandPerimeter {
     //2022-12-18 10:00:35
     //岛屿的周长
     //编号：[463]
-    
+
     public static void main(String[] args) {
         Solution solution = new islandPerimeter().new Solution();
-        int[][] x = {{0,1,0,0},{1,1,1,0},{0,1,0,0},{1,1,0,0}};
+        int[][] x = {{0, 1, 0, 0}, {1, 1, 1, 0}, {0, 1, 0, 0}, {1, 1, 0, 0}};
         int i = solution.islandPerimeter(x);
         System.out.println(i);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int islandPerimeter(int[][] grid) {
-        //grid多少行
-        int m = grid.length;
-        //grid多少列
-        int n = grid[0].length;
-        //岛屿的个数
-        int count = 0;
-        //重合边数
-        int edge = 0;
-        if (grid.length == 0 || grid == null){
-           return 0;
-        }
-        for (int i = 0 ; i < m; i++){
-            for (int j = 0 ; j < n; j++){
-                if (grid[i][j] == 0){
-                    continue;
-                }
-                count++;
-                //下边是否是陆地
-                if ( i+1 < m && grid[i+1][j] == 1){
-                    edge++;
-                }
-                //右边是否是陆地
-                if ( j+1 < n && grid[i][j+1] == 1){
-                    edge++;
+    class Solution {
+        public int islandPerimeter(int[][] grid) {
+            //grid多少行
+            int m = grid.length;
+            //grid多少列
+            int n = grid[0].length;
+            //岛屿的个数
+            int count = 0;
+            //重合边数
+            int edge = 0;
+            if (grid.length == 0 || grid == null) {
+                return 0;
+            }
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (grid[i][j] == 0) {
+                        continue;
+                    }
+                    count++;
+                    //下边是否是陆地
+                    if (i + 1 < m && grid[i + 1][j] == 1) {
+                        edge++;
+                    }
+                    //右边是否是陆地
+                    if (j + 1 < n && grid[i][j + 1] == 1) {
+                        edge++;
+                    }
                 }
             }
+            return 4 * count - 2 * edge;
         }
-        return 4*count - 2*edge;
     }
-}
 
 //leetcode submit region end(Prohibit modification and deletion)
 

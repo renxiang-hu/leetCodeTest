@@ -32,11 +32,11 @@ package leetcode.editor.cn;
 import java.util.HashSet;
 import java.util.Set;
 
-class removeDuplicateNodeLcci{
+class removeDuplicateNodeLcci {
     //2023-02-22 13:44:29
     //移除重复节点
     //编号：[面试题 02.01]
-    
+
     public static void main(String[] args) {
         Solution solution = new removeDuplicateNodeLcci().new Solution();
         ListNode linkedList = CreateLink.createLinkedList(new int[]{1, 2, 3, 3, 2, 1});
@@ -44,34 +44,35 @@ class removeDuplicateNodeLcci{
         PrintLink.printLinkedList(listNode);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */
+
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     * int val;
+     * ListNode next;
+     * ListNode(int x) { val = x; }
+     * }
+     */
 // 1 2 3 3 2 1
-class Solution {
-    public ListNode removeDuplicateNodes(ListNode head) {
-        if (head == null){
-            return null;
+    class Solution {
+        public ListNode removeDuplicateNodes(ListNode head) {
+            if (head == null) {
+                return null;
+            }
+            Set<Integer> mySet = new HashSet<>();
+            mySet.add(head.val);
+            ListNode cur = head;
+            while (cur.next != null) {
+                ListNode pos = cur.next;
+                if (mySet.add(pos.val)) {
+                    cur = cur.next;
+                } else {
+                    cur.next = cur.next.next;
+                }
+            }
+            return head;
         }
-        Set<Integer> mySet = new HashSet<>();
-        mySet.add(head.val);
-        ListNode cur = head;
-        while (cur.next != null){
-           ListNode pos = cur.next;
-           if (mySet.add(pos.val)){
-               cur = cur.next;
-           } else {
-               cur.next = cur.next.next;
-           }
-        }
-       return head;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

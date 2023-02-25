@@ -34,28 +34,30 @@
 // Related Topics 数组 前缀和 👍 260 👎 0
 
 package leetcode.editor.cn;
-class runningSumOf1dArray{
+
+class runningSumOf1dArray {
     //2022-10-02 16:23:51
     //一维数组的动态和
     //编号：[1480]
-    
+
     public static void main(String[] args) {
         Solution solution = new runningSumOf1dArray().new Solution();
         int[] ints = solution.runningSum(new int[]{1, 2, 3, 4});
         System.out.println(ints.toString());
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int[] runningSum(int[] nums) {
-        int[] value = new int[nums.length];
-        int sum = 0;
-        for (int i = 0 ; i < nums.length ; i++){
-            sum = sum + nums[i];
-            value[i] = sum;
+    class Solution {
+        public int[] runningSum(int[] nums) {
+            int[] value = new int[nums.length];
+            int sum = 0;
+            for (int i = 0; i < nums.length; i++) {
+                sum = sum + nums[i];
+                value[i] = sum;
+            }
+            return value;
         }
-        return value;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

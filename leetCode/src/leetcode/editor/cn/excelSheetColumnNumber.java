@@ -47,27 +47,29 @@
 // Related Topics 数学 字符串 👍 362 👎 0
 
 package leetcode.editor.cn;
-class excelSheetColumnNumber{
+
+class excelSheetColumnNumber {
     //2023-01-09 09:46:12
     //Excel 表列序号
     //编号：[171]
-    
+
     public static void main(String[] args) {
         Solution solution = new excelSheetColumnNumber().new Solution();
         int ab = solution.titleToNumber("AB");
         System.out.println(ab);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int titleToNumber(String columnTitle) {
-        int tl = 0;
-        for (int i = 0 ; i < columnTitle.length() ; i++){
-            int num = columnTitle.charAt(i) - 'A' + 1;
-            tl = 26 * tl + num;
+    class Solution {
+        public int titleToNumber(String columnTitle) {
+            int tl = 0;
+            for (int i = 0; i < columnTitle.length(); i++) {
+                int num = columnTitle.charAt(i) - 'A' + 1;
+                tl = 26 * tl + num;
+            }
+            return tl;
         }
-        return tl;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

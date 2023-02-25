@@ -47,37 +47,39 @@
 // Related Topics 栈 双指针 字符串 模拟 👍 582 👎 0
 
 package leetcode.editor.cn;
-class backspaceStringCompare{
+
+class backspaceStringCompare {
     //2023-02-13 09:57:55
     //比较含退格的字符串
     //编号：[844]
-    
+
     public static void main(String[] args) {
         Solution solution = new backspaceStringCompare().new Solution();
         boolean b = solution.backspaceCompare("ab#c", "ad#c");
         System.out.println(b);
     }
-    //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean backspaceCompare(String s, String t) {
-        return build(s).equals(build(t));
-    }
 
-    public String build(String ans){
-        StringBuffer buffer = new StringBuffer();
-        for (int i = 0 ; i < ans.length() ; i++){
-            char tl = ans.charAt(i);
-            if (tl!='#'){
-               buffer.append(tl);
-            } else {
-                if (buffer.length() > 0){
-                    buffer.deleteCharAt(buffer.length() - 1);
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public boolean backspaceCompare(String s, String t) {
+            return build(s).equals(build(t));
+        }
+
+        public String build(String ans) {
+            StringBuffer buffer = new StringBuffer();
+            for (int i = 0; i < ans.length(); i++) {
+                char tl = ans.charAt(i);
+                if (tl != '#') {
+                    buffer.append(tl);
+                } else {
+                    if (buffer.length() > 0) {
+                        buffer.deleteCharAt(buffer.length() - 1);
+                    }
                 }
             }
+            return buffer.toString();
         }
-        return buffer.toString();
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

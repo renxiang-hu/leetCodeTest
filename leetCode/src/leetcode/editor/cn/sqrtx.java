@@ -32,34 +32,36 @@
 // Related Topics 数学 二分查找 👍 1251 👎 0
 
 package leetcode.editor.cn;
-class sqrtx{
+
+class sqrtx {
     //2023-02-09 09:12:02
     //x 的平方根 
     //编号：[69]
-    
+
     public static void main(String[] args) {
         Solution solution = new sqrtx().new Solution();
         int i = solution.mySqrt(4);
         System.out.println(i);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int mySqrt(int x) {
-       int left = 0;
-       int right = x;
-       while (left <= right){
-           int middle = left + (right - left) / 2;
-           if ((long)middle * middle > x){
-               right = middle - 1;
-           } else if (middle * middle < x){
-               left = left + 1;
-           } else {
-              return middle;
-           }
-       }
-       return right;
+    class Solution {
+        public int mySqrt(int x) {
+            int left = 0;
+            int right = x;
+            while (left <= right) {
+                int middle = left + (right - left) / 2;
+                if ((long) middle * middle > x) {
+                    right = middle - 1;
+                } else if (middle * middle < x) {
+                    left = left + 1;
+                } else {
+                    return middle;
+                }
+            }
+            return right;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

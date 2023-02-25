@@ -1,8 +1,8 @@
 /**
-  * 题目Id：1331
-  * 题目：数组序号转换
-  * 日期：2022-09-15 13:30:02
-*/
+ * 题目Id：1331
+ * 题目：数组序号转换
+ * 日期：2022-09-15 13:30:02
+ */
 //给你一个整数数组 arr ，请你将数组中的每个元素替换为它们排序后的序号。
 //
 // 序号代表了一个元素有多大。序号编号的规则如下：
@@ -53,32 +53,33 @@ import java.util.Map;
 
 public class RankTransformOfAnArray {
     public static void main(String[] args) {
-        int[] x = {100,100,100};
+        int[] x = {100, 100, 100};
         Solution solution = new RankTransformOfAnArray().new Solution();
         int[] ints = solution.arrayRankTransform(x);
         System.out.println(Arrays.toString(ints));
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int[] arrayRankTransform(int[] arr) {
-        int[] tempArr = new int[arr.length];
-        System.arraycopy(arr,0,tempArr,0,arr.length);
-        Arrays.sort(tempArr);
-        Map<Integer,Integer> rankTran = new HashMap<>();
-        for (int i = 0 ; i < tempArr.length ; i++){
-            if (!rankTran.containsKey(tempArr[i])){
-                rankTran.put(tempArr[i],rankTran.size()+1);
+    class Solution {
+        public int[] arrayRankTransform(int[] arr) {
+            int[] tempArr = new int[arr.length];
+            System.arraycopy(arr, 0, tempArr, 0, arr.length);
+            Arrays.sort(tempArr);
+            Map<Integer, Integer> rankTran = new HashMap<>();
+            for (int i = 0; i < tempArr.length; i++) {
+                if (!rankTran.containsKey(tempArr[i])) {
+                    rankTran.put(tempArr[i], rankTran.size() + 1);
+                }
             }
-        }
-        int[] tems = new int[arr.length];
-        for (int j = 0 ; j < arr.length ; j++){
-            if (rankTran.containsKey(arr[j])){
-                tems[j] = rankTran.get(arr[j]);
+            int[] tems = new int[arr.length];
+            for (int j = 0; j < arr.length; j++) {
+                if (rankTran.containsKey(arr[j])) {
+                    tems[j] = rankTran.get(arr[j]);
+                }
             }
+            return tems;
         }
-        return tems;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

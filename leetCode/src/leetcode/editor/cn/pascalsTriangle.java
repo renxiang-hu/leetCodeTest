@@ -35,34 +35,35 @@ package leetcode.editor.cn;
 import java.util.ArrayList;
 import java.util.List;
 
-class pascalsTriangle{
+class pascalsTriangle {
     //2023-01-03 13:07:55
     //杨辉三角
     //编号：[118]
-    
+
     public static void main(String[] args) {
         Solution solution = new pascalsTriangle().new Solution();
         List<List<Integer>> generate = solution.generate(5);
         System.out.println(generate);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public List<List<Integer>> generate(int numRows) {
-        List<List<Integer>> lists = new ArrayList<>(numRows);
-        for (int i = 0 ; i < numRows ; i++){
-            List<Integer> arr = new ArrayList<>();
-            for (int j = 0 ; j <= i ; j++){
-               if (j == 0 || j == i){
-                   arr.add(1);
-               } else {
-                   arr.add(lists.get(i-1).get(j-1)+lists.get(i-1).get(j));
-               }
+    class Solution {
+        public List<List<Integer>> generate(int numRows) {
+            List<List<Integer>> lists = new ArrayList<>(numRows);
+            for (int i = 0; i < numRows; i++) {
+                List<Integer> arr = new ArrayList<>();
+                for (int j = 0; j <= i; j++) {
+                    if (j == 0 || j == i) {
+                        arr.add(1);
+                    } else {
+                        arr.add(lists.get(i - 1).get(j - 1) + lists.get(i - 1).get(j));
+                    }
+                }
+                lists.add(arr);
             }
-            lists.add(arr);
+            return lists;
         }
-        return lists;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

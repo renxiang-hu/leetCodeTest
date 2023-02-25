@@ -75,49 +75,59 @@
 // Related Topics 哈希表 数学 字符串 👍 2196 👎 0
 
 package leetcode.editor.cn;
-class romanToInteger{
+
+class romanToInteger {
     //2023-01-11 10:17:43
     //罗马数字转整数
     //编号：[13]
-    
+
     public static void main(String[] args) {
         Solution solution = new romanToInteger().new Solution();
         int iii = solution.romanToInt("LVIII");
         System.out.println(iii);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int romanToInt(String s) {
-        int sum = 0;
-        int preNum = getNum(s.charAt(0));
-        for (int i = 1 ; i < s.length() ; i++){
-            int num = getNum(s.charAt(i));
-            if (preNum >= num){
-                sum = sum + preNum;
-            } else {
-                sum = sum - preNum;
+    class Solution {
+        public int romanToInt(String s) {
+            int sum = 0;
+            int preNum = getNum(s.charAt(0));
+            for (int i = 1; i < s.length(); i++) {
+                int num = getNum(s.charAt(i));
+                if (preNum >= num) {
+                    sum = sum + preNum;
+                } else {
+                    sum = sum - preNum;
+                }
+                preNum = num;
             }
-            preNum = num;
+            sum = sum + preNum;
+            return sum;
         }
-        sum = sum + preNum;
-        return sum;
-    }
 
-    public int getNum(char ch){
-        switch (ch) {
-            case 'I' : return 1;
-            case 'V' : return 5;
-            case 'X' : return 10;
-            case 'L' : return 50;
-            case 'C' : return 100;
-            case 'D' : return 500;
-            case 'M' : return 1000;
-            default : return 0;
+        public int getNum(char ch) {
+            switch (ch) {
+                case 'I':
+                    return 1;
+                case 'V':
+                    return 5;
+                case 'X':
+                    return 10;
+                case 'L':
+                    return 50;
+                case 'C':
+                    return 100;
+                case 'D':
+                    return 500;
+                case 'M':
+                    return 1000;
+                default:
+                    return 0;
+            }
         }
+
+
     }
-
-
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

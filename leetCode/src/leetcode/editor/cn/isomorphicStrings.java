@@ -45,33 +45,34 @@ package leetcode.editor.cn;
 import java.util.HashMap;
 import java.util.Map;
 
-class isomorphicStrings{
+class isomorphicStrings {
     //2022-10-09 21:44:10
     //同构字符串
     //编号：[205]
-    
+
     public static void main(String[] args) {
         Solution solution = new isomorphicStrings().new Solution();
         boolean isomorphic = solution.isIsomorphic("foo", "bar");
         System.out.println(isomorphic);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean isIsomorphic(String s, String t) {
-        Map<Character,Character> map = new HashMap<>();
-        Map<Character,Character> map1 = new HashMap<>();
-        for (int i =  0 ; i < s.length() ; i++){
-            char m = s.charAt(i);
-            char n = t.charAt(i);
-            if ((map.containsKey(m) && map.get(m) != n) || (map1.containsKey(n) && map1.get(n) != m)){
-               return false;
+    class Solution {
+        public boolean isIsomorphic(String s, String t) {
+            Map<Character, Character> map = new HashMap<>();
+            Map<Character, Character> map1 = new HashMap<>();
+            for (int i = 0; i < s.length(); i++) {
+                char m = s.charAt(i);
+                char n = t.charAt(i);
+                if ((map.containsKey(m) && map.get(m) != n) || (map1.containsKey(n) && map1.get(n) != m)) {
+                    return false;
+                }
+                map.put(m, n);
+                map1.put(n, m);
             }
-            map.put(m,n);
-            map1.put(n,m);
+            return true;
         }
-        return true;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

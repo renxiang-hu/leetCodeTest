@@ -43,45 +43,47 @@
 // Related Topics 双指针 字符串 👍 610 👎 0
 
 package leetcode.editor.cn;
-class validPalindrome{
+
+class validPalindrome {
     //2023-02-16 15:35:20
     //验证回文串
     //编号：[125]
-    
+
     public static void main(String[] args) {
         Solution solution = new validPalindrome().new Solution();
         boolean palindrome = solution.isPalindrome("A man, a plan, a canal: Panama");
         System.out.println(palindrome);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean isPalindrome(String s) {
-       if (" ".equals(s)){
-           return true;
-       }
-       StringBuffer stringBuffer = new StringBuffer();
-       String replaceString = s.replace(" ", "");
-       for (int i = 0 ; i < replaceString.length() ; i++){
-           char c = replaceString.charAt(i);
-           if (Character.isLetterOrDigit(c)){
-               char c1 = Character.toLowerCase(c);
-               stringBuffer.append(c1);
-           }
-       }
-        String s1 = stringBuffer.toString();
-        int left = 0;
-        int right = s1.length() - 1;
-        while (left <= right){
-            if (s1.charAt(left)==s1.charAt(right)){
-                left++;
-                right--;
-            } else {
-                return false;
+    class Solution {
+        public boolean isPalindrome(String s) {
+            if (" ".equals(s)) {
+                return true;
             }
+            StringBuffer stringBuffer = new StringBuffer();
+            String replaceString = s.replace(" ", "");
+            for (int i = 0; i < replaceString.length(); i++) {
+                char c = replaceString.charAt(i);
+                if (Character.isLetterOrDigit(c)) {
+                    char c1 = Character.toLowerCase(c);
+                    stringBuffer.append(c1);
+                }
+            }
+            String s1 = stringBuffer.toString();
+            int left = 0;
+            int right = s1.length() - 1;
+            while (left <= right) {
+                if (s1.charAt(left) == s1.charAt(right)) {
+                    left++;
+                    right--;
+                } else {
+                    return false;
+                }
+            }
+            return true;
         }
-        return true;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

@@ -30,11 +30,12 @@
 // Related Topics 链表 👍 281 👎 0
 
 package leetcode.editor.cn;
-class shanChuLianBiaoDeJieDianLcof{
+
+class shanChuLianBiaoDeJieDianLcof {
     //2023-02-22 09:05:27
     //删除链表的节点
     //编号：[剑指 Offer 18]
-    
+
     public static void main(String[] args) {
         Solution solution = new shanChuLianBiaoDeJieDianLcof().new Solution();
         ListNode linkedList = CreateLink.createLinkedList(new int[]{4, 5, 1, 9});
@@ -42,29 +43,30 @@ class shanChuLianBiaoDeJieDianLcof{
         PrintLink.printLinkedList(listNode);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */
-class Solution {
-    public ListNode deleteNode(ListNode head, int val) {
-        ListNode dummyNode = new ListNode(0);
-        dummyNode.next = head;
-        ListNode cur = dummyNode;
-        while (cur.next != null) {
-            if (cur.next.val == val){
-                cur.next = cur.next.next;
-            } else {
-                cur = cur.next;
+
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     * int val;
+     * ListNode next;
+     * ListNode(int x) { val = x; }
+     * }
+     */
+    class Solution {
+        public ListNode deleteNode(ListNode head, int val) {
+            ListNode dummyNode = new ListNode(0);
+            dummyNode.next = head;
+            ListNode cur = dummyNode;
+            while (cur.next != null) {
+                if (cur.next.val == val) {
+                    cur.next = cur.next.next;
+                } else {
+                    cur = cur.next;
+                }
             }
+            return dummyNode.next;
         }
-        return dummyNode.next;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

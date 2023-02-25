@@ -34,29 +34,31 @@
 // Related Topics 位运算 哈希表 字符串 排序 👍 372 👎 0
 
 package leetcode.editor.cn;
-class findTheDifference{
+
+class findTheDifference {
     //2023-01-09 23:17:29
     //找不同
     //编号：[389]
-    
+
     public static void main(String[] args) {
         Solution solution = new findTheDifference().new Solution();
         char theDifference = solution.findTheDifference("abcd", "abcde");
         System.out.println(theDifference);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public char findTheDifference(String s, String t) {
-        int ret = 0;
-        for (int i = 0 ; i < s.length() ; i++){
-            ret ^= s.charAt(i);
+    class Solution {
+        public char findTheDifference(String s, String t) {
+            int ret = 0;
+            for (int i = 0; i < s.length(); i++) {
+                ret ^= s.charAt(i);
+            }
+            for (int j = 0; j < t.length(); j++) {
+                ret ^= t.charAt(j);
+            }
+            return (char) ret;
         }
-        for (int j = 0 ; j < t.length() ; j++){
-            ret ^= t.charAt(j);
-        }
-        return (char) ret;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

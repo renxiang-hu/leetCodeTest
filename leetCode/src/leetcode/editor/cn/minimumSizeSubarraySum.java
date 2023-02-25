@@ -48,35 +48,37 @@
 // Related Topics 数组 二分查找 前缀和 滑动窗口 👍 1557 👎 0
 
 package leetcode.editor.cn;
-class minimumSizeSubarraySum{
+
+class minimumSizeSubarraySum {
     //2023-02-13 12:59:45
     //长度最小的子数组
     //编号：[209]
-    
+
     public static void main(String[] args) {
         Solution solution = new minimumSizeSubarraySum().new Solution();
         int i = solution.minSubArrayLen(7, new int[]{2, 3, 1, 2, 4, 3});
         System.out.println(i);
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int minSubArrayLen(int s, int[] nums) {
-        int min = Integer.MAX_VALUE;
-        for (int i = 0; i < nums.length; i++) {
-            int sum = nums[i];
-            if (sum >= s)
-                return 1;
-            for (int j = i + 1; j < nums.length; j++) {
-                sum += nums[j];
-                if (sum >= s) {
-                    min = Math.min(min, j - i + 1);
-                    break;
+    class Solution {
+        public int minSubArrayLen(int s, int[] nums) {
+            int min = Integer.MAX_VALUE;
+            for (int i = 0; i < nums.length; i++) {
+                int sum = nums[i];
+                if (sum >= s)
+                    return 1;
+                for (int j = i + 1; j < nums.length; j++) {
+                    sum += nums[j];
+                    if (sum >= s) {
+                        min = Math.min(min, j - i + 1);
+                        break;
+                    }
                 }
             }
+            return min == Integer.MAX_VALUE ? 0 : min;
         }
-        return min == Integer.MAX_VALUE ? 0 : min;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
