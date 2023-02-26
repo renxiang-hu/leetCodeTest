@@ -38,10 +38,7 @@
 
 package leetcode.editor.cn;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 class uncommonWordsFromTwoSentences {
     //2023-01-12 16:05:45
@@ -51,25 +48,33 @@ class uncommonWordsFromTwoSentences {
     public static void main(String[] args) {
         Solution solution = new uncommonWordsFromTwoSentences().new Solution();
         String[] strings = solution.uncommonFromSentences("this apple is sweet", "this apple is sour");
-        System.out.println(strings.toString());
+        System.out.println(Arrays.toString(strings));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public String[] uncommonFromSentences(String s1, String s2) {
-            Map<String, Integer> map = new HashMap<>();
-            String ts = s1 + " " + s2;
-            String[] s = ts.split(" ");
-            for (String ns : s) {
-                map.put(ns, map.getOrDefault(ns, 0) + 1);
-            }
             List<String> list = new ArrayList<>();
-            for (String tt : map.keySet()) {
-                if (map.get(tt) == 1) {
-                    list.add(tt);
+            String[] s = s1.split(" ");
+            for (String tns : s){
+                list.add(tns);
+            }
+            String[] s3 = s2.split(" ");
+            for (String tns1 : s3){
+                list.add(tns1);
+            }
+            Map<String,Integer> map = new HashMap<>();
+            for (int i = 0 ; i < list.size() ; i++){
+                map.put(list.get(i),map.getOrDefault(list.get(i),0)+1);
+            }
+            List<String> nn = new ArrayList<>();
+            Set<Map.Entry<String, Integer>> entries = map.entrySet();
+            for (Map.Entry<String,Integer> entry : entries){
+                if (entry.getValue() == 1){
+                    nn.add(entry.getKey());
                 }
             }
-            return list.toArray(new String[list.size()]);
+            return nn.toArray(new String[nn.size()]);
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
