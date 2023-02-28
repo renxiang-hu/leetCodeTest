@@ -1015,6 +1015,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/reverseVowelsOfAString.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/reverseVowelsOfAString.md" />
+              <option name="frontendQuestionId" value="leetcode.cn345" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/reverseVowelsOfAString.java" />
+              <option name="titleSlug" value="reverse-vowels-of-a-string" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/reverseWordsInAStringIii.java">
           <value>
             <LeetcodeEditor>
