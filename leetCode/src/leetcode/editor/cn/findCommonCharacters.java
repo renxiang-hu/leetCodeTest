@@ -49,15 +49,6 @@ class findCommonCharacters {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public List<String> commonChars(String[] words) {
-            String firstWord = words[0];
-            Map<Character, Integer> firstWordMap = new HashMap<>();
-            for (int i = 0; i < firstWord.length(); i++) {
-                firstWordMap.put(firstWord.charAt(i), firstWordMap.getOrDefault(firstWord.charAt(i), 0) + 1);
-            }
-            for (int i = 1; i < words.length; i++) {
-                Map<Character, Integer> amp = new HashMap<>();
-
-            }
             return null;
         }
     }
