@@ -40,6 +40,7 @@ package leetcode.editor.cn;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 class longestPalindrome {
     //2023-01-16 22:02:21
@@ -56,12 +57,13 @@ class longestPalindrome {
     class Solution {
         public int longestPalindrome(String s) {
             Map<Character, Integer> map = new HashMap<>();
-            for (int i = 0; i < s.length(); i++) {
-                map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
+            for (int i = 0 ; i < s.length() ; i++){
+                map.put(s.charAt(i),map.getOrDefault(s.charAt(i),0)+1);
             }
+            Set<Character> characters = map.keySet();
             int count = 0;
-            for (char ch : map.keySet()) {
-                count = count + map.get(ch) % 2;
+            for (Character tns : characters){
+                count = count + map.get(tns) % 2;
             }
             return count == 0 ? s.length() : s.length() - count + 1;
         }
