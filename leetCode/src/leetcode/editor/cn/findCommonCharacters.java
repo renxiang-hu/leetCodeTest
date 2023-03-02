@@ -31,6 +31,7 @@
 
 package leetcode.editor.cn;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,7 +43,7 @@ class findCommonCharacters {
 
     public static void main(String[] args) {
         Solution solution = new findCommonCharacters().new Solution();
-        List<String> strings = solution.commonChars(new String[]{"bella", "label", "roller"});
+        List<String> strings = solution.commonChars(new String[]{"cool","lock","cook"});
         System.out.println(strings.toString());
     }
 
