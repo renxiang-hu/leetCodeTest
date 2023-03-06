@@ -50,6 +50,7 @@ class findCommonCharacters {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public List<String> commonChars(String[] words) {
+
             return null;
         }
     }
