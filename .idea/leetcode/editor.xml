@@ -586,6 +586,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/countCommonWordsWithOneOccurrence.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/countCommonWordsWithOneOccurrence.md" />
+              <option name="frontendQuestionId" value="leetcode.cn2085" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/countCommonWordsWithOneOccurrence.java" />
+              <option name="titleSlug" value="count-common-words-with-one-occurrence" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/countTheNumberOfConsistentStrings.java">
           <value>
             <LeetcodeEditor>

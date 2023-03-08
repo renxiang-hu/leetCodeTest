@@ -48,18 +48,18 @@ class maxConsecutiveOnes {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int findMaxConsecutiveOnes(int[] nums) {
-            int value = 0;
-            int maxValue = 0;
-            for (int i = 0; i < nums.length; i++) {
-                if (nums[i] == 1) {
-                    value++;
-                } else {
-                    maxValue = Math.max(maxValue, value);
-                    value = 0;
-                }
-            }
-            maxValue = Math.max(maxValue, value);
-            return maxValue;
+           int value = 0;
+           int maxValue = 0;
+           for (int i  = 0 ; i < nums.length ; i++){
+              if (nums[i] == 1){
+                  value++;
+              } else {
+                  maxValue = Math.max(value, maxValue);
+                  value = 0;
+              }
+           }
+           maxValue = Math.max(value,maxValue);
+           return maxValue;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
