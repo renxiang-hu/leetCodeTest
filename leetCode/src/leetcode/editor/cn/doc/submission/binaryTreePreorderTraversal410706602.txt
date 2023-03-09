@@ -1,9 +1,9 @@
 /**
- * 题目Id：145
- * 题目：二叉树的后序遍历
- * 日期：2022-09-26 18:00:14
+ * 题目Id：144
+ * 题目：二叉树的前序遍历
+ * 日期：2022-07-01 11:46:08
  */
-//给你一棵二叉树的根节点 root ，返回其节点值的 后序遍历 。
+//给你二叉树的根节点 root ，返回它节点值的 前序 遍历。
 //
 //
 //
@@ -11,7 +11,7 @@
 //
 //
 //输入：root = [1,null,2,3]
-//输出：[3,2,1]
+//输出：[1,2,3]
 //
 //
 // 示例 2：
@@ -28,32 +28,45 @@
 //输出：[1]
 //
 //
+// 示例 4：
+//
+//
+//输入：root = [1,2]
+//输出：[1,2]
+//
+//
+// 示例 5：
+//
+//
+//输入：root = [1,null,2]
+//输出：[1,2]
+//
+//
 //
 //
 // 提示：
 //
 //
-// 树中节点的数目在范围 [0, 100] 内
+// 树中节点数目在范围 [0, 100] 内
 // -100 <= Node.val <= 100
 //
 //
 //
 //
 // 进阶：递归算法很简单，你可以通过迭代算法完成吗？
-//
-// Related Topics 栈 树 深度优先搜索 二叉树 👍 927 👎 0
+// Related Topics 栈 树 深度优先搜索 二叉树 \U0001f44d 855 \U0001f44e 0
 
 package leetcode.editor.cn;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinaryTreePostorderTraversal {
+public class BinaryTreePreorderTraversal {
     public static void main(String[] args) {
-        Solution solution = new BinaryTreePostorderTraversal().new Solution();
-        Integer[] arr = {1, null, 2, 3};
-        List<Integer> integers = solution.postorderTraversal(TreeUtil.createTree(arr));
-        System.out.println(integers.toString());
+        Solution solution = new BinaryTreePreorderTraversal().new Solution();
+        Integer[] arr = {1, null, 2, 3, 4};
+        List<Integer> integers = solution.preorderTraversal(TreeUtil.createTree(arr));
+        System.out.println(integers);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 
@@ -72,24 +85,26 @@ public class BinaryTreePostorderTraversal {
      *     }
      * }
      */
+// 1, null, 2, 3
     class Solution {
-        public List<Integer> postorderTraversal(TreeNode root) {
+        public List<Integer> preorderTraversal(TreeNode root) {
             List<Integer> list = new ArrayList<>();
-            postOrder(root,list);
+            preOrder(root, list);
             return list;
         }
 
-        public void postOrder(TreeNode root,List<Integer> list){
+        public void preOrder(TreeNode root , List<Integer> list){
             if (root == null){
                 return;
             }
-            postOrder(root.left,list);
-            postOrder(root.right,list);
             list.add(root.val);
+            preOrder(root.left,list);
+            preOrder(root.right,list);
         }
-
-
     }
-//leetcode submit region end(Prohibit modification and deletion)
-
 }
+
+//total_correct:0
+//compile_error:Line 59: error: class, interface, enum, or record expected [in BinaryTreePreorderTraversal.java]
+package leetcode.editor.cn;
+^
