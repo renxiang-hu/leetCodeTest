@@ -520,6 +520,28 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/arrayPartition.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/arrayPartition.md" />
+              <option name="frontendQuestionId" value="leetcode.cn561" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/arrayPartition.java" />
+              <option name="titleSlug" value="array-partition" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/assignCookies.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/assignCookies.md" />
+              <option name="frontendQuestionId" value="leetcode.cn455" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/assignCookies.java" />
+              <option name="titleSlug" value="assign-cookies" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/backspaceStringCompare.java">
           <value>
             <LeetcodeEditor>
@@ -949,6 +971,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/largestOddNumberInString.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/largestOddNumberInString.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1903" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/largestOddNumberInString.java" />
+              <option name="titleSlug" value="largest-odd-number-in-string" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/leetcode/editor/cn/BinaryTreePreorderTraversal.java">
           <value>
             <LeetcodeEditor>
@@ -982,6 +1015,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/longestNiceSubstring.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/longestNiceSubstring.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1763" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/longestNiceSubstring.java" />
+              <option name="titleSlug" value="longest-nice-substring" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/longestPalindrome.java">
           <value>
             <LeetcodeEditor>
@@ -1001,6 +1045,28 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/maxConsecutiveOnes.java" />
               <option name="titleSlug" value="max-consecutive-ones" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/maximum69Number.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/maximum69Number.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1323" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/maximum69Number.java" />
+              <option name="titleSlug" value="maximum-69-number" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/maximumSubarray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/maximumSubarray.md" />
+              <option name="frontendQuestionId" value="leetcode.cn53" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/maximumSubarray.java" />
+              <option name="titleSlug" value="maximum-subarray" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -1367,6 +1433,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/splitAStringInBalancedStrings.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/splitAStringInBalancedStrings.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1221" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/splitAStringInBalancedStrings.java" />
+              <option name="titleSlug" value="split-a-string-in-balanced-strings" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/sqrtx.java">
           <value>
             <LeetcodeEditor>
@@ -1496,6 +1573,17 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/validPerfectSquare.java" />
               <option name="titleSlug" value="valid-perfect-square" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/wiggleSubsequence.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/doc/content/wiggleSubsequence.md" />
+              <option name="frontendQuestionId" value="leetcode.cn376" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/leetCode/src/leetcode/editor/cn/wiggleSubsequence.java" />
+              <option name="titleSlug" value="wiggle-subsequence" />
             </LeetcodeEditor>
           </value>
         </entry>
