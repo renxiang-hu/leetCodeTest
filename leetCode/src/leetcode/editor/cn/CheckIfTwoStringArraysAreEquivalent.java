@@ -51,7 +51,8 @@ package leetcode.editor.cn;
 public class CheckIfTwoStringArraysAreEquivalent {
     public static void main(String[] args) {
         Solution solution = new CheckIfTwoStringArraysAreEquivalent().new Solution();
-        System.out.println(solution);
+        boolean b = solution.arrayStringsAreEqual(new String[]{"ab", "c"}, new String[]{"a", "bc"});
+        System.out.println(b);
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
@@ -59,18 +60,13 @@ public class CheckIfTwoStringArraysAreEquivalent {
         public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
             StringBuilder stringBuilder = new StringBuilder();
             StringBuilder stringBuilder1 = new StringBuilder();
-            for (int i = 0; i < word1.length; i++) {
-                stringBuilder.append(word1[i]);
+            for (String word : word1){
+                stringBuilder.append(word);
             }
-            for (int j = 0; j < word2.length; j++) {
-                stringBuilder1.append(word2[j]);
+            for (String word : word2){
+                stringBuilder1.append(word);
             }
-            String str1 = stringBuilder.toString();
-            String str2 = stringBuilder1.toString();
-            if (str1.equals(str2)) {
-                return true;
-            }
-            return false;
+            return stringBuilder.toString().equals(stringBuilder1.toString());
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
