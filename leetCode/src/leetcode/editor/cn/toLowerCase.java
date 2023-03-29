@@ -51,9 +51,8 @@ class toLowerCase {
     class Solution {
         public String toLowerCase(String s) {
             StringBuffer stringBuffer = new StringBuffer();
-            for (char ch : s.toCharArray()) {
-                char c = Character.toLowerCase(ch);
-                stringBuffer.append(c);
+            for (Character character : s.toCharArray()){
+               stringBuffer.append(Character.toLowerCase(character));
             }
             return stringBuffer.toString();
         }

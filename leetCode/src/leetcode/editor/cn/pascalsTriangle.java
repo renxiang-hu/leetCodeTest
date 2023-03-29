@@ -49,19 +49,19 @@ class pascalsTriangle {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public List<List<Integer>> generate(int numRows) {
-            List<List<Integer>> lists = new ArrayList<>(numRows);
-            for (int i = 0; i < numRows; i++) {
-                List<Integer> arr = new ArrayList<>();
-                for (int j = 0; j <= i; j++) {
+            List<List<Integer>> list = new ArrayList<>(numRows);
+            for (int i = 0 ; i < numRows ; i++){
+                List<Integer> newList = new ArrayList<>();
+                for (int j = 0 ; j <= i ; j++){
                     if (j == 0 || j == i) {
-                        arr.add(1);
+                        newList.add(1);
                     } else {
-                        arr.add(lists.get(i - 1).get(j - 1) + lists.get(i - 1).get(j));
+                        newList.add(list.get(i-1).get(j-1)+list.get(i-1).get(j));
                     }
                 }
-                lists.add(arr);
+                list.add(newList);
             }
-            return lists;
+            return list;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

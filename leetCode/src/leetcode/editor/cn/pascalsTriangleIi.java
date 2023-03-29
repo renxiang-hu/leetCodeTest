@@ -55,24 +55,26 @@ class pascalsTriangleIi {
 
     public static void main(String[] args) {
         Solution solution = new pascalsTriangleIi().new Solution();
+        List<Integer> row = solution.getRow(3);
+        System.out.println(row);
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public List<Integer> getRow(int rowIndex) {
-            List<List<Integer>> list = new ArrayList<>();
-            for (int i = 0; i < rowIndex + 1; i++) {
-                List<Integer> nt = new ArrayList<>();
-                for (int j = 0; j <= i; j++) {
-                    if (j == 0 || j == i) {
-                        nt.add(1);
-                    } else {
-                        nt.add(list.get(i - 1).get(j - 1) + list.get(i - 1).get(j));
-                    }
-                }
-                list.add(nt);
-            }
-            return list.get(rowIndex);
+           List<List<Integer>> list = new ArrayList<>();
+           for (int i = 0 ; i < rowIndex + 1; i++){
+               List<Integer> newList = new ArrayList<>();
+               for (int j = 0 ; j <= i ; j++){
+                  if (j == 0 || j == i){
+                      newList.add(1);
+                  } else {
+                      newList.add(list.get(i-1).get(j-1)+list.get(i-1).get(j));
+                  }
+               }
+               list.add(newList);
+           }
+           return list.get(rowIndex);
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
