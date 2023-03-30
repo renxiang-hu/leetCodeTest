@@ -52,12 +52,12 @@ public class MaximumDepthOfBinaryTree {
      */
     class Solution {
         public int maxDepth(TreeNode root) {
-            if (root == null) {
+            if (root == null){
                 return 0;
             }
             int i = maxDepth(root.left);
             int i1 = maxDepth(root.right);
-            return Math.max(i, i1) + 1;
+            return Math.max(i,i1)+1;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
