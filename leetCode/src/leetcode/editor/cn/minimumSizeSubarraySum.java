@@ -63,20 +63,22 @@ class minimumSizeSubarraySum {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int minSubArrayLen(int s, int[] nums) {
-            int min = Integer.MAX_VALUE;
-            for (int i = 0; i < nums.length; i++) {
-                int sum = nums[i];
-                if (sum >= s)
-                    return 1;
-                for (int j = i + 1; j < nums.length; j++) {
-                    sum += nums[j];
-                    if (sum >= s) {
-                        min = Math.min(min, j - i + 1);
-                        break;
-                    }
-                }
+            int left = 0;
+            int right = 0;
+            int minLengh = 0;
+            int curSum = 0;
+            while (right < nums.length) {
+               curSum = curSum + nums[right];
+               while (curSum >= s) {
+                   if (right-left+1 < minLengh || minLengh == 0){
+                       minLengh = right - left + 1;
+                   }
+                   curSum = curSum - nums[left];
+                   left++;
+               }
+               right++;
             }
-            return min == Integer.MAX_VALUE ? 0 : min;
+            return minLengh;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
