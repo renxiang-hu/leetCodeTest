@@ -52,23 +52,23 @@ class isomorphicStrings {
 
     public static void main(String[] args) {
         Solution solution = new isomorphicStrings().new Solution();
-        boolean isomorphic = solution.isIsomorphic("foo", "bar");
+        boolean isomorphic = solution.isIsomorphic("egg", "add");
         System.out.println(isomorphic);
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public boolean isIsomorphic(String s, String t) {
-            Map<Character, Character> map = new HashMap<>();
-            Map<Character, Character> map1 = new HashMap<>();
-            for (int i = 0; i < s.length(); i++) {
-                char m = s.charAt(i);
-                char n = t.charAt(i);
-                if ((map.containsKey(m) && map.get(m) != n) || (map1.containsKey(n) && map1.get(n) != m)) {
+            Map<Character,Character> map = new HashMap<>();
+            Map<Character,Character> map1 = new HashMap<>();
+            for (int i = 0 ; i < s.length() ; i++){
+                Character tns = s.charAt(i);
+                Character tls = t.charAt(i);
+                if ((map.containsKey(tns) && map.get(tns) != tls) || (map1.containsKey(tls) && map1.get(tls) != tns)){
                     return false;
                 }
-                map.put(m, n);
-                map1.put(n, m);
+                map.put(tns,tls);
+                map1.put(tls,tns);
             }
             return true;
         }

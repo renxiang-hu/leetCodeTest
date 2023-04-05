@@ -70,25 +70,20 @@ class findPivotIndex {
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 
-    /**
-     * 数组总和：total
-     * 左边和： sum
-     * 右边和： total - sum - nums[i]
-     * 左边和 == 右边和
-     * sum = total - sum - nums[i];
-     * 2*sum = total - nums[i]
-     */
     class Solution {
         public int pivotIndex(int[] nums) {
-            int total = Arrays.stream(nums).sum();
-            int sumLeft = 0;
-            for (int i = 0; i < nums.length; i++) {
-                if (sumLeft == total - sumLeft - nums[i]) {
-                    return i;
-                }
-                sumLeft += nums[i];
-            }
-            return -1;
+           int total=0;
+           for (int tns : nums){
+               total += tns;
+           }
+           int leftSum = 0;
+           for (int i = 0 ; i < nums.length ; i++){
+               if (2*leftSum == total-nums[i]){
+                   return i;
+               }
+               leftSum += nums[i];
+           }
+           return -1;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -49,13 +49,12 @@ class runningSumOf1dArray {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[] runningSum(int[] nums) {
-            int[] value = new int[nums.length];
             int sum = 0;
-            for (int i = 0; i < nums.length; i++) {
-                sum = sum + nums[i];
-                value[i] = sum;
+            for (int i = 0 ; i < nums.length ; i++){
+                sum += nums[i];
+                nums[i] = sum;
             }
-            return value;
+            return nums;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
