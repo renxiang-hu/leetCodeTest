@@ -37,6 +37,11 @@
 
 package leetcode.editor.cn;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 class mergeTwoSortedLists {
     //2022-10-13 11:49:23
     //合并两个有序链表
@@ -65,37 +70,27 @@ class mergeTwoSortedLists {
      */
     class Solution {
         public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-            //方法一：递归
-//        if (list1 == null){
-//            return list2;
-//        } else if (list2 == null){
-//            return list1;
-//        } else if (list1.val < list2.val){
-//            list1.next = mergeTwoLists(list1.next,list2);
-//            return list1;
-//        } else {
-//            list2.next = mergeTwoLists(list1,list2.next);
-//            return list2;
-//        }
-            //方法二：逐个查找比较
-            ListNode dummyNode = new ListNode();
+            // 1 -> 2 -> 4
+            // 1 -> 3 -> 4
+            ListNode dummyNode = new ListNode(0);
             ListNode cur = dummyNode;
             while (list1 != null && list2 != null) {
-                if (list1.val > list2.val) {
-                    cur.next = list2;
-                    list2 = list2.next;
-                } else {
+                if (list1.val <= list2.val){
                     cur.next = list1;
+                    cur = list1;
                     list1 = list1.next;
+                } else {
+                    cur.next = list2;
+                    cur = list2;
+                    list2 = list2.next;
                 }
-                cur = cur.next;
             }
             if (list1 == null) {
                 cur.next = list2;
             } else {
                 cur.next = list1;
             }
-            return dummyNode.next;
+          return dummyNode.next;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

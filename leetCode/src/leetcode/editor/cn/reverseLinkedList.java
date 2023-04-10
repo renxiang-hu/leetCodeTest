@@ -70,15 +70,15 @@ class reverseLinkedList {
      */
     class Solution {
         public ListNode reverseList(ListNode head) {
-            ListNode cur = head;
-            ListNode pre = null;
-            while (cur != null) {
-                ListNode temp = cur.next;
-                cur.next = pre;
-                pre = cur;
-                cur = temp;
-            }
-            return pre;
+           ListNode pre = null;
+           ListNode cur = head;
+           while (cur != null) {
+               ListNode next = cur.next;
+               cur.next = pre;
+               pre = cur;
+               cur = next;
+           }
+           return pre;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

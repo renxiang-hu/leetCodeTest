@@ -42,6 +42,9 @@
 
 package leetcode.editor.cn;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class isSubsequence {
     //2022-10-10 19:13:41
     //判断子序列
@@ -49,22 +52,25 @@ class isSubsequence {
 
     public static void main(String[] args) {
         Solution solution = new isSubsequence().new Solution();
-        boolean subsequence = solution.isSubsequence("aaaaaa", "bbaaaa");
+        boolean subsequence = solution.isSubsequence("abc", "ahbgdc");
+//        boolean subsequence = solution.isSubsequence("axc", "ahbgdc");
         System.out.println(subsequence);
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public boolean isSubsequence(String s, String t) {
-            int i = 0;
-            int j = 0;
-            while (i < s.length() && j < t.length()) {
-                if (s.charAt(i) == t.charAt(j)) {
-                    i++;
+            int left = 0;
+            int right = 0;
+            while (left < s.length() && right < t.length()) {
+                char c = s.charAt(left);
+                char c1 = t.charAt(right);
+                if (c == c1){
+                   left++;
                 }
-                j++;
+                right++;
             }
-            return i == s.length();
+            return left == s.length();
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

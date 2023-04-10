@@ -49,23 +49,27 @@ class longestPalindrome {
 
     public static void main(String[] args) {
         Solution solution = new longestPalindrome().new Solution();
-        int abccccdd = solution.longestPalindrome("abccccdd");
+        int abccccdd = solution.longestPalindrome("bb");
         System.out.println(abccccdd);
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int longestPalindrome(String s) {
-            Map<Character, Integer> map = new HashMap<>();
+            //个数只能有一个奇数
+            Map<Character,Integer> map = new HashMap<>();
             for (int i = 0 ; i < s.length() ; i++){
                 map.put(s.charAt(i),map.getOrDefault(s.charAt(i),0)+1);
             }
+            int len = s.length();
             Set<Character> characters = map.keySet();
             int count = 0;
-            for (Character tns : characters){
-                count = count + map.get(tns) % 2;
+            for (Character character : characters){
+                if (map.get(character) % 2 == 1){
+                    count++;
+                }
             }
-            return count == 0 ? s.length() : s.length() - count + 1;
+            return count == 0 ? len : len - count + 1;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
