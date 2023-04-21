@@ -40,6 +40,7 @@ package leetcode.editor.cn;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 class findWordsThatCanBeFormedByCharacters {
     //2023-01-12 18:01:35
@@ -53,36 +54,34 @@ class findWordsThatCanBeFormedByCharacters {
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 
-    /**
-     * 思路：用hash存储chars每个字符出现的次数
-     * 用hash存储每个单词每个字符出现的次数
-     * 然后进行一一比对即可
-     */
     class Solution {
         public int countCharacters(String[] words, String chars) {
-            Map<Character, Integer> charMap = new HashMap<>();
-            for (int i = 0; i < chars.length(); i++) {
-                charMap.put(chars.charAt(i), charMap.getOrDefault(chars.charAt(i), 0) + 1);
+            Map<Character, Integer> map = new HashMap<>();
+            for (int i = 0 ; i < chars.length() ; i++){
+                map.put(chars.charAt(i),map.getOrDefault(chars.charAt(i),0)+1);
             }
-            int ans = 0;
-            for (int j = 0; j < words.length; j++) {
-                Map<Character, Integer> wordMap = new HashMap<>();
-                String cc = words[j];
-                for (int m = 0; m < cc.length(); m++) {
-                    wordMap.put(cc.charAt(m), wordMap.getOrDefault(cc.charAt(m), 0) + 1);
+            boolean tns = true;
+            int sum = 0;
+            for (int j = 0 ; j < words.length ; j++){
+                String word = words[j];
+                Map<Character, Integer> map1 = new HashMap<>();
+                for (int m = 0 ; m < word.length() ; m++) {
+                    map1.put(word.charAt(m),map1.getOrDefault(word.charAt(m),0)+1);
                 }
-                boolean tns = true;
-                for (int n = 0; n < cc.length(); n++) {
-                    if (charMap.getOrDefault(cc.charAt(n), 0) < wordMap.getOrDefault(cc.charAt(n), 0)) {
+                Set<Character> characters = map1.keySet();
+                for (Character val : characters){
+                    if (map1.getOrDefault(val,0) > map.getOrDefault(val,0)){
                         tns = false;
                         break;
+                    } else {
+                        tns = true;
                     }
                 }
-                if (tns) {
-                    ans = ans + words[j].length();
+                if (tns){
+                    sum += word.length();
                 }
             }
-            return ans;
+            return sum;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

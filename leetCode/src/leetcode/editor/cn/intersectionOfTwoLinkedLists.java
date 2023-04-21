@@ -90,6 +90,8 @@
 
 package leetcode.editor.cn;
 
+import com.sun.tools.javac.util.Assert;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -119,15 +121,21 @@ class intersectionOfTwoLinkedLists{
  */
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        if (headA == null || headB == null) {
-            return null;
+        Set<ListNode> set = new HashSet<>();
+        // 遍历链表 A，将每个节点的地址存储到一个哈希表中
+        while (headA != null) {
+            set.add(headA);
+            headA = headA.next;
         }
-        ListNode pA = headA, pB = headB;
-        while (pA != pB) {
-            pA = pA == null ? headB : pA.next;
-            pB = pB == null ? headA : pB.next;
+        // 遍历链表 B，对于每个节点，检查它在哈希表中是否已经存在
+        while (headB != null) {
+            if (set.contains(headB)) {
+                return headB;
+            }
+            headB = headB.next;
         }
-        return pA;
+        // 如果遍历完链表 B 后仍没有找到相交节点，则它们没有交点
+        return null;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
