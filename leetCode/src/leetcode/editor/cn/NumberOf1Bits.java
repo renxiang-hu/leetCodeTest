@@ -67,12 +67,12 @@ public class NumberOf1Bits {
     public class Solution {
         // you need to treat n as an unsigned value
         public int hammingWeight(int n) {
-            int val = 0;
-            while (n != 0) {
-                val += n & 1;
-                n = n >>> 1;
-            }
-            return val;
+           int val = 0;
+           while (n != 0) {
+               val += n & 1;
+               n = n >>> 1;
+           }
+           return val;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
