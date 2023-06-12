@@ -1,9 +1,12 @@
-//给你一个链表的头节点 head ，判断链表中是否有环。 
+//给定一个链表的头节点 head ，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。 
 //
 // 如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到
-//链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递 。仅仅是为了标识链表的实际情况。 
+//链表中的位置（索引从 0 开始）。如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。 
 //
-// 如果链表中存在环 ，则返回 true 。 否则，返回 false 。 
+// 不允许修改 链表。 
+//
+// 
+// 
 //
 // 
 //
@@ -13,7 +16,7 @@
 //
 // 
 //输入：head = [3,2,0,-4], pos = 1
-//输出：true
+//输出：返回索引为 1 的链表节点
 //解释：链表中有一个环，其尾部连接到第二个节点。
 // 
 //
@@ -23,7 +26,7 @@
 //
 // 
 //输入：head = [1,2], pos = 0
-//输出：true
+//输出：返回索引为 0 的链表节点
 //解释：链表中有一个环，其尾部连接到第一个节点。
 // 
 //
@@ -33,7 +36,7 @@
 //
 // 
 //输入：head = [1], pos = -1
-//输出：false
+//输出：返回 null
 //解释：链表中没有环。
 // 
 //
@@ -42,32 +45,38 @@
 // 提示： 
 //
 // 
-// 链表中节点的数目范围是 [0, 10⁴] 
+// 链表中节点的数目范围在范围 [0, 10⁴] 内 
 // -10⁵ <= Node.val <= 10⁵ 
-// pos 为 -1 或者链表中的一个 有效索引 。 
+// pos 的值为 -1 或者链表中的一个有效索引 
 // 
 //
 // 
 //
-// 进阶：你能用 O(1)（即，常量）内存解决此问题吗？ 
+// 进阶：你是否可以使用 O(1) 空间解决此题？ 
 //
-// Related Topics 哈希表 链表 双指针 👍 1809 👎 0
+// Related Topics哈希表 | 链表 | 双指针 
+//
+// 👍 2095, 👎 0 
+//
+//
+//
+//
 
 package leetcode.editor.cn;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
-class linkedListCycle{
-    //2023-04-11 09:04:35
-    //环形链表
-    //编号：[141]
+class linkedListCycleIi{
+    //2023-05-07 07:49:12
+    //环形链表 II
+    //编号：[142]
     
     public static void main(String[] args) {
-        Solution solution = new linkedListCycle().new Solution();
+        Solution solution = new linkedListCycleIi().new Solution();
         ListNode linkedList = CreateLink.createLinkedList(new int[]{3, 2, 0, -4});
-        boolean b = solution.hasCycle(linkedList);
-        System.out.println(b);
+        ListNode listNode = solution.detectCycle(linkedList);
+        System.out.println(listNode);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 /**
@@ -82,17 +91,27 @@ class linkedListCycle{
  * }
  */
 public class Solution {
-    public boolean hasCycle(ListNode head) {
+    public ListNode detectCycle(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;
+        List<Integer> list = new ArrayList<>();
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
             if (slow == fast){
-                return true;
+                list.add(slow.val);
+                break;
             }
         }
-        return false;
+        if (list.size() > 0) {
+            while (head.next != null) {
+                if (head.val != list.get(0)){
+                    head = head.next;
+                }
+                return head;
+            }
+        }
+        return null;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

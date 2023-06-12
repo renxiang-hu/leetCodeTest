@@ -64,10 +64,10 @@ public class MinimumOperationsToMakeTheArrayIncreasing {
         public int minOperations(int[] nums) {
             int len = nums.length;
             int res = 0;
-            for (int i = 1; i < len; i++) {
-                if (nums[i - 1] >= nums[i]) {
-                    res = res + nums[i - 1] - nums[i] + 1;
-                    nums[i] = nums[i - 1] + 1;
+            for (int i = 1 ; i < nums.length ; i++){
+                if (nums[i-1] >= nums[i]){
+                    res = res + nums[i-1] - nums[i] + 1;
+                    nums[i] = nums[i-1] + 1;
                 }
             }
             return res;
