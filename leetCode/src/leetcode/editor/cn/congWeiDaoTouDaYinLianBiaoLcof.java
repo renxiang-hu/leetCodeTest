@@ -46,18 +46,18 @@ class congWeiDaoTouDaYinLianBiaoLcof {
      */
     class Solution {
         public int[] reversePrint(ListNode head) {
-            ListNode cur = head;
             List<Integer> list = new ArrayList<>();
-            while (cur != null) {
+            ListNode cur = head;
+            while(cur != null){
                 list.add(cur.val);
                 cur = cur.next;
             }
+            int[] tmp = new int[list.size()];
             Collections.reverse(list);
-            int[] a = new int[list.size()];
-            for (int i = 0; i < list.size(); i++) {
-                a[i] = list.get(i);
+            for(int i = 0 ; i < list.size() ; i++){
+                tmp[i] = list.get(i);
             }
-            return a;
+            return tmp;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
