@@ -50,23 +50,26 @@
 
 
 package leetcode.editor.cn;
-//Java：使用最小花费爬楼梯
+//Java：c
 class T746_MinCostClimbingStairs{
     public static void main(String[] args) {
         Solution solution = new T746_MinCostClimbingStairs().new Solution();
-        int i = solution.minCostClimbingStairs(new int[]{1,100,1,1,1,100,1,1,100,1});
+        int i = solution.minCostClimbingStairs(new int[]{10,15,20});
         System.out.println(i);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
+    //确定dp数组及下标的含义 ： 第i层的最低花费
+    //确定递推公式： dp[i] = dp[i-1] + dp[i-2]
+    //初始化：dp[0] = 0  dp[1] = 0
 class Solution {
     public int minCostClimbingStairs(int[] cost) {
-       int n = cost.length;
-       int[] dp = new int[n+1];
-       dp[0]=dp[1]=0;
-       for (int i = 2 ; i <= n ; i++) {
-           dp[i] = Math.min(dp[i-1]+cost[i-1],dp[i-2]+cost[i-2]);
-       }
-       return dp[n];
+         int n = cost.length;
+         int[] dp = new int[n+1];
+         dp[0] = dp[1] = 0;
+         for (int i = 2 ; i <= n ; i++) {
+             dp[i] = Math.min(dp[i-1]+cost[i-1],dp[i-2]+cost[i-2]);
+         }
+         return dp[n];
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
