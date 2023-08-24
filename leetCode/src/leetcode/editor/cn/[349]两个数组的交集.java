@@ -43,35 +43,32 @@ import java.util.*;
 class T349_IntersectionOfTwoArrays{
     public static void main(String[] args) {
         Solution solution = new T349_IntersectionOfTwoArrays().new Solution();
-        int[] intersection = solution.intersection(new int[]{4,9,5}, new int[]{9, 4, 9, 8, 4});
+        int[] intersection = solution.intersection(new int[]{1,2,2,1}, new int[]{2,2});
         System.out.println(Arrays.toString(intersection));
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int[] intersection(int[] nums1, int[] nums2) {
         Set<Integer> set = new HashSet<>();
-        List<Integer> list = new ArrayList<>();
-        List<Integer> list1 = new ArrayList<>();
-        for (int i = 0 ; i < nums1.length ; i++) {
-            list.add(nums1[i]);
+        Set<Integer> set1 = new HashSet<>();
+        for (int value : nums1) {
+            set.add(value);
         }
-        for (int j = 0 ; j < nums2.length ; j++) {
-            list1.add(nums2[j]);
+        for (int val : nums2) {
+            set1.add(val);
         }
-        for (int t = 0 ; t < list.size() ; t++) {
-            for (int m = 0 ; m < list1.size() ; m++) {
-                if (list.get(t).equals(list1.get(m))) {
-                    set.add(list.get(t));
-                }
+        List<Integer> tns = new ArrayList<>();
+        for (Integer integer : set) {
+            if (set1.contains(integer)) {
+                tns.add(integer);
             }
         }
-        int[] tn = new int[set.size()];
-        int l = 0;
-        for (Integer sl : set) {
-            tn[l] = sl;
-            l++;
+        int[] tl = new int[tns.size()];
+        for (int i = 0 ; i < tns.size() ; i++) {
+            tl[i] = tns.get(i);
         }
-        return tn;
+        return tl;
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

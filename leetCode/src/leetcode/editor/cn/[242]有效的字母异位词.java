@@ -41,21 +41,42 @@
 
 package leetcode.editor.cn;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 //Java：有效的字母异位词
 class T242_ValidAnagram{
     public static void main(String[] args) {
         Solution solution = new T242_ValidAnagram().new Solution();
-        boolean anagram = solution.isAnagram("anagram","nagaram");
+        boolean anagram = solution.isAnagram("a","ab");
         System.out.println(anagram);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public boolean isAnagram(String s, String t) {
-       
+        Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> map1 = new HashMap<>();
+        char[] chars = s.toCharArray();
+        char[] chars1 = t.toCharArray();
+        for (int i = 0 ; i < chars.length ; i++) {
+            map.put(chars[i],map.getOrDefault(chars[i],0)+1);
+        }
+        for (int j = 0 ; j < chars1.length ; j++) {
+            map1.put(chars1[j],map1.getOrDefault(chars1[j],0)+1);
+        }
+        int size1 = map.size();
+        int size2 = map1.size();
+        Set<Character> characters = new HashSet<>();
+        if (size1>size2) {
+            characters = map.keySet();
+        } else {
+            characters = map1.keySet();
+        }
+        for (Character character : characters) {
+            if (!map1.getOrDefault(character,0).equals(map.getOrDefault(character,0))) {
+                return false;
+            }
+        }
+        return true;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
