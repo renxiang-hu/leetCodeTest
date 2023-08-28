@@ -15,6 +15,9 @@
 
 package leetcode.editor.cn;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class lianBiaoZhongDaoShuDiKgeJieDianLcof {
     //2023-02-23 22:43:48
     //链表中倒数第k个节点
@@ -38,16 +41,13 @@ class lianBiaoZhongDaoShuDiKgeJieDianLcof {
      */
     class Solution {
         public ListNode getKthFromEnd(ListNode head, int k) {
-            ListNode left = head;
-            ListNode right = head;
-            for (int i = 1; i <= k; i++) {
-                right = right.next;
-            }
-            while (right != null) {
-                left = left.next;
-                right = right.next;
-            }
-            return left;
+           List<ListNode> list = new ArrayList<>();
+           ListNode cur = head;
+           while (cur != null) {
+               list.add(cur);
+               cur = cur.next;
+           }
+           return list.get(list.size()-k);
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
