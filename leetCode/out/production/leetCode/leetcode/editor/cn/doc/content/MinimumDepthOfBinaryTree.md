@@ -1,0 +1,296 @@
+<p>给定一个二叉树，找出其最小深度。</p>
+
+<p>最小深度是从根节点到最近叶子节点的最短路径上的节点数量。</p>
+
+<p><strong>说明：</strong>叶子节点是指没有子节点的节点。</p>
+
+<p>&nbsp;</p>
+
+<p><strong>示例 1：</strong></p> 
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/12/ex_depth.jpg" style="width: 432px; height: 302px;" /> 
+<pre>
+<strong>输入：</strong>root = [3,9,20,null,null,15,7]
+<strong>输出：</strong>2
+</pre>
+
+<p><strong>示例 2：</strong></p>
+
+<pre>
+<strong>输入：</strong>root = [2,null,3,null,4,null,5,null,6]
+<strong>输出：</strong>5
+</pre>
+
+<p>&nbsp;</p>
+
+<p><strong>提示：</strong></p>
+
+<ul> 
+ <li>树中节点数的范围在 <code>[0, 10<sup>5</sup>]</code> 内</li> 
+ <li><code>-1000 &lt;= Node.val &lt;= 1000</code></li> 
+</ul>
+
+<details><summary><strong>Related Topics</strong></summary>树 | 深度优先搜索 | 广度优先搜索 | 二叉树</details><br>
+
+<div>👍 1071, 👎 0<span style='float: right;'><span style='color: gray;'><a href='https://github.com/labuladong/fucking-algorithm/discussions/939' target='_blank' style='color: lightgray;text-decoration: underline;'>bug 反馈</a> | <a href='https://labuladong.gitee.io/article/fname.html?fname=jb插件简介' target='_blank' style='color: lightgray;text-decoration: underline;'>使用指南</a> | <a href='https://labuladong.github.io/algo/images/others/%E5%85%A8%E5%AE%B6%E6%A1%B6.jpg' target='_blank' style='color: lightgray;text-decoration: underline;'>更多配套插件</a></span></span></div>
+
+<div id="labuladong"><hr>
+
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 和 [递归算法专题课](https://aep.xet.tech/s/3YGcq3) 限时附赠网站会员！**
+
+
+
+<p><strong><a href="https://labuladong.gitee.io/article/slug.html?slug=minimum-depth-of-binary-tree" target="_blank">⭐️labuladong 题解</a></strong></p>
+<details><summary><strong>labuladong 思路</strong></summary>
+
+## 基本思路
+
+> 本文有视频版：[BFS 算法核心框架套路](https://www.bilibili.com/video/BV1oT411u7Vn)
+
+PS：这道题在[《算法小抄》](https://item.jd.com/12759911.html) 的第 53 页。
+
+基本的二叉树层序遍历方法，值得一提的是，BFS 算法框架就是二叉树层序遍历代码的衍生。
+
+BFS 算法和 DFS（回溯）算法的一大区别就是，BFS 第一次搜索到的结果是最优的，这个得益于 BFS 算法的搜索逻辑，可见详细题解。
+
+**详细题解：[BFS 算法解题套路框架](https://labuladong.github.io/article/fname.html?fname=BFS框架)**
+
+**标签：[BFS 算法](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzAxODQxMDM0Mw==&action=getalbum&album_id=2122002916411604996)，[二叉树](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzAxODQxMDM0Mw==&action=getalbum&album_id=2121994699837177859)**
+
+## 解法代码
+
+提示：🟢 标记的是我写的解法代码，🤖 标记的是 chatGPT 翻译的多语言解法代码。如有错误，可以 [点这里](https://github.com/labuladong/fucking-algorithm/issues/1113) 反馈和修正。
+
+<div class="tab-panel"><div class="tab-nav">
+<button data-tab-item="cpp" class="tab-nav-button btn " data-tab-group="default" onclick="switchTab(this)">cpp🤖</button>
+
+<button data-tab-item="python" class="tab-nav-button btn " data-tab-group="default" onclick="switchTab(this)">python🤖</button>
+
+<button data-tab-item="java" class="tab-nav-button btn active" data-tab-group="default" onclick="switchTab(this)">java🟢</button>
+
+<button data-tab-item="go" class="tab-nav-button btn " data-tab-group="default" onclick="switchTab(this)">go🤖</button>
+
+<button data-tab-item="javascript" class="tab-nav-button btn " data-tab-group="default" onclick="switchTab(this)">javascript🤖</button>
+</div><div class="tab-content">
+<div data-tab-item="cpp" class="tab-item " data-tab-group="default"><div class="highlight">
+
+```cpp
+// 注意：cpp 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
+// 本代码已经通过力扣的测试用例，应该可直接成功提交。
+
+class Solution {
+public:
+    int minDepth(TreeNode* root) {
+        if (root == NULL) return 0;
+        queue<TreeNode*> q;
+        q.push(root);
+        // root 本身就是一层，depth 初始化为 1
+        int depth = 1;
+
+        while (!q.empty()) {
+            /* 层数 step */
+            int sz = q.size();
+            /* 将当前队列中的所有节点向四周扩散 */
+            for (int i = 0; i < sz; i++) {
+                TreeNode* cur = q.front();
+                q.pop();
+                /* 判断是否到达终点 */
+                if (cur->left == NULL && cur->right == NULL)
+                    return depth;
+                /* 将 cur 的相邻节点加入队列 */
+                if (cur->left != NULL)
+                    q.push(cur->left);
+                if (cur->right != NULL)
+                    q.push(cur->right);
+            }
+            /* 这里增加步数 */
+            depth++;
+        }
+        return depth;
+    }
+};
+```
+
+</div></div>
+
+<div data-tab-item="python" class="tab-item " data-tab-group="default"><div class="highlight">
+
+```python
+# 注意：python 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
+# 本代码已经通过力扣的测试用例，应该可直接成功提交。
+
+class Solution:
+    def minDepth(self, root: TreeNode) -> int:
+        if not root:
+            return 0
+        q = collections.deque([root])
+        # root 本身就是一层，depth 初始化为 1
+        depth = 1
+        while q:
+            # extend down -200>
+            # ![](https://labuladong.github.io/pictures/dijkstra/1.jpeg)
+            sz = len(q)
+            ## 遍历当前层的节点
+            for i in range(sz):
+                cur = q.popleft()
+                ## 判断是否到达叶子结点
+                if not cur.left and not cur.right:
+                    return depth
+                ## 将下一层节点加入队列
+                if cur.left:
+                    q.append(cur.left)
+                if cur.right:
+                    q.append(cur.right)
+            ## 这里增加步数
+            depth += 1
+        return depth
+```
+
+</div></div>
+
+<div data-tab-item="java" class="tab-item active" data-tab-group="default"><div class="highlight">
+
+```java
+class Solution {
+    public int minDepth(TreeNode root) {
+        if (root == null) return 0;
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(root);
+        // root 本身就是一层，depth 初始化为 1
+        int depth = 1;
+
+        while (!q.isEmpty()) {/**<extend down -200>![](https://labuladong.github.io/pictures/dijkstra/1.jpeg) */
+            int sz = q.size();
+            /* 遍历当前层的节点 */
+            for (int i = 0; i < sz; i++) {
+                TreeNode cur = q.poll();
+                /* 判断是否到达叶子结点 */
+                if (cur.left == null && cur.right == null)
+                    return depth;
+                /* 将下一层节点加入队列 */
+                if (cur.left != null)
+                    q.offer(cur.left);
+                if (cur.right != null)
+                    q.offer(cur.right);
+            }
+            /* 这里增加步数 */
+            depth++;
+        }
+        return depth;
+    }
+}
+```
+
+</div></div>
+
+<div data-tab-item="go" class="tab-item " data-tab-group="default"><div class="highlight">
+
+```go
+// 注意：go 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
+// 本代码已经通过力扣的测试用例，应该可直接成功提交。
+
+/**
+ * Definition for TreeNode.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func minDepth(root *TreeNode) int {
+    if root == nil {
+        return 0
+    }
+    q := []*TreeNode{root}
+    // root 本身就是一层，depth 初始化为 1
+    depth := 1
+
+    for len(q) != 0 {/**<extend down -200>![](https://labuladong.github.io/pictures/dijkstra/1.jpeg) */
+        sz := len(q)
+        /* 遍历当前层的节点 */
+        for i := 0; i < sz; i++ {
+            cur := q[0]
+            q = q[1:]
+            /* 判断是否到达叶子结点 */
+            if cur.Left == nil && cur.Right == nil {
+                return depth
+            }
+            /* 将下一层节点加入队列 */
+            if cur.Left != nil {
+                q = append(q, cur.Left)
+            }
+            if cur.Right != nil {
+                q = append(q, cur.Right)
+            }
+        }
+        /* 这里增加步数 */
+        depth++
+    }
+    return depth
+}
+```
+
+</div></div>
+
+<div data-tab-item="javascript" class="tab-item " data-tab-group="default"><div class="highlight">
+
+```javascript
+// 注意：javascript 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
+// 本代码已经通过力扣的测试用例，应该可直接成功提交。
+
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var minDepth = function(root) {
+    if (root === null) return 0;
+    var q = [];
+    q.push(root);
+    //root本身就是一层，depth初始化为 1
+    var depth = 1;
+
+    while (q.length !== 0) {/**<extend down -200>![](https://labuladong.github.io/pictures/dijkstra/1.jpeg) */
+        var sz = q.length;
+        /* 遍历当前层的节点 */
+        for (var i = 0; i < sz; i++) {
+
+            var cur = q.shift();
+            /* 判断是否到达叶子结点 */
+            if (!cur.left && !cur.right) {
+                return depth;
+            }
+            /* 将下一层节点加入队列 
+            */
+           if (cur.left !== null) {
+             q.push(cur.left);
+            }
+            if (cur.right !== null) {
+              q.push(cur.right);
+             }
+            
+        }
+        /* 这里增加步数 */
+        depth++;
+    }
+    return depth;
+};
+```
+
+</div></div>
+</div></div>
+
+<details open><summary><strong>🌈🌈 算法可视化 🌈🌈</strong></summary><div id="data_minimum-depth-of-binary-tree" data="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"></div><div class="resizable aspect-ratio-container" style="height: 100%;">
+<div id="iframe_minimum-depth-of-binary-tree"></div></div>
+</details><hr /><br />
+
+**类似题目**：
+  - [542. 01 矩阵 🟠](/problems/01-matrix)
+  - [752. 打开转盘锁 🟠](/problems/open-the-lock)
+  - [剑指 Offer II 109. 开密码锁 🟠](/problems/zlDJc7)
+
+</details>
+</div>
+
+
+
+
+

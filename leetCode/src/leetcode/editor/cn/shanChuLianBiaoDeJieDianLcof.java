@@ -38,8 +38,8 @@ class shanChuLianBiaoDeJieDianLcof {
 
     public static void main(String[] args) {
         Solution solution = new shanChuLianBiaoDeJieDianLcof().new Solution();
-        ListNode linkedList = CreateLink.createLinkedList(new int[]{4, 5, 1, 9});
-        ListNode listNode = solution.deleteNode(linkedList, 5);
+        ListNode linkedList = CreateLink.createLinkedList(new int[]{-3,5,-99});
+        ListNode listNode = solution.deleteNode(linkedList, -3);
         PrintLink.printLinkedList(listNode);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
@@ -54,7 +54,7 @@ class shanChuLianBiaoDeJieDianLcof {
      */
     class Solution {
         public ListNode deleteNode(ListNode head, int val) {
-            ListNode dummyNode = new ListNode(0);
+            ListNode dummyNode = new ListNode();
             dummyNode.next = head;
             ListNode cur = dummyNode;
             while (cur.next != null) {

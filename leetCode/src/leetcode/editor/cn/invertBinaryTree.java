@@ -47,7 +47,9 @@ class invertBinaryTree{
     public static void main(String[] args) {
         Solution solution = new invertBinaryTree().new Solution();
         TreeNode tree = TreeUtil.createTree(new Integer[]{4, 2, 7, 1, 3, 6, 9});
-        System.out.println(tree);
+
+        TreeNode treeNode = solution.invertTree(tree);
+
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 /**
@@ -70,30 +72,15 @@ class Solution {
         if (root == null) {
             return null;
         }
-        // 利用函数定义，先翻转左右子树
-        TreeNode left = invertTree(root.left);
-        TreeNode right = invertTree(root.right);
+        TreeNode temp = root.right;
+        root.right = root.left;
+        root.left = temp;
 
-        // 然后交换左右子节点
-        root.left = right;
-        root.right = left;
+        invertTree(root.right);
+        invertTree(root.left);
 
-        // 和定义逻辑自恰：以 root 为根的这棵二叉树已经被翻转，返回 root
         return root;
     }
-
-    //方法一
-//    void traverse(TreeNode root){
-//       if (root == null){
-//           return;
-//       }
-//       TreeNode temp = root.left;
-//       root.left = root.right;
-//       root.right = temp;
-//       traverse(root.left);
-//       traverse(root.right);
-//    }
-
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
