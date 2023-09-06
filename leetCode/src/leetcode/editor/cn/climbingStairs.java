@@ -46,10 +46,18 @@ class climbingStairs{
         System.out.println(i);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-    //1  1   2  2   3   3  4
+    // dp[i]  第i层多少种方法
+    // dp[i] = dp[i-1] + dp[i-2]
+    // dp[0] = 1 ; dp[1] = 1;
 class Solution {
     public int climbStairs(int n) {
-        return 1;
+        if (n<=1) return n;
+        int[] dp = new int[n+1];
+        dp[1] = 1 ; dp[2] = 2;
+        for (int i = 3; i <= n; i++) {
+            dp[i] = dp[i-1] + dp[i-2];
+        }
+        return dp[n];
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
