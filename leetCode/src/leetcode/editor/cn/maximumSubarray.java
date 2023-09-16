@@ -55,17 +55,19 @@ class maximumSubarray{
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int maxSubArray(int[] nums) {
-        int tns = nums[0];
-        int sum = 0;
-        for (int num : nums) {
-          if (sum > 0){
-             sum = sum + num;
-          } else {
-             sum = num;
-          }
-          tns = Math.max(tns,sum);
+        if (nums.length==1) {
+            return nums[0];
         }
-        return tns;
+        int sum = Integer.MIN_VALUE;
+        int count = 0;
+        for (int i = 0 ; i < nums.length ; i++) {
+            count += nums[i];
+            sum = Math.max(sum,count);
+            if (count < 0) {
+                count = 0;
+            }
+        }
+        return sum;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

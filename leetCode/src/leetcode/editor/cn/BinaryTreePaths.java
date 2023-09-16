@@ -64,24 +64,20 @@ public class BinaryTreePaths {
     class Solution {
         public List<String> binaryTreePaths(TreeNode root) {
             List<String> list = new ArrayList<>();
-            binaryPath(root, "", list);
+            binaryPath(root,"",list);
             return list;
         }
 
-        /**
-         *  思路：如果当前节点是叶子节点(节点的左节点和右节点都为空)，那么直接把结果加入到list中
-         *       如果当前节点不是叶子节点，遍历，遍历的过程中用“->”连接
-         */
         public void binaryPath(TreeNode root, String path, List<String> list) {
-            if (root != null) {
+            if (root!=null) {
                 StringBuilder stringBuilder = new StringBuilder(path);
                 stringBuilder.append(root.val);
-                if (root.left == null && root.right == null) {
+                if (root.left==null && root.right==null) {
                     list.add(stringBuilder.toString());
                 } else {
                     stringBuilder.append("->");
-                    binaryPath(root.left, stringBuilder.toString(), list);
-                    binaryPath(root.right, stringBuilder.toString(), list);
+                    binaryPath(root.left,stringBuilder.toString(),list);
+                    binaryPath(root.right,stringBuilder.toString(),list);
                 }
             }
         }

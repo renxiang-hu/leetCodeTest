@@ -35,6 +35,8 @@
 package leetcode.editor.cn;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 class sumOfLeftLeaves{
@@ -66,14 +68,19 @@ class sumOfLeftLeaves{
  */
 class Solution {
     public int sumOfLeftLeaves(TreeNode root) {
-        if (root == null){
+        if (root==null) {
             return 0;
         }
-        int i = sumOfLeftLeaves(root.left);
-        int i1 = sumOfLeftLeaves(root.right);
-        System.out.println("i = "+i);
-        System.out.println("i1 = "+i1);
-        return i + i1;
+        int left = sumOfLeftLeaves(root.left);
+        int right = sumOfLeftLeaves(root.right);
+        int sum = 0;
+        if (root.left!=null && root.left.left==null && root.left.right==null) {
+            sum = root.left.val;
+        }
+        System.out.println("left:"+left);
+        System.out.println("right:"+right);
+        System.out.println("sum"+sum);
+        return left+right+sum;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
