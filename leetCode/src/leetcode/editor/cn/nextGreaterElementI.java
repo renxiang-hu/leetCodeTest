@@ -66,21 +66,20 @@ class nextGreaterElementI {
     // 4,1,2   1,3,4,2
     class Solution {
         public int[] nextGreaterElement(int[] nums1, int[] nums2) {
-            Map<Integer, Integer> map = new HashMap<>();
             Stack<Integer> stack = new Stack<>();
-            for (int i = nums2.length - 1; i >= 0; i--) {
-                int num = nums2[i];
-                if (!stack.isEmpty() && num >= stack.peek()) {
-                    stack.pop();
+            Map<Integer,Integer> map = new HashMap<>();
+            for (int i = 0 ; i < nums2.length ; i++) {
+                int numVal = nums2[i];
+                while (!stack.isEmpty() && numVal > stack.peek()) {
+                    map.put(stack.pop(),numVal);
                 }
-                map.put(num, stack.isEmpty() ? -1 : stack.peek());
-                stack.push(num);
+                stack.push(numVal);
             }
-            int[] ns = new int[nums1.length];
-            for (int j = 0; j < nums1.length; j++) {
-                ns[j] = map.get(nums1[j]);
+            int[] tns = new int[nums1.length];
+            for (int j = 0 ; j < nums1.length ; j++) {
+                tns[j] = map.getOrDefault(nums1[j],-1);
             }
-            return ns;
+            return tns;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

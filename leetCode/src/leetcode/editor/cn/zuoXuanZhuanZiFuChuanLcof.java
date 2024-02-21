@@ -27,6 +27,9 @@
 
 package leetcode.editor.cn;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class zuoXuanZhuanZiFuChuanLcof {
     //2022-11-18 23:23:04
     //左旋转字符串
@@ -34,7 +37,7 @@ class zuoXuanZhuanZiFuChuanLcof {
 
     public static void main(String[] args) {
         Solution solution = new zuoXuanZhuanZiFuChuanLcof().new Solution();
-        String abcdefg = solution.reverseLeftWords("abcdefg", 2);
+        String abcdefg = solution.reverseLeftWords("s3cur1tyC0d3", 4);
         System.out.println(abcdefg);
     }
 
@@ -44,8 +47,7 @@ class zuoXuanZhuanZiFuChuanLcof {
             String substring = s.substring(0, n);
             String substring1 = s.substring(n, s.length());
             StringBuffer stringBuffer = new StringBuffer();
-            String s1 = stringBuffer.append(substring1).append(substring).toString();
-            return s1;
+            return stringBuffer.append(substring1).append(substring).toString();
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

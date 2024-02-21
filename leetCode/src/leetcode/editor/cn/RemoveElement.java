@@ -76,14 +76,14 @@ public class RemoveElement {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int removeElement(int[] nums, int val) {
-            int ans = 0;
-            for (int num : nums) {
-                if (num != val) {
-                    nums[ans] = num;
-                    ans++;
+            int tns = 0;
+            for (int nn : nums) {
+                if (nn!=val) {
+                    nums[tns] = nn;
+                    tns++;
                 }
             }
-            return ans;
+            return tns;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

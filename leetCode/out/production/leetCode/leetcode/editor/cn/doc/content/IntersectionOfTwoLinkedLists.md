@@ -79,3 +79,205 @@
 
 <p><strong>进阶：</strong>你能否设计一个时间复杂度 <code>O(m + n)</code> 、仅用 <code>O(1)</code> 内存的解决方案？</p>
 <div><div>Related Topics</div><div><li>哈希表</li><li>链表</li><li>双指针</li></div></div><br><div><li>👍 1768</li><li>👎 0</li></div>
+
+<div id="labuladong"><hr>
+
+**通知：[数据结构精品课](https://aep.h5.xeknow.com/s/1XJHEO) 和 [递归算法专题课](https://aep.xet.tech/s/3YGcq3) 限时附赠网站会员，全新纸质书[《labuladong 的算法笔记》](https://labuladong.gitee.io/algo/images/book/book_intro_qrcode.jpg) 出版，签名版限时半价！**
+
+
+
+<p><strong><a href="https://labuladong.gitee.io/article/slug.html?slug=intersection-of-two-linked-lists" target="_blank">⭐️labuladong 题解</a></strong></p>
+<details><summary><strong>labuladong 思路</strong></summary>
+
+## 基本思路
+
+> 本文有视频版：[链表双指针技巧全面汇总](https://www.bilibili.com/video/BV1q94y1X7vy)
+
+PS：这道题在[《算法小抄》](https://item.jd.com/12759911.html) 的第 64 页。
+
+这题难点在于，由于两条链表的长度可能不同，两条链表之间的节点无法对应：
+
+![](https://labuladong.github.io/pictures/链表技巧/5.jpeg)
+
+如果用两个指针 `p1` 和 `p2` 分别在两条链表上前进，并不能**同时**走到公共节点，也就无法得到相交节点 `c1`。
+
+**解决这个问题的关键是，通过某些方式，让 `p1` 和 `p2` 能够同时到达相交节点 `c1`**。
+
+如果用两个指针 `p1` 和 `p2` 分别在两条链表上前进，我们可以让 `p1` 遍历完链表 `A` 之后开始遍历链表 `B`，让 `p2` 遍历完链表 `B` 之后开始遍历链表 `A`，这样相当于「逻辑上」两条链表接在了一起。
+
+如果这样进行拼接，就可以让 `p1` 和 `p2` 同时进入公共部分，也就是同时到达相交节点 `c1`：
+
+![](https://labuladong.github.io/pictures/链表技巧/6.jpeg)
+
+另一种思路，先计算两条链表的长度，然后让 `p1` 和 `p2` 距离链表尾部的距离相同，然后齐头并进，
+
+**详细题解：[双指针技巧秒杀七道链表题目](https://labuladong.github.io/article/fname.html?fname=链表技巧)**
+
+**标签：[数据结构](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzAxODQxMDM0Mw==&action=getalbum&album_id=1318892385270808576)，[链表](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzAxODQxMDM0Mw==&action=getalbum&album_id=2120596033251475465)，[链表双指针](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzAxODQxMDM0Mw==&action=getalbum&album_id=2120596033251475465)**
+
+## 解法代码
+
+提示：🟢 标记的是我写的解法代码，🤖 标记的是 chatGPT 翻译的多语言解法代码。如有错误，可以 [点这里](https://github.com/labuladong/fucking-algorithm/issues/1113) 反馈和修正。
+
+<div class="tab-panel"><div class="tab-nav">
+<button data-tab-item="cpp" class="tab-nav-button btn " data-tab-group="default" onclick="switchTab(this)">cpp🤖</button>
+
+<button data-tab-item="python" class="tab-nav-button btn " data-tab-group="default" onclick="switchTab(this)">python🤖</button>
+
+<button data-tab-item="java" class="tab-nav-button btn active" data-tab-group="default" onclick="switchTab(this)">java🟢</button>
+
+<button data-tab-item="go" class="tab-nav-button btn " data-tab-group="default" onclick="switchTab(this)">go🤖</button>
+
+<button data-tab-item="javascript" class="tab-nav-button btn " data-tab-group="default" onclick="switchTab(this)">javascript🤖</button>
+</div><div class="tab-content">
+<div data-tab-item="cpp" class="tab-item " data-tab-group="default"><div class="highlight">
+
+```cpp
+// 注意：cpp 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
+// 本代码已经通过力扣的测试用例，应该可直接成功提交。
+
+class Solution {
+public:
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        // p1 指向 A 链表头结点，p2 指向 B 链表头结点
+        ListNode *p1 = headA, *p2 = headB;
+        while (p1 != p2) {
+            // p1 走一步，如果走到 A 链表末尾，转到 B 链表
+            if (p1 == nullptr) p1 = headB;
+            else                p1 = p1->next;
+            // p2 走一步，如果走到 B 链表末尾，转到 A 链表
+            if (p2 == nullptr) p2 = headA;
+            else                p2 = p2->next;
+        }
+        return p1;
+    }
+};
+```
+
+</div></div>
+
+<div data-tab-item="python" class="tab-item " data-tab-group="default"><div class="highlight">
+
+```python
+# 注意：python 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
+# 本代码已经通过力扣的测试用例，应该可直接成功提交。
+
+class Solution:
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+        # p1 指向 A 链表头结点，p2 指向 B 链表头结点
+        p1, p2 = headA, headB
+        while p1 != p2:
+            # p1 走一步，如果走到 A 链表末尾，转到 B 链表
+            if p1 is None:
+                p1 = headB
+            else:
+                p1 = p1.next
+            # p2 走一步，如果走到 B 链表末尾，转到 A 链表
+            if p2 is None:
+                p2 = headA
+            else:
+                p2 = p2.next
+        return p1
+```
+
+</div></div>
+
+<div data-tab-item="java" class="tab-item active" data-tab-group="default"><div class="highlight">
+
+```java
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        // p1 指向 A 链表头结点，p2 指向 B 链表头结点
+        ListNode p1 = headA, p2 = headB;
+        while (p1 != p2) {
+            // p1 走一步，如果走到 A 链表末尾，转到 B 链表
+            if (p1 == null) p1 = headB;
+            else            p1 = p1.next;
+            // p2 走一步，如果走到 B 链表末尾，转到 A 链表
+            if (p2 == null) p2 = headA;
+            else            p2 = p2.next;
+        }
+        return p1;
+    }
+}
+```
+
+</div></div>
+
+<div data-tab-item="go" class="tab-item " data-tab-group="default"><div class="highlight">
+
+```go
+// 注意：go 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
+// 本代码已经通过力扣的测试用例，应该可直接成功提交。
+
+func getIntersectionNode(headA, headB *ListNode) *ListNode {
+    // p1 指向 A 链表头结点，p2 指向 B 链表头结点
+    p1, p2 := headA, headB
+    for p1 != p2 {
+        // p1 走一步，如果走到 A 链表末尾，转到 B 链表
+        if p1 == nil {
+            p1 = headB
+        } else {
+            p1 = p1.Next
+        }
+        // p2 走一步，如果走到 B 链表末尾，转到 A 链表
+        if p2 == nil {
+            p2 = headA
+        } else {
+            p2 = p2.Next
+        }
+    }
+    return p1
+}
+```
+
+</div></div>
+
+<div data-tab-item="javascript" class="tab-item " data-tab-group="default"><div class="highlight">
+
+```javascript
+// 注意：javascript 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
+// 本代码已经通过力扣的测试用例，应该可直接成功提交。
+
+var getIntersectionNode = function(headA, headB) {
+    // p1 指向 A 链表头结点，p2 指向 B 链表头结点
+    let p1 = headA, p2 = headB;
+    while (p1 !== p2) {
+        // p1 走一步，如果走到 A 链表末尾，转到 B 链表
+        if (p1 === null) p1 = headB;
+        else             p1 = p1.next;
+        // p2 走一步，如果走到 B 链表末尾，转到 A 链表
+        if (p2 === null) p2 = headA;
+        else             p2 = p2.next;
+    }
+    return p1;
+};
+```
+
+</div></div>
+</div></div>
+
+<details open><summary><strong>👾👾 算法可视化 👾👾</strong></summary><div id="data_intersection-of-two-linked-lists" data="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"></div><div class="resizable aspect-ratio-container" style="height: 100%;">
+<div id="iframe_intersection-of-two-linked-lists"></div></div>
+</details><hr /><br />
+
+**类似题目**：
+  - [141. 环形链表 🟢](/problems/linked-list-cycle)
+  - [142. 环形链表 II 🟠](/problems/linked-list-cycle-ii)
+  - [1650. 二叉树的最近公共祖先 III 🟠](/problems/lowest-common-ancestor-of-a-binary-tree-iii)
+  - [19. 删除链表的倒数第 N 个结点 🟠](/problems/remove-nth-node-from-end-of-list)
+  - [21. 合并两个有序链表 🟢](/problems/merge-two-sorted-lists)
+  - [23. 合并K个升序链表 🔴](/problems/merge-k-sorted-lists)
+  - [86. 分隔链表 🟠](/problems/partition-list)
+  - [876. 链表的中间结点 🟢](/problems/middle-of-the-linked-list)
+  - [剑指 Offer 22. 链表中倒数第k个节点 🟢](/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof)
+  - [剑指 Offer 25. 合并两个排序的链表 🟢](/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof)
+  - [剑指 Offer 52. 两个链表的第一个公共节点 🟢](/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof)
+  - [剑指 Offer II 021. 删除链表的倒数第 n 个结点 🟠](/problems/SLwz0R)
+  - [剑指 Offer II 022. 链表中环的入口节点 🟠](/problems/c32eOV)
+  - [剑指 Offer II 023. 两个链表的第一个重合节点 🟢](/problems/3u1WK4)
+  - [剑指 Offer II 078. 合并排序链表 🔴](/problems/vvXgSW)
+
+</details>
+</div>
+

@@ -46,25 +46,26 @@ public class IntersectionOfTwoArrays {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[] intersection(int[] nums1, int[] nums2) {
-            Set<Integer> num1Set = new HashSet<>();
-            Set<Integer> num2Set = new HashSet<>();
-            for (Integer num : nums1) {
-                num1Set.add(num);
+            Set<Integer> set = new HashSet<>();
+            for (Integer t : nums1) {
+                set.add(t);
             }
-            for (Integer num : nums2) {
-                num2Set.add(num);
+            Set<Integer> set1 = new HashSet<>();
+            for (Integer n : nums2) {
+                set1.add(n);
             }
             List<Integer> list = new ArrayList<>();
-            for (Integer nu1 : num1Set) {
-                if (num2Set.contains(nu1)) {
-                    list.add(nu1);
+            for (Integer tt : set) {
+                if (set1.contains(tt)) {
+                    list.add(tt);
                 }
             }
-            int[] tl = new int[list.size()];
-            for (int i = 0; i < list.size(); i++) {
-                tl[i] = list.get(i);
+            int[] ttt = new int[list.size()];
+            for (int i = 0 ; i < ttt.length ; i++) {
+                ttt[i] = list.get(i);
             }
-            return tl;
+            return ttt;
+
         }
     }
 

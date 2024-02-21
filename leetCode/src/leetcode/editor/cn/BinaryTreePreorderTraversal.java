@@ -58,6 +58,8 @@
 
 package leetcode.editor.cn;
 
+import sun.invoke.empty.Empty;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -86,7 +88,8 @@ public class BinaryTreePreorderTraversal {
      *     }
      * }
      */
-// 1, null, 2, 3
+    // 前序遍历：根-->左-->右
+        //
     class Solution {
         public List<Integer> preorderTraversal(TreeNode root) {
             List<Integer> list = new ArrayList<>();

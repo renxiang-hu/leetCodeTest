@@ -39,6 +39,8 @@
 
 package leetcode.editor.cn;
 
+import java.util.Stack;
+
 public class ErChaShuDeJingXiangLcof {
     public static void main(String[] args) {
         Solution solution = new ErChaShuDeJingXiangLcof().new Solution();
@@ -59,14 +61,23 @@ public class ErChaShuDeJingXiangLcof {
      */
     class Solution {
         public TreeNode mirrorTree(TreeNode root) {
-            if (root == null){
-                return null;
+            Stack<TreeNode> stack = new Stack<>();
+            if (root==null) {
+                return root;
             }
-            TreeNode temp = root.left;
-            root.left = root.right;
-            root.right = temp;
-            mirrorTree(root.left);
-            mirrorTree(root.right);
+            stack.push(root);
+            while (!stack.isEmpty()) {
+                TreeNode pop = stack.pop();
+                TreeNode temp = pop.left;
+                pop.left = pop.right;
+                pop.right = temp;
+                if (pop.left!=null) {
+                   stack.push(pop.left);
+                }
+                if (pop.right!=null) {
+                   stack.push(pop.right);
+                }
+            }
             return root;
         }
     }

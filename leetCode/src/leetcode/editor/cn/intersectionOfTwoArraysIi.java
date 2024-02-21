@@ -39,7 +39,7 @@
 
 package leetcode.editor.cn;
 
-import java.util.Arrays;
+import java.util.*;
 
 class intersectionOfTwoArraysIi {
     //2023-02-24 14:32:13
@@ -48,35 +48,29 @@ class intersectionOfTwoArraysIi {
 
     public static void main(String[] args) {
         Solution solution = new intersectionOfTwoArraysIi().new Solution();
-        int[] intersect = solution.intersect(new int[]{4,4,4,5,9}, new int[]{4,4,6,8,9,9});
+        int[] intersect = solution.intersect(new int[]{1,2,2,1}, new int[]{2,2});
         System.out.println(intersect.toString());
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[] intersect(int[] nums1, int[] nums2) {
-            Arrays.sort(nums1);
-            Arrays.sort(nums2);
-            int index1 = 0;
-            int index2 = 0;
-            int tag = 0;
-            int[] newArray = new int[Math.min(nums1.length,nums2.length)];
-            while (index1 < nums1.length && index2 < nums2.length){
-                if (nums1[index1] > nums2[index2]){
-                    index2++;
-                } else if (nums1[index1] < nums2[index2]){
-                    index1++;
-                } else {
-                    newArray[tag++] = nums1[index1];
-                    index1++;
-                    index2++;
+            Map<Integer,Integer> map = new HashMap<>();
+            for (Integer num : nums1) {
+                map.put(num,map.getOrDefault(num,0)+1);
+            }
+            Map<Integer,Integer> map1 = new HashMap<>();
+            for (Integer num : nums2) {
+                map1.put(num,map1.getOrDefault(num,0)+1);
+            }
+            List<Integer> list = new ArrayList<>();
+            Set<Integer> integers = map.keySet();
+            for (Integer tns : integers) {
+                if (map.get(tns)!=null && map1.get(tns)!=null) {
+                    list.add(tns);
                 }
             }
-            int[] tns = new int[tag];
-            for (int i = 0 ; i < tag ; i++){
-                tns[i] = newArray[i];
-            }
-            return tns;
+            return null;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

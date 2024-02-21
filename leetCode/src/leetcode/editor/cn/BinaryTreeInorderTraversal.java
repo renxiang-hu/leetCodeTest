@@ -47,6 +47,7 @@ package leetcode.editor.cn;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class BinaryTreeInorderTraversal {
     public static void main(String[] args) {

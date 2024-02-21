@@ -58,11 +58,12 @@ class squaresOfASortedArray {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[] sortedSquares(int[] nums) {
-            for (int i = 0; i < nums.length; i++) {
-                nums[i] = nums[i] * nums[i];
+            int[] tns = new int[nums.length];
+            for (int i = 0 ; i < nums.length ; i++) {
+                tns[i] = nums[i] * nums[i];
             }
-            Arrays.sort(nums);
-            return nums;
+            Arrays.sort(tns);
+            return  tns;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

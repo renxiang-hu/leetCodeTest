@@ -37,6 +37,7 @@
 package leetcode.editor.cn;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -50,13 +51,9 @@ public class ContainsDuplicate {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public boolean containsDuplicate(int[] nums) {
-            Map<Integer, Integer> map = new HashMap<>();
-            for (int i = 0; i < nums.length; i++) {
-                map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
-            }
-            Set<Map.Entry<Integer, Integer>> entries = map.entrySet();
-            for (Map.Entry<Integer, Integer> entry : entries) {
-                if (entry.getValue() >= 2) {
+            Set<Integer> set = new HashSet<>();
+            for (int num : nums) {
+                if (!set.add(num)) {
                     return true;
                 }
             }

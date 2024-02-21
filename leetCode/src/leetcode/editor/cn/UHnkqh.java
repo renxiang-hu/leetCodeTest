@@ -77,15 +77,15 @@ class UHnkqh{
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
-       ListNode temp = null;
-       ListNode curr = head;
-       while (curr!=null){
-           ListNode next = curr.next;
-           curr.next = temp;
-           temp = curr;
-           curr = next;
-       }
-       return temp;
+        ListNode dummyNode = null;
+        ListNode cur = head;
+        while (cur != null) {
+            ListNode temp = cur.next;
+            cur.next = dummyNode;
+            dummyNode = cur;
+            cur = temp;
+        }
+        return dummyNode;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

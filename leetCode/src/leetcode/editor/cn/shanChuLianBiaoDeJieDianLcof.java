@@ -54,17 +54,16 @@ class shanChuLianBiaoDeJieDianLcof {
      */
     class Solution {
         public ListNode deleteNode(ListNode head, int val) {
-            ListNode dummyNode = new ListNode();
-            dummyNode.next = head;
-            ListNode cur = dummyNode;
-            while (cur.next != null) {
-                if (cur.next.val == val) {
-                    cur.next = cur.next.next;
-                } else {
-                    cur = cur.next;
-                }
-            }
-            return dummyNode.next;
+           ListNode dummyNode = new ListNode(0,head);
+           ListNode cur = dummyNode;
+           while (cur.next != null) {
+               if (cur.next.val==val) {
+                   cur.next = cur.next.next;
+               } else {
+                   cur = cur.next;
+               }
+           }
+           return dummyNode.next;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

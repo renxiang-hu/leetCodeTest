@@ -55,6 +55,7 @@ class happyNumber{
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public boolean isHappy(int n) {
+        String num = n+"";
         return false;
     }
 }

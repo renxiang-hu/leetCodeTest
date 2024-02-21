@@ -122,19 +122,16 @@ class intersectionOfTwoLinkedLists{
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         Set<ListNode> set = new HashSet<>();
-        // 遍历链表 A，将每个节点的地址存储到一个哈希表中
         while (headA != null) {
             set.add(headA);
             headA = headA.next;
         }
-        // 遍历链表 B，对于每个节点，检查它在哈希表中是否已经存在
         while (headB != null) {
             if (set.contains(headB)) {
                 return headB;
             }
             headB = headB.next;
         }
-        // 如果遍历完链表 B 后仍没有找到相交节点，则它们没有交点
         return null;
     }
 }

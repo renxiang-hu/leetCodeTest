@@ -44,6 +44,11 @@
 
 package leetcode.editor.cn;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
 class validPalindrome {
     //2023-02-16 15:35:20
     //验证回文串
@@ -58,30 +63,19 @@ class validPalindrome {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public boolean isPalindrome(String s) {
-            if (" ".equals(s)) {
+           List<Character> list = new ArrayList<>();
+           for (int i = 0 ; i < s.length() ; i++) {
+               if (Character.isLetterOrDigit(s.charAt(i))) {
+                   list.add(Character.toLowerCase(s.charAt(i)));
+               }
+           }
+            String collect = list.stream().map(String::valueOf).collect(Collectors.joining(","));
+            Collections.reverse(list);
+            String collect1 = list.stream().map(String::valueOf).collect(Collectors.joining(","));
+            if (collect.equals(collect1)) {
                 return true;
             }
-            StringBuffer stringBuffer = new StringBuffer();
-            String replaceString = s.replace(" ", "");
-            for (int i = 0; i < replaceString.length(); i++) {
-                char c = replaceString.charAt(i);
-                if (Character.isLetterOrDigit(c)) {
-                    char c1 = Character.toLowerCase(c);
-                    stringBuffer.append(c1);
-                }
-            }
-            String s1 = stringBuffer.toString();
-            int left = 0;
-            int right = s1.length() - 1;
-            while (left <= right) {
-                if (s1.charAt(left) == s1.charAt(right)) {
-                    left++;
-                    right--;
-                } else {
-                    return false;
-                }
-            }
-            return true;
+            return false;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

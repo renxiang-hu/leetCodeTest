@@ -58,17 +58,18 @@ class ransomNote {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public boolean canConstruct(String ransomNote, String magazine) {
-            Map<Character, Integer> ranHashMap = new HashMap<>();
-            for (int i = 0; i < ransomNote.length(); i++) {
-                ranHashMap.put(ransomNote.charAt(i), ranHashMap.getOrDefault(ransomNote.charAt(i), 0) + 1);
+            Map<Character,Integer> map = new HashMap<>();
+            for (int i = 0 ; i < ransomNote.length() ; i++) {
+                map.put(ransomNote.charAt(i),map.getOrDefault(ransomNote.charAt(i),0)+1);
             }
-            Map<Character, Integer> magHashMap = new HashMap<>();
-            for (int j = 0; j < magazine.length(); j++) {
-                magHashMap.put(magazine.charAt(j), magHashMap.getOrDefault(magazine.charAt(j), 0) + 1);
+            Map<Character,Integer> map1 = new HashMap<>();
+            for (int j = 0 ; j < magazine.length() ; j++) {
+                map1.put(magazine.charAt(j),map1.getOrDefault(magazine.charAt(j),0)+1);
             }
-            for (Character ch : ranHashMap.keySet()) {
-                if (ranHashMap.getOrDefault(ch, 0) > magHashMap.getOrDefault(ch, 0)) {
-                    return false;
+            Set<Character> characters = map.keySet();
+            for (Character num : characters) {
+                if (map.getOrDefault(num,0)>map1.getOrDefault(num,0)) {
+                   return false;
                 }
             }
             return true;

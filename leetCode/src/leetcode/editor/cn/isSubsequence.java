@@ -43,7 +43,9 @@
 package leetcode.editor.cn;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 class isSubsequence {
     //2022-10-10 19:13:41
@@ -52,7 +54,7 @@ class isSubsequence {
 
     public static void main(String[] args) {
         Solution solution = new isSubsequence().new Solution();
-        boolean subsequence = solution.isSubsequence("abc", "ahbgdc");
+        boolean subsequence = solution.isSubsequence("aaaaaa", "bbaaaa");
 //        boolean subsequence = solution.isSubsequence("axc", "ahbgdc");
         System.out.println(subsequence);
     }
@@ -65,12 +67,12 @@ class isSubsequence {
             while (left < s.length() && right < t.length()) {
                 char c = s.charAt(left);
                 char c1 = t.charAt(right);
-                if (c == c1){
-                   left++;
+                if (c == c1) {
+                    left++;
                 }
                 right++;
             }
-            return left == s.length();
+            return left==s.length();
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

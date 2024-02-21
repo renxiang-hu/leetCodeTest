@@ -55,12 +55,13 @@ public class MaximumDepthOfBinaryTree {
      */
     class Solution {
         public int maxDepth(TreeNode root) {
-           if (root==null) {
+           if (root == null) {
                return 0;
            }
            int left = maxDepth(root.left);
            int right = maxDepth(root.right);
-           return Math.max(left,right)+1;
+           int total = Math.max(left,right) + 1;
+           return total;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
